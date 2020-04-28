@@ -21,13 +21,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'sc%drq-!4elvzql_ov-xye1$iza)(8r5e@wq4rhqj=183gyvqg'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'sc%drq-!4elvzql_ov-xye1$iza)(8r5e@wq4rhqj=183gyvqg')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['jb-full-stack-frameworks.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
+                 os.environ.get('HOSTNAME')]
 
+host = os.environ.get('SITE_HOST')
+if host:
+    ALLOWED_HOSTS.append(host)
 
 # Application definition
 
@@ -81,7 +85,7 @@ WSGI_APPLICATION = 'jbfullstackframeworks.wsgi.application'
 #    }
 # }
 
-DATABASES = {'default': dj_database_url.parse("postgres://saynigjqnymila:fb7b529a289586bfeee0cb0e2b5a0c0fcadb9fc41af026e04f081ec0aa5466f2@ec2-54-217-213-79.eu-west-1.compute.amazonaws.com:5432/d8i9frvqusbrkt")}
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
