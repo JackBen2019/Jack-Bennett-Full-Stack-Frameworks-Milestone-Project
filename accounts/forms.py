@@ -1,4 +1,5 @@
 from django import forms
+from .models import Post
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
@@ -43,3 +44,9 @@ class UserRegistrationForm(UserCreationForm):
             raise ValidationError("Passwords must match")
         
         return password2
+
+
+class BlogPostForm(forms.ModelForm):
+    class Meta2:
+        model = Post
+        fields = ('title', 'content', 'image', 'tag', 'published_date')
