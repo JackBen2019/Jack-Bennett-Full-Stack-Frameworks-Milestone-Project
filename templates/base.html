@@ -25,9 +25,11 @@
 					<div class="collapse navbar-collapse" id="collapse_target">
 						<ul class="navbar-nav nav-menu mx-auto ml-auto">
 							{% if user.is_authenticated %}
+                            <li><a href="{% url 'add_review' %}">Add Review</a></li>
 							<li><a href="{% url 'profile' %}">Profile</a></li>
 							<li><a href="{% url 'logout' %}">Logout</a></li>
 							{% else %}
+                            <li><a href="{% url 'add_review' %}">Add Review</a></li>
 							<li><a href="{% url 'login' %}">Login</a></li>
 							<li><a href="{% url 'registration' %}">Register</a></li>
 							{% endif %}
@@ -42,7 +44,11 @@
 	<div>
 		{% for message in messages %} {{ message }} {% endfor %}
 	</div>
-	{% endif %} {% block content %}{% endblock %}
+	{% endif %}
+    
+    {% block content %}
+    
+    {% endblock %}
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">

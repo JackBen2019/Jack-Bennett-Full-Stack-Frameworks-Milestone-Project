@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.utils import timezone
 from .models import Post
-from .forms import BlogPostForm
+from .forms import ReviewPostForm
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -74,7 +74,7 @@ def user_profile(request):
     return render(request, 'profile.html', {"profile": user})
 
 
-def get_posts(request):
+def get_reviews(request):
     """
     Create a view that will return a list
     of posts that were published prior to 'now'
@@ -83,9 +83,9 @@ def get_posts(request):
 
     posts = Post.objects.filter(published_date__lte=timezone.now
         ()).order_by('-published_date')
-    return render(request, "blogposts.html", {'posts': posts})
+    return render(request, "reviews.html", {'posts': posts})
 
-def post_detail(request, pk):
+def review_details(request, pk):
     """
     Create a view that returns a single
     post object based on the post ID (pk) and
@@ -96,9 +96,9 @@ def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.views += 1
     post.save()
-    return render(request, "postdetail.html", {'post': post})
+    return render(request, "reviewdetails.html", {'post': post})
 
-def create_or_edit_post(request, pk=None):
+def create_or_edit_review(request, pk=None):
     """
     Create a view that allows us to create
     or edit a post depending on if the post ID
@@ -107,10 +107,10 @@ def create_or_edit_post(request, pk=None):
 
     post = get_object_or_404(Post, pk=pk) if pk else None
     if request.method == "POST":
-        form = BlogPostForm(request.POST, request.FILES, instance=post)
+        form = AddReviewForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save()
             return redirect(post_detail, post.pk)
     else:
-        form = BlogPostForm(instance=post)
-    return render(request, 'blogpostform.html', {'form': form})
+        form = AddReviewForm(instance=post)
+    return render(request, 'addreviewform.html', {'form': form})

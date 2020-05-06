@@ -3,7 +3,7 @@ from django.utils import timezone
 
 class Post(models.Model):
     """
-    A single blog post
+    A single review added
     """
     title = models.CharField(max_length=200)
     content = models.TextField()

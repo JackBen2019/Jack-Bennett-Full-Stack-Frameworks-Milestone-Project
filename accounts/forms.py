@@ -46,7 +46,7 @@ class UserRegistrationForm(UserCreationForm):
         return password2
 
 
-class BlogPostForm(forms.ModelForm):
+class ReviewPostForm(forms.ModelForm):
     class Meta2:
         model = Post
         fields = ('title', 'content', 'image', 'tag', 'published_date')
