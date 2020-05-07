@@ -3,7 +3,7 @@ from django.utils import timezone
 
 class Post(models.Model):
     """
-    A single review added
+    A single Blog post
     """
     title = models.CharField(max_length=200)
     content = models.TextField()
@@ -13,5 +13,5 @@ class Post(models.Model):
     tag = models.CharField(max_length=30, blank=True, null=True)
     image = models.ImageField(upload_to="img", blank=True, null=True)
 
-    def  __unicode__(self):
+    def __unicode__(self):
         return self.title

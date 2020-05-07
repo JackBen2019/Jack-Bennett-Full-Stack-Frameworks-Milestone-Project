@@ -47,6 +47,7 @@ class UserRegistrationForm(UserCreationForm):
 
 
 class ReviewPostForm(forms.ModelForm):
-    class Meta2:
+
+    class Meta:
         model = Post
         fields = ('title', 'content', 'image', 'tag', 'published_date')

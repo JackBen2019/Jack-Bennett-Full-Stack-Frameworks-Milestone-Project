@@ -81,8 +81,8 @@ def get_reviews(request):
     and render them to the 'blogposts.html' template
     """
 
-    posts = Post.objects.filter(published_date__lte=timezone.now
-        ()).order_by('-published_date')
+    posts = Post.objects.filter(published_date__lte=timezone.now()
+        ).order_by('-published_date')
     return render(request, "reviews.html", {'posts': posts})
 
 def review_details(request, pk):
@@ -107,10 +107,10 @@ def create_or_edit_review(request, pk=None):
 
     post = get_object_or_404(Post, pk=pk) if pk else None
     if request.method == "POST":
-        form = AddReviewForm(request.POST, request.FILES, instance=post)
+        form = ReviewPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save()
-            return redirect(post_detail, post.pk)
+            return redirect(review_details, post.pk)
     else:
-        form = AddReviewForm(instance=post)
-    return render(request, 'addreviewform.html', {'form': form})
+        form = ReviewPostForm(instance=post)
+    return render(request, 'reviewpostform.html', {'form': form})

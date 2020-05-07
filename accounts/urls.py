@@ -8,8 +8,9 @@ urlpatterns = [
     url(r'^login/', login, name="login"),
     url(r'^register/', registration, name="registration"),
     url(r'^profile/', user_profile, name="profile"),
-    url(r'^$', get_reviews, name='get_reviews'),
-    url(r'^(?P<pk>\d+)/$', review_details, name='reviews_detail'),
+    url(r'^reviews/', get_reviews, name='get_reviews'),
+    url(r'^password-reset/', include(url_reset)),
+    url(r'^(?P<pk>\d+)/$', review_details, name='review_details'),
     url(r'^new/$', create_or_edit_review, name='add_review'),
     url(r'^(?P<pk>\d+)/edit/$', create_or_edit_review, name='edit_review')
 ]

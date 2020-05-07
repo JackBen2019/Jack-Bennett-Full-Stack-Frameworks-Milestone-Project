@@ -16,7 +16,7 @@
 	<header class="container-fluid">
 		<div class="row">
 			<div class="col-md-4 header-content">
-				<a href="#" class="navbar-brand website-logo">
+				<a href="{% url 'index' %}" class="navbar-brand website-logo">
 					<img alt="Jack Bennett's" class="website-logo" src="#"></a>
 			</div>
 			<div class="col-md-8 header-content">
@@ -25,10 +25,12 @@
 					<div class="collapse navbar-collapse" id="collapse_target">
 						<ul class="navbar-nav nav-menu mx-auto ml-auto">
 							{% if user.is_authenticated %}
+                            <li><a href="{% url 'get_reviews' %}">Reviews</a></li>
                             <li><a href="{% url 'add_review' %}">Add Review</a></li>
 							<li><a href="{% url 'profile' %}">Profile</a></li>
 							<li><a href="{% url 'logout' %}">Logout</a></li>
 							{% else %}
+                            <li><a href="{% url 'get_reviews' %}">Add Review</a></li>
                             <li><a href="{% url 'add_review' %}">Add Review</a></li>
 							<li><a href="{% url 'login' %}">Login</a></li>
 							<li><a href="{% url 'registration' %}">Register</a></li>
