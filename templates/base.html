@@ -57,7 +57,12 @@
 	</div>
 	{% endif %}
     <div class="container">
-
+    <div class="display">
+        <form action="{% url 'search' %}" method="GET">
+            <input type="text" name="q">
+            <button type="submit">Search</button>
+        </form>
+    </div>
         {% block content %} {% endblock %}
     </div>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
