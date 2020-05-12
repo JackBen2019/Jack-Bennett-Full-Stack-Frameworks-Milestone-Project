@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 	<title>{% block page_title %}{% endblock %}</title>
+    {% block head_js %}
+    {% endblock head_js %}
 </head>
 
 <body class="container-fluid">
