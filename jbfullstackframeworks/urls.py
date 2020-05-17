@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.views.generic import RedirectView
 from django.views.static import serve
 from .settings import MEDIA_ROOT
-from accounts.views import index
+from accounts.views import index, about
 from accounts import urls as accounts_urls
 from products import urls as urls_products
 from search import urls as urls_search
@@ -30,6 +30,7 @@ from django.views import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name="index"),
+    url(r'^about/', about, name="about"),
     url(r'^accounts/', include(accounts_urls)),
     url(r'^products/', include(urls_products)),
     url(r'^cart/', include(urls_cart)),

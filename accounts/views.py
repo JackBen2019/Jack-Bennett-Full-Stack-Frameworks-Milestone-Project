@@ -11,7 +11,11 @@ from accounts.forms import UserLoginForm, UserRegistrationForm
 
 def index(request):
     """Return the index.html file"""
-    return render(request,  'index.html')
+    return render(request, 'index.html')
+
+def about(request):
+    """Return the about.html file"""
+    return render(request, 'about.html')
 
 @login_required
 def logout(request):

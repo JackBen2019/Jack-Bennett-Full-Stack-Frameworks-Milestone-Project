@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from .views import get_reviews, review_details, create_or_edit_review
-from accounts.views import logout, login, registration, user_profile
+from accounts.views import logout, login, registration, user_profile, about
 from accounts import url_reset
 
 urlpatterns = [
@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^login/', login, name="login"),
     url(r'^register/', registration, name="registration"),
     url(r'^profile/', user_profile, name="profile"),
+    url(r'^about/', about, name="about"),
     url(r'^reviews/', get_reviews, name='get_reviews'),
     url(r'^password-reset/', include(url_reset)),
     url(r'^(?P<pk>\d+)/$', review_details, name='review_details'),

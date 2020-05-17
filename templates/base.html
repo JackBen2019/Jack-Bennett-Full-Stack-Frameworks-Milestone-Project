@@ -14,12 +14,12 @@
     {% endblock head_js %}
 </head>
 
-<body class="container-fluid">
+<body>
 	<header class="container-fluid">
 		<div class="row">
-			<div class="col-md-8 header-content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Navbar</a>
+			<div class="col-12">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Game Trade</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -30,20 +30,17 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'get_reviews' %}">Reviews</a></li>
 							<li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
 							<li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
-							{% else %}
-                            <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Products</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'get_reviews' %}">Reviews</a></li>
-							<li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a></li>
-							<li class="nav-item"><a class="nav-link" href="{% url 'registration' %}"><i class="fa fa-user-plus"></i> Register</a></li>
-							{% endif %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'view_cart' %}">
-                                    <i class="fa fa-shipping-cart"></i> Cart
+                            <li class="nav-item"><a class="nav-link" href="{% url 'view_cart' %}"><i class="fa fa-shipping-cart"></i> Cart
                                     {% if product_count > 0 %}
                                     <label class="badge badge-warning">{{ product_count }}</label>
                                     {% endif %}
                                 </a>
                             </li>
+							{% else %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
+							<li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a></li>
+							<li class="nav-item"><a class="nav-link" href="{% url 'registration' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+							{% endif %}
 						</ul>
 					</div>
 				</nav>
@@ -51,7 +48,7 @@
 		</div>
 	</header>
 
-	<hr> {% if messages %}
+	{% if messages %}
 	<div>
 		{% for message in messages %} {{ message }} {% endfor %}
 	</div>
