@@ -78,7 +78,7 @@ def get_reviews(request):
     """
     Create a view that will return a list
     of posts that were published prior to 'now'
-    and render them to the 'blogposts.html' template
+    and render them to the 'reviews.html' template
     """
 
     posts = Post.objects.filter(published_date__lte=timezone.now()

@@ -11,6 +11,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #317eac;
 }
 
+body {
+    padding: 0px !important;
+    margin: 50px !important;
+}
+
 /* ------ Forms ------ */
 
 button {
@@ -31,6 +36,13 @@ form {
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.row {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
 }
 
 /* ------ Navigation ------ */
