@@ -16,8 +16,6 @@ body {
     margin: 50px !important;
 }
 
-/* ------ Forms ------ */
-
 button {
     margin-bottom: 12px;
 }
@@ -26,8 +24,14 @@ form {
     width: 85%;
 }
 
-.accountform {
-    padding-top: 20px;
+/* ------ Registration Form ------ */
+
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
 }
 
 /* ------ Bootstrap ------ */
@@ -43,6 +47,10 @@ form {
 .row {
     padding-left: 15px !important;
     padding-right: 15px !important;
+}
+
+.navbar-collapse {
+    text-align: center;
 }
 
 /* ------ Navigation ------ */
@@ -93,5 +101,9 @@ caption p {
     border: 1px solid #ddd;
 }
 
-/* ------ Footer ------ */
+/* ------ Footer / Social Media ------ */
 
+.social-media-container {
+    background-color: #333 !important;
+    margin-right: 0 !important;
+}

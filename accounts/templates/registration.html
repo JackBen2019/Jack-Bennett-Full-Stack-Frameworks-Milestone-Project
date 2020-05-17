@@ -1,16 +1,27 @@
 {% extends 'base.html' %}
 
-{% load bootstrap_tags %}
+{% load crispy_forms_tags %}
 
 {% block page_title %}Registration Page{% endblock %}
 
 {% block page_heading %}User Registration{% endblock %}
 
 {% block content %}
-<p>If you already have an account, you can <a href="{% url 'login' %}">sign in</a> here.</p>
-<form method="POST">
-    {% csrf_token %}
-    {{ registration_form | as_bootstrap }}
-    <button type="submit" class="btn btn-primary">Register</button>
-</form>
-{% endblock %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="#">Sign In</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}
