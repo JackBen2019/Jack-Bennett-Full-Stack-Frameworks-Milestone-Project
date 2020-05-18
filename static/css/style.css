@@ -21,7 +21,7 @@ button {
 }
 
 form {
-    width: 85%;
+    width: 100%;
 }
 
 ul {
@@ -39,22 +39,39 @@ li {
 
 /* ------ Registration Form ------ */
 
-.content-section {
+.registration-form {
     background: #ffffff;
     padding: 10px 20px;
     border: 1px solid #dddddd;
     border-radius: 3px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-.container-fluid {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+.form-container {
+    width: 40%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.col-12 {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+@media only screen and (max-width: 1385px) {
+.form-container {
+    width: 60%;
+}
+}
+
+@media only screen and (max-width: 920px) {
+.form-container {
+    width: 80%;
+}
+}
+
+@media only screen and (max-width: 735px) {
+.form-container {
+    width: 90%;
+}
 }
 
 /* ------ Bootstrap ------ */
@@ -74,6 +91,16 @@ li {
 
 .navbar-collapse {
     text-align: center;
+}
+
+.container-fluid {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.col-12 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 
 /* ------ Navigation ------ */
