@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 body {
     padding: 0px !important;
-    margin: 50px !important;
+    margin: 0px !important;
 }
 
 button {
@@ -24,6 +24,15 @@ form {
     width: 85%;
 }
 
+ul {
+    padding-left: 0px !important;
+    margin-bottom: 0 !important;
+}
+
+li {
+    list-style-type: none !important;
+}
+
 /* ------ Registration Form ------ */
 
 .content-section {
@@ -32,6 +41,16 @@ form {
     border: 1px solid #dddddd;
     border-radius: 3px;
     margin-bottom: 20px;
+}
+
+.container-fluid {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.col-12 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 
 /* ------ Bootstrap ------ */
@@ -55,9 +74,7 @@ form {
 
 /* ------ Navigation ------ */
 
-caption p {
-    word-wrap: break-word;
-}
+
 
 /* ------ Cart / Items in Cart ------ */
 
@@ -104,6 +121,32 @@ caption p {
 /* ------ Footer / Social Media ------ */
 
 .social-media-container {
-    background-color: #333 !important;
+    background-color: #f8f9fa !important;
     margin-right: 0 !important;
+}
+
+.social-media-footer {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.facebook-footer i {
+    font-size: 33px;
+    color: rgba(0,0,0,.5);
+}
+
+.twitter-footer i {
+    font-size: 33px;
+    color: rgba(0,0,0,.5);
+}
+
+.instagram-footer i {
+    font-size: 33px;
+    color: rgba(0,0,0,.5);
+}
+
+.pinterest-footer i {
+    font-size: 33px;
+    color: rgba(0,0,0,.5);
 }
