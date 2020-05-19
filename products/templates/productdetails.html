@@ -16,13 +16,13 @@
 		<h3>{{ item.product.name }}</h3>
 		<div class="row">
 			<div class="col-xs-9">
-				<p>{{ post.content }}</p>
+				
 				<p><span class="boldtext">Service Title:</span> {{ item.product.name }} </p>
 				<p><span class="boldtext">Service Type:</span> {{ item.product.category }} </p>
                 <p><span class="boldtext">Description:</span> {{ item.product.description }} </p>
 				<p><span class="boldtext">Price:</span> {{ item.product.price }} </p>
 				<a href="{% url 'products' %}" class="btn btn-default">Back to Services</a>
-				<a href="{% url 'edit_product' post.id %}" class="btn btn-default">Edit Service</a>
+				<a href="{% url 'edit_product' item.id %}" class="btn btn-default">Edit Service</a>
 				<hr>
 			</div>
 		</div>
