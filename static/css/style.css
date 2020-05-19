@@ -74,6 +74,12 @@ li {
 }
 }
 
+/* ------ Font Awesome ------ */
+
+.fa, .fas {
+    font-size: 11px !important;
+}
+
 /* ------ Bootstrap ------ */
 
 .row.row-flex {
@@ -106,21 +112,6 @@ li {
 /* ------ Navigation ------ */
 
 
-
-/* ------ Cart / Items in Cart ------ */
-
-.badge {
-    padding-left: 9px;
-    padding-right: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
-}
-
-.label-warning[href],
-.badge-warning[href] {
-    background-color: #c67605;
-}
 
 /* ------ Products ------ */
 
@@ -181,3 +172,30 @@ li {
     font-size: 33px;
     color: rgba(0,0,0,.5);
 }
+
+/* ------ Cart / Items in Cart ------ */
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+
+.order-form-container {
+    width: 70%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+/* ------ Checkout ------ */
+

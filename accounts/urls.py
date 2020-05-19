@@ -1,6 +1,7 @@
 from django.conf.urls import url, include
 from .views import get_reviews, review_details, create_or_edit_review
 from accounts.views import logout, login, registration, user_profile, about
+from products.views import all_products, product_details, create_or_edit_product
 from accounts import url_reset
 
 urlpatterns = [

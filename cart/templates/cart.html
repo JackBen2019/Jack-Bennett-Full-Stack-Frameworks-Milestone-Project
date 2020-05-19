@@ -3,6 +3,40 @@
 {% load bootstrap_tags %}
 
 {% block content %}
+
+<div class="table-responsive order-form-container">
+<table class="table">
+<h4>Order Summary</h4>
+  <thead>
+    <tr>
+      <th scope="col">Service</th>
+      <th scope="col">Service Type</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in cart_items %}
+    <tr>
+      <td scope="row">{{ item.product.name }}</td>
+      <td>{{ item.product.category }}</td>
+      <td>{{ item.product.price }}</td>
+    </tr>
+    {% endfor %}
+
+    <tr>
+        <td colspan="3"><b>Order Total</b></td>
+        <td><b>{{ total }}</b></td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <a class="btn btn-warning float-left" href="{% url 'checkout' %}">Proceed To Checkout</a>
+            <a class="btn btn-primary float-left ml-2" href="{% url 'products' %}">Continue Shopping</a>
+        </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 <div class="row row-flex">
     {% for item in cart_items %}
     
