@@ -1,29 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div class="container">
-  <div class="display">
+<section class="container">
+<div class="add-post row">
+    <div class="col-lg-6">
+        <td>
+            <a class="btn btn-primary float-left ml-2" href="{% url 'add_review' %}">Add a Post</a>
+        </td>
+    </div>
+    <div class="col-lg-6">
     <form action="{% url 'search' %}" method="GET">
       <input type="text" name="q" />
       <button type="submit">Search</button>
     </form>
-  </div>
-</div>
-
-<div class="col-12">
-    <div class="row">
-        <a href="{% url 'add_review' %}">Add Your Own Review</a>
     </div>
 </div>
 
 {% for post in posts %}
-<div class="row">
+<div class="row panel-body">
 	<div class="col-md-2 col-sm-3 text-center">
 		<a class="story-img" href="#">
-			<img src="/media/img/profile.jpg" class="img-circle">
+			<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ post.image }}')"></div>
                 </a>
-			<p><span class="boldtext">Author:</span> Jack</p>
 	</div>
 	<div class="col-md-10 col-sm-9">
 		<h3>{{ post.title }}</h3>
@@ -40,4 +38,5 @@
 	<hr>
 </div>
 {% endfor %}
+</section>
 {% endblock %}

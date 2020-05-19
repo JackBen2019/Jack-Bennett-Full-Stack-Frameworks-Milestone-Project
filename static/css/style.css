@@ -37,7 +37,7 @@ li {
     min-height: calc(100vh - 265px);
 }
 
-/* ------ Registration Form ------ */
+/* ------ Forms ------ */
 
 .registration-form {
     background: #ffffff;
@@ -109,9 +109,12 @@ li {
     padding-right: 0px !important;
 }
 
-/* ------ Navigation ------ */
+/* ------ Forum ------ */
 
-
+.add-post {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
 
 /* ------ Products ------ */
 

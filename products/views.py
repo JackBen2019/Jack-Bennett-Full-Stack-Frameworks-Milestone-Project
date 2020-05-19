@@ -19,11 +19,23 @@ def product_details(request, pk):
     products.save()
     return render(request, "productdetails.html", {"products": products})
 
-def create_or_edit_product(request, pk=None):
+def edit_product(request, pk):
+    """ 
+    Edit a single product 
     """
-    Create a view that allows us to create
-    or edit a post depending on if the post ID
-    is null or not
+    products = get_object_or_404(Product, pk=pk)
+    if request.method == "POST":
+        form = ProductPostForm(request.POST, instance=products)
+        if form.is_valid():
+            product = form.save()
+            return redirect(product_details, product.pk)
+    else:
+        form = ProductPostForm(instance=products)
+    return render(request, 'editproduct.html', {"form": form})
+
+def add_product(request, pk=None):
+    """
+    Add a single product
     """
 
     products = get_object_or_404(Product, pk=pk) if pk else None
