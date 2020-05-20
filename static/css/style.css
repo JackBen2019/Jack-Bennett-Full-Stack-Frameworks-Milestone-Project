@@ -211,9 +211,17 @@ li {
 
 .panel-body-about {
     height: 100%;
-    padding: 35px;
+    padding: 30px;
     border: 1px solid #ddd;
     border-radius: 10px;
+}
+
+.panel-body-about:hover {
+    background-color: #f2f2f2;
+}
+
+.margin-bottom-about-boxes>a:hover {
+    text-decoration: none !important;
 }
 
 .margin-bottom-about-boxes {
