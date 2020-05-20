@@ -9,19 +9,19 @@
             </a>
 	</div>
 	<div class="col-sm-10 col-md-9">
-		{% if product.image %}
+		{% if products.image %}
 		<img class="img-blogpost" src="/media/{{ review.image }}">
             {% endif %}
-		<h3>{{ product.name }}</h3>
+		<h3>{{ products.name }}</h3>
 		<div class="row">
 			<div class="col-xs-9">
-				
-				<p><span class="boldtext">Service Title:</span> {{ product.name }} </p>
-				<p><span class="boldtext">Service Type:</span> {{ product.category }} </p>
-                <p><span class="boldtext">Description:</span> {{ product.description }} </p>
-				<p><span class="boldtext">Price:</span> {{ product.price }} </p>
+				<p><span class="boldtext">Service Title:</span> {{ products.name }} </p>
+				<p><span class="boldtext">Service Type:</span> {{ products.category }} </p>
+                <p><span class="boldtext">Description:</span> {{ products.description }} </p>
+				<p><span class="boldtext">Price:</span> {{ products.price }} </p>
 				<a href="{% url 'products' %}" class="btn btn-default">Back to Services</a>
-                <a href="{% url 'edit_product' %}" class="btn btn-default">Edit Service</a>
+                <a href="{% url 'edit_product' products.id %}" class="btn btn-default">Edit Service</a>
+
 				<hr>
 			</div>
 		</div>

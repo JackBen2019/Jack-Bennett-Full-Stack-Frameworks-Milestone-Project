@@ -7,7 +7,6 @@
 		<a class="story-img" href="#">
 			<img src="/media/img/profile.jpg" class="img-circle">
             </a>
-			<p><span class="boldtext">Author:</span> Jack</p>
 	</div>
 	<div class="col-sm-10 col-md-9">
 		{% if post.image %}
@@ -20,8 +19,8 @@
 				<p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
 				<p><span class="boldtext">Views:</span> {{post.views}}</p>
 				<p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
-				<a href="{% url 'get_reviews' %}" class="btn btn-default">Back to Blog</a>
-				<a href="{% url 'edit_review' post.id %}" class="btn btn-default">Edit Post</a>
+				<a href="{% url 'get_reviews' %}" class="btn btn-outline-primary">Back to Forum</a>
+				<a href="{% url 'edit_review' post.id %}" class="btn btn-outline-warning">Edit Post</a>
 				<hr>
 			</div>
 		</div>

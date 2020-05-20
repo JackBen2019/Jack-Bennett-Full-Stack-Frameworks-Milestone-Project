@@ -1,35 +1,47 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container">
-  <div class="display">
-    <form action="{% url 'search' %}" method="GET">
-      <input type="text" name="q" />
-      <button type="submit">Search</button>
-    </form>
-  </div>
-</div>
 
-<div class="col-12">
-    <div class="row">
-        <a href="{% url 'add_product' %}">Add Your Own Product</a>
+<section class="container-fluid">
+
+<div class="row justify-content-center">
+    <div class="col-12 forum-heading">
+        <h2>Do you specialize in websites or marketing?</h2>
+        <p>If you have a service you can provide, then feel free to add it below!</p>
     </div>
 </div>
 
-<div class="container">
+<div class="add-post row forum-heading">
+    <div class="col-12">
+    <form action="{% url 'search_product' %}" method="GET">
+      <input class="search-bar" type="text" name="q" />
+      <button type="submit">Search</button>
+    </form>
+    </div>
+</div>
+
+<div class="add-post row">
+    <div class="col-md-4">
+        <td>
+            <a class="btn btn-primary float-left ml-2" href="{% url 'add_product' %}">Add a Marketing/Web Service</a>
+        </td>
+    </div>
+</div>
+
+<div class="container-fluid">
 <div class="row row-flex">
   {% for product in products %}
   <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-    <div class="panel-body">
+    <div class="panel-body-product">
       <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 
-      <h3>{{ product.name }}</h3>
-      <p class="product-description">{{ product.description }}</p>
-      <p>{{ product.price }}</p>
+      <h3 class="product-info">{{ product.name }}</h3>
+      <p class="product-description product-info">{{ product.description }}</p>
+      <p class="product-info">£{{ product.price }}</p>
 
       <form method="post" action="{% url 'add_to_cart' product.id %}">
         {% csrf_token %}
-        <div>
+        <div class="add-to-cart-button-container">
             <span class="input-group-btn">
-                <button class="btn btn-success" type="submit">Add</button>
+                <button class="btn btn-success add-to-cart-button" type="submit">Add to Cart</button>
             </span>
         </div>
       </form>
@@ -39,3 +51,4 @@
 </div>
 </div>
 {% endblock %}
+</section>

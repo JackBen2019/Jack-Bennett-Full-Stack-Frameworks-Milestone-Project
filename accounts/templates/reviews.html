@@ -2,36 +2,40 @@
 
 {% block content %}
 <section class="container">
-<div class="add-post row">
-    <div class="col-lg-6">
-        <td>
-            <a class="btn btn-primary float-left ml-2" href="{% url 'add_review' %}">Add a Post</a>
-        </td>
+
+<div class="row justify-content-center">
+    <div class="col-12 forum-heading">
+        <h2>Welcome to the community forum!</h2>
+        <p>Here you'll find the latest marketing and web events, as well as some helpful tips.</p>
     </div>
-    <div class="col-lg-6">
-    <form action="{% url 'search' %}" method="GET">
-      <input type="text" name="q" />
+</div>
+
+<div class="add-post row forum-heading">
+    <div class="col-12">
+    <form action="{% url 'search_review' %}" method="GET">
+      <input class="search-bar" type="text" name="q" />
       <button type="submit">Search</button>
     </form>
     </div>
 </div>
 
+<div style="padding-left: 0px !important;" class="row">
+<div class="col-md-4 padding-left">
+        <td>
+            <a class="panel-body btn-primary float-left" href="{% url 'add_review' %}">Add a Post</a>
+        </td>
+    </div>
+</div>
 {% for post in posts %}
-<div class="row panel-body">
-	<div class="col-md-2 col-sm-3 text-center">
-		<a class="story-img" href="#">
-			<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ post.image }}')"></div>
-                </a>
-	</div>
+<div class="row panel-body-forum">
 	<div class="col-md-10 col-sm-9">
 		<h3>{{ post.title }}</h3>
 		<div class="row">
 			<div class="col-xs-9">
 				<p>{{ post.content|truncatewords:30 }}</p>
-				<p><a href="{% url 'review_details' post.id %}" class="btn btn-default">Read more</a></p>
 				<p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
-				<p><span class="boldtext">Views:</span> {{post.views}}</p>
-				<p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
+                <p><span class="boldtext">Views:</span> {{post.views}}</p>
+                <p><a href="{% url 'review_details' post.id %}" class="btn btn-outline-info">Read more</a></p>
 			</div>
 		</div>
 	</div>

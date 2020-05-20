@@ -16,8 +16,7 @@ def product_details(request, pk):
     """
 
     products = get_object_or_404(Product, pk=pk)
-    products.save()
-    return render(request, "productdetails.html", {"products": products})
+    return render(request, "productdetails.html", {"products": products, "pk": pk})
 
 def edit_product(request, pk):
     """ 

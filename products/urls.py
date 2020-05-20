@@ -5,5 +5,5 @@ urlpatterns = [
     url(r'^$', all_products, name='products'),
     url(r'^(?P<pk>\d+)/$', product_details, name='product_details'),
     url(r'^new/$', add_product, name='add_product'),
-    url(r'^(?P<pk>\d+)/edit/$', edit_product, name='edit_product')
+    url(r'^edit/(?P<pk>\d+)/$', edit_product, name='edit_product')
 ]
