@@ -3,13 +3,13 @@
 <section class="container-fluid">
 
 <div class="row justify-content-center">
-    <div class="col-12 forum-heading">
+    <div class="col-12 centre-align-text">
         <h2>Do you specialize in websites or marketing?</h2>
         <p>If you have a service you can provide, then feel free to add it below!</p>
     </div>
 </div>
 
-<div class="add-post row forum-heading">
+<div class="add-post row centre-align-text">
     <div class="col-12">
     <form action="{% url 'search_product' %}" method="GET">
       <input class="search-bar" type="text" name="q" />
@@ -39,7 +39,7 @@
 
       <form method="post" action="{% url 'add_to_cart' product.id %}">
         {% csrf_token %}
-        <div class="add-to-cart-button-container">
+        <div class="centre-align-text">
             <span class="input-group-btn">
                 <button class="btn btn-success add-to-cart-button" type="submit">Add to Cart</button>
             </span>

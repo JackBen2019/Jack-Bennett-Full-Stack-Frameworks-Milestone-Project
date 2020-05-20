@@ -1,23 +1,55 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-<section class="container">
+<section class="container base-font-colour">
 <div class="row">
     <div class="col-12">
         <h2 class="about-heading">
             <span>- Hello and Welcome -</span>
         </h2>
-        <h4>This is JB:Marketing, a central hub for all marketers and web developers to advertise thier services.</h4>
+        <h4 class="centre-align-text">JB:Marketing - a central hub for all marketers and web developers to advertise thier services.</h4>
+        <hr>
     </div>
 </div>
 
 <div class="row">
     <div class="col-12">
-        <h5>
-            <span>We first want to take this opportunity to thank you for visiting our site today. We, just like you, are 
-            business owners who strive to Here at JB:Marketing, our mission is
-            to </span>
+        <img src="{% static 'img/about_us_marketing.jpg' %}" alt="">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h5 class="centre-align-text">
+            <span class="">We first want to take this opportunity to thank you for visiting our site today. We, just like you, are 
+            always striving to be better everyday and we are always pushing for the next amazing opportunity. We live by to motto to 
+            always <b>do more</b> and that's something we hope we you can live by with us.
+            <br>-<br>
+            To always do more is a broad term. To do more does not simply mean spending hours, or even days working on something that 
+            will provide minimum value. To do more means you are being more efficient with your time, therefore getting more done.
+            That's where we come in.
+            <br>-<br>
+            Whether you're someone who is looking to promote their marketing or web services, or someone who is looking to buy those 
+            services, JB:Marketing is the place to be. Here you have to choice to add your services, or simply pay for someone else's.
+            So, I think that covers everything. Thank you again for visiting and let's get to work!
+            </span>
         </h5>
+        <hr>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 margin-bottom-about-boxes">
+        <div class="panel-body-about centre-align-text">
+            <a class="base-font-colour" href="{% url 'registration' %}"><h2>Register</h2></a>
+        </div>
+    </div>
+    <div class="col-sm-6 margin-bottom-about-boxes">
+        <div class="panel-body-about centre-align-text">
+            <a class="base-font-colour" href="{% url 'login' %}"><h2>Login</h2></a>
+        </div>
     </div>
 </div>
 </section>
