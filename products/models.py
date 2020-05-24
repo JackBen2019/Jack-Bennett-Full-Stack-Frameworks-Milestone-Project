@@ -8,7 +8,7 @@ CATEGORY_CHOICES = (
 )
 
 class Product(models.Model):
-    name = models.CharField(max_length=254, default='')
+    name = models.CharField(max_length=38, default='')
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=25, default='')
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)

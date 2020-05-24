@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.utils import timezone
 from .models import Post
-from .forms import ReviewPostForm
+from .forms import ForumPostForm
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -78,18 +78,17 @@ def user_profile(request):
     return render(request, 'profile.html', {"profile": user})
 
 
-def get_reviews(request):
+def get_forum(request):
     """
-    Create a view that will return a list
-    of posts that were published prior to 'now'
-    and render them to the 'reviews.html' template
+    Will return a list of posts that were published prior to 'now'
+    and render them to the 'forum.html' template
     """
 
     posts = Post.objects.filter(published_date__lte=timezone.now()
         ).order_by('-published_date')
-    return render(request, "reviews.html", {'posts': posts})
+    return render(request, "forum.html", {'posts': posts})
 
-def review_details(request, pk):
+def forum_details(request, pk):
     """
     Create a view that returns a single
     post object based on the post ID (pk) and
@@ -100,9 +99,9 @@ def review_details(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.views += 1
     post.save()
-    return render(request, "reviewdetails.html", {'post': post})
+    return render(request, "forumdetails.html", {'post': post})
 
-def create_or_edit_review(request, pk=None):
+def create_or_edit_forum(request, pk=None):
     """
     Create a view that allows us to create
     or edit a post depending on if the post ID
@@ -111,10 +110,10 @@ def create_or_edit_review(request, pk=None):
 
     post = get_object_or_404(Post, pk=pk) if pk else None
     if request.method == "POST":
-        form = ReviewPostForm(request.POST, request.FILES, instance=post)
+        form = ForumPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save()
-            return redirect(review_details, post.pk)
+            return redirect(forum_details, post.pk)
     else:
-        form = ReviewPostForm(instance=post)
-    return render(request, 'reviewpostform.html', {'form': form})
+        form = ForumPostForm(instance=post)
+    return render(request, 'forumpostform.html', {'form': form})

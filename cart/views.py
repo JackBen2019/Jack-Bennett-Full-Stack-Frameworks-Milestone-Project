@@ -6,7 +6,7 @@ def view_cart(request):
 
 
 def add_to_cart(request, id):
-    """Add a quantity of the specified product to the cart"""
+    """Add a specified product to the cart"""
 
     cart = request.session.get('cart', {})
     cart[id] = cart.get(id, 1)
@@ -14,6 +14,14 @@ def add_to_cart(request, id):
     request.session['cart'] = cart
     return redirect(reverse('products'))
 
+def remove_from_cart(request, id):
+    """Add a quantity of the specified product to the cart"""
+
+    cart = request.session.get('cart', {})
+    cart[id] = cart.get(id, -1)
+
+    request.session['cart'] = cart
+    return redirect(reverse('products'))
 
 def adjust_cart(request, id):
     """

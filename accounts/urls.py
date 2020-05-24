@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from .views import get_reviews, review_details, create_or_edit_review
+from .views import get_forum, forum_details, create_or_edit_forum
 from accounts.views import logout, login, registration, user_profile, about
 from products.views import all_products, product_details, edit_product, add_product
 from accounts import url_reset
@@ -10,9 +10,9 @@ urlpatterns = [
     url(r'^register/', registration, name="registration"),
     url(r'^profile/', user_profile, name="profile"),
     url(r'^about/', about, name="about"),
-    url(r'^reviews/', get_reviews, name='get_reviews'),
+    url(r'^forum/', get_forum, name='get_forum'),
     url(r'^password-reset/', include(url_reset)),
-    url(r'^(?P<pk>\d+)/$', review_details, name='review_details'),
-    url(r'^new/$', create_or_edit_review, name='add_review'),
-    url(r'^(?P<pk>\d+)/edit/$', create_or_edit_review, name='edit_review')
+    url(r'^(?P<pk>\d+)/$', forum_details, name='forum_details'),
+    url(r'^new/$', create_or_edit_forum, name='add_forum'),
+    url(r'^(?P<pk>\d+)/edit/$', create_or_edit_forum, name='edit_forum')
 ]

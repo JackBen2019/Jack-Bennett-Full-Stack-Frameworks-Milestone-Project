@@ -15,13 +15,11 @@
 		<h3>{{ products.name }}</h3>
 		<div class="row">
 			<div class="col-xs-9">
-				<p><span class="boldtext">Service Title:</span> {{ products.name }} </p>
 				<p><span class="boldtext">Service Type:</span> {{ products.category }} </p>
                 <p><span class="boldtext">Description:</span> {{ products.description }} </p>
 				<p><span class="boldtext">Price:</span> {{ products.price }} </p>
-				<a href="{% url 'products' %}" class="btn btn-default">Back to Services</a>
-                <a href="{% url 'edit_product' products.id %}" class="btn btn-default">Edit Service</a>
-
+				<a href="{% url 'products' %}" class="btn btn-outline-primary">Back to Services</a>
+                <a href="{% url 'edit_product' products.id %}" class="btn btn-outline-warning">Edit Service</a>
 				<hr>
 			</div>
 		</div>

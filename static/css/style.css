@@ -24,10 +24,6 @@ img {
     max-height: 100%;
 }
 
-form {
-    width: 100%;
-}
-
 ul {
     padding-left: 0px !important;
     margin-bottom: 0 !important;
@@ -38,7 +34,7 @@ li {
 }
 
 .base-font-colour {
-    color: #848587 !important;
+    color: #737373 !important;
 }
 
 .base-wrapper {
@@ -101,6 +97,20 @@ li {
 
 .bg-light {
     background-color: #f2f2f2 !important;
+}
+
+.jumbotron {
+    background-color: #f7f7f7 !important;
+}
+
+.btn-group, .btn-group-vertical {
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+.jumbotron {
+    padding: 2rem 1rem !important;
+}
 }
 
 /* ------ Search Bar ------ */
@@ -176,6 +186,42 @@ li {
     padding-left: 15px;
 }
 
+.product-title {
+    font-size: 18px;
+}
+
+.product-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.product-price {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.product-btns {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
 .add-to-cart-button {
     width: 75%;
 }
@@ -207,6 +253,7 @@ li {
     padding-bottom: .125em;
     text-transform: uppercase;
     text-align: center;
+    color: #4a4a4a !important;
 }
 
 .panel-body-about {
