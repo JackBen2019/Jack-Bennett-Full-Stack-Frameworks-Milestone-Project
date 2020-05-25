@@ -22,7 +22,7 @@
 <div style="padding-left: 0px !important;" class="row">
 <div class="col-md-4 padding-left">
         <td>
-            <a class="panel-body btn-primary float-left" href="{% url 'add_forum' %}">Add a Post</a>
+            <a class="panel-body btn-primary float-left" href="{% url 'create_forum_post' %}">Add a Post</a>
         </td>
     </div>
 </div>
@@ -35,7 +35,7 @@
 				<p>{{ post.content|truncatewords:30 }}</p>
 				<p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
                 <p><span class="boldtext">Views:</span> {{post.views}}</p>
-                <p><a href="{% url 'forum_details' post.id %}" class="btn btn-outline-info">Read more</a></p>
+                <p><a href="{% url 'forum_post_details' post.id %}" class="btn btn-outline-info">Read more</a></p>
 			</div>
 		</div>
 	</div>

@@ -105,7 +105,7 @@ def get_forum(request):
         ).order_by('-published_date')
     return render(request, "forum.html", {'posts': posts})
 
-def forum_details(request, pk):
+def forum_post_details(request, pk):
     """
     Create a view that returns a single
     post object based on the post ID (pk) and
@@ -116,21 +116,40 @@ def forum_details(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.views += 1
     post.save()
-    return render(request, "forumdetails.html", {'post': post})
+    return render(request, "forum_post_details.html", {'post': post})
 
-def create_or_edit_forum(request, pk=None):
-    """
-    Create a view that allows us to create
-    or edit a post depending on if the post ID
-    is null or not
-    """
+def create_forum_post(request, pk=None):
+    """ Create a view that allows us to create a post """
 
-    post = get_object_or_404(Post, pk=pk) if pk else None
     if request.method == "POST":
         form = ForumPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save()
-            return redirect(forum_details, post.pk)
+            return redirect(forum_post_details, post.pk)
     else:
         form = ForumPostForm(instance=post)
-    return render(request, 'forumpostform.html', {'form': form})
+    return render(request, 'forum_post_form.html', {'form': form})
+
+def edit_forum_post(request, post_id):
+    """ Create a view that allows us to edit a post """
+
+    post = get_object_or_404(Post, pk=pk)
+
+    if request.user != post.originator:
+        messages.error(request, 'You are unable to edit this post')
+        return redirect('get_forum')
+    
+    if request.method == "POST":
+        edit_post = ForumPostForm(request.POST, request.FILES, instance=post)
+        if edit_post.is_valid():
+            edit_post.save()
+            messages.success(request, 'You have successfully updated your post')
+            return redirect('forum_post_details', post_id)
+
+            edit_post = CreatePost(instance=post)
+
+            context = {
+                'form': edit_post,
+                'post': post
+            }
+            return render(request, 'forum_post_form.html', context)

@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from django.http import HttpResponse
-from .views import get_forum, forum_details, create_or_edit_forum
+from .views import get_forum, forum_post_details, create_forum_post, edit_forum_post
 from accounts.views import logout, login, registration, user_profile, about, customer, dashboard
 from products.views import all_products, product_details, edit_product, add_product
 from accounts import url_reset
@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^dashboard/', dashboard, name="dashboard"),
     url(r'^forum/', get_forum, name='get_forum'),
     url(r'^password-reset/', include(url_reset)),
-    url(r'^(?P<pk>\d+)/$', forum_details, name='forum_details'),
-    url(r'^new/$', create_or_edit_forum, name='add_forum'),
-    url(r'^(?P<pk>\d+)/edit/$', create_or_edit_forum, name='edit_forum')
+    url(r'^(?P<pk>\d+)/$', forum_post_details, name='forum_post_details'),
+    url(r'^new/$', create_forum_post, name='create_forum_post'),
+    url(r'^(?P<pk>\d+)/edit/$', edit_forum_post, name='edit_forum_post')
 ]

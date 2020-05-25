@@ -20,7 +20,10 @@
 				<p><span class="boldtext">Views:</span> {{post.views}}</p>
 				<p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
 				<a href="{% url 'get_forum' %}" class="btn btn-outline-primary">Back to Forum</a>
-				<a href="{% url 'edit_forum' post.id %}" class="btn btn-outline-warning">Edit Post</a>
+
+                {% if user == post.originator %}
+				<a href="{% url 'edit_forum_post' post.id %}" class="btn btn-outline-warning">Edit Post</a>
+                {% endif %}
 				<hr>
 			</div>
 		</div>
