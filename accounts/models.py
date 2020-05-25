@@ -13,7 +13,7 @@ class Customer(models.Model):
 
 class Post(models.Model):
     """
-    A single Blog post
+    A single forum post
     """
     title = models.CharField(max_length=200)
     content = models.TextField()
