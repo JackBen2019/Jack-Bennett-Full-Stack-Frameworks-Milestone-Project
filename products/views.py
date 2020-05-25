@@ -11,8 +11,8 @@ def product_details(request, pk):
     """
     Create a view that returns a single
     post object based on the post ID (pk) and
-    render it to the 'postdetail.html' template.
-    Or return a 404 error if the post is not found
+    render it to the 'productdetails.html' template.
+    Or return a 404 error if the product is not found
     """
 
     products = get_object_or_404(Product, pk=pk)

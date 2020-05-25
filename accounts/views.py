@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.utils import timezone
-from django.http import HttpResponse
-from .models import Post
+from .models import Post, Customer
+from checkout.models import Order
 from .forms import ForumPostForm
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
@@ -20,8 +20,19 @@ def customer(request):
     return render(request, 'customer.html')
 
 def dashboard(request):
-    """Return the customer.html file"""
-    return render(request, 'dashboard.html')
+    """Return the dashboard.html file"""
+    orders = Order.objects.all()
+    customers = Customer.objects.all()
+
+    total_customers = customers.count()
+
+    total_orders = orders.count()
+    pending = orders.filter(status='Pending').count()
+
+    context = {'orders':orders, 'customers':customers,
+    'total_orders':total_orders, 'pending':pending}
+
+    return render(request, 'dashboard.html', context)
 
 @login_required
 def logout(request):
