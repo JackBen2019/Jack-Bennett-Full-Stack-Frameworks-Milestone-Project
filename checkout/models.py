@@ -1,5 +1,6 @@
 from django.db import models
 from products.models import Product
+from accounts.models import Customer, Post
 
 class Order(models.Model):
     STATUS = (
@@ -8,8 +9,8 @@ class Order(models.Model):
         ('Delivered', 'Delivered'),
     )
 
-    #customer =
-    #product =
+    customer = models.ForeignKey(Customer, null=True, on_delete=models.SET_NULL)
+    product = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
     country = models.CharField(max_length=40, blank=False)
