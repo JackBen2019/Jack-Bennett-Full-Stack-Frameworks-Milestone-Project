@@ -1,21 +1,27 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.utils import timezone
+from django.http import HttpResponse
 from .models import Post
 from .forms import ForumPostForm
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
+from .decorators import unauthenticated_user, allowed_users, admin_only
 
 
-
-def index(request):
-    """Return the index.html file"""
-    return render(request, 'index.html')
 
 def about(request):
     """Return the about.html file"""
     return render(request, 'about.html')
+
+def customer(request):
+    """Return the customer.html file"""
+    return render(request, 'customer.html')
+
+def dashboard(request):
+    """Return the customer.html file"""
+    return render(request, 'dashboard.html')
 
 @login_required
 def logout(request):
@@ -77,7 +83,6 @@ def user_profile(request):
     
     user = User.objects.get(email=request.user.email)
     return render(request, 'profile.html', {"profile": user})
-
 
 def get_forum(request):
     """
