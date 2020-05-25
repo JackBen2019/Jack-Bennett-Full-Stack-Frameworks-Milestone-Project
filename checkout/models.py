@@ -1,5 +1,5 @@
 from django.db import models
-from products.models import Product
+from products.models import Product, Tag
 from accounts.models import Customer, Post
 
 class Order(models.Model):
