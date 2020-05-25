@@ -113,6 +113,28 @@ li {
 }
 }
 
+/* ------ Profile ------ */
+
+.card {
+    background-color: #9cdaff !important;
+}
+
+.card-header {
+    background-color: #82d0ff !important;
+}
+
+.profile-header-row {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin-top: 20px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
 /* ------ Search Bar ------ */
 
 .search-bar {
@@ -126,8 +148,8 @@ li {
     padding: 10px 20px;
     border: 1px solid #dddddd;
     border-radius: 3px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 70px;
+    margin-top: 70px;
 }
 
 .form-container {
@@ -188,6 +210,7 @@ li {
 
 .product-title {
     font-size: 18px;
+    font-weight: 600;
 }
 
 .product-row {

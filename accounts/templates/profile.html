@@ -5,5 +5,38 @@
 {% block page_heading %}{{ user }}'s Profile{% endblock %}
 
 {% block content %}
-<p>{{ profile.email }}</p>
+
+<!-- Code assisted by https://www.youtube.com/watch?v=gXGQmt_U9Ao -->
+
+<section class="container">
+<div class="profile-header-row">
+	<div class="col-sm-6">
+		<div class="col-md">
+			<div class="card text-center text-white mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Total Orders</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{total_orders}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-6">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Orders Pending</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{pending}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+
+<!-- Assisted code END -->
 {% endblock %}
