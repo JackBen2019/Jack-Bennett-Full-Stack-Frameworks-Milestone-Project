@@ -7,7 +7,7 @@
 <p>Please confirm that you would like to cancel <b>{{item}}?</b></p>
 
 <form action="POST">
-    <a href="{% url 'customer' customer.id %}">Cancel</a>
+    <a href="{% url 'customer' item.customer.id %}">Cancel</a>
     <input type="submit" name="Confirm">
 </form>
 

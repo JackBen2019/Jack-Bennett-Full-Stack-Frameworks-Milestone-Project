@@ -142,11 +142,12 @@ def forum_post_details(request, pk):
 def create_forum_post(request, pk=None):
     """ Create a view that allows us to create a post """
 
+    post = get_object_or_404(Post, pk=pk) if pk else None
     if request.method == "POST":
         form = ForumPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save()
-            return redirect(forum_post_details, post.pk)
+            return redirect(review_details, post.pk)
     else:
         form = ForumPostForm(instance=post)
     return render(request, 'forum_post_form.html', {'form': form})

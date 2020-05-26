@@ -273,6 +273,7 @@ li {
 }
 
 .product-btns {
+    margin-bottom: 0px !important;
     display: inline-block;
     font-weight: 400;
     text-align: center;
@@ -302,6 +303,12 @@ li {
 .panel-body-product {
     height: 100%;
     border: 1px solid #ddd;
+}
+
+.product-card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem !important;
 }
 
 /* ------ About Us ------ */
