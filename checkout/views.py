@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import MakePaymentForm, OrderForm
-from .models import OrderLineItem
+from .models import OrderLineItem, Order
 from django.conf import settings
 from django.utils import timezone
 from products.models import Product
@@ -58,3 +58,8 @@ def checkout(request):
         order_form = OrderForm()
     
     return render(request, "checkout.html", {"order_form": order_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
+
+def deleteOrder(request, pk):
+    order = Order.objects.get(id=pk)
+    context = {'item':order}
+    return render(request, "delete_order.html", context)

@@ -1,56 +1,39 @@
 {% extends 'base.html' %}
 
-<!-- Dashboard code assisted by https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO -->
-
 {% block content %}
 
 <br>
 
-<section class="container">
 <div class="row">
-	<div class="col">
-		<div class="col-md">
-			<div class="card text-center text-white  mb-3" id="total-orders">
-			  	<div class="card-header">
-			  		<h5 class="card-title">Total Orders</h5>
-			  	</div>
-			  	<div class="card-body">
-			    	<h3 class="card-title">{{total_orders}}</h3>
-			  	</div>
-			</div>
+	<div class="col-md">
+		<div class="card card-body">
+			<h5><b>All Time Order Count:</b> {{total_orders}}</h5>
 		</div>
 	</div>
 
-	<div class="col">
-		<div class="col-md">
-			<div class="card text-center text-white  mb-3" id="orders-pending">
-			  	<div class="card-header">
-			  		<h5 class="card-title">Orders Pending</h5>
-			  	</div>
-			  	<div class="card-body">
-			    	<h3 class="card-title">{{pending}}</h3>
-			  	</div>
-			</div>
+	<div class="col-md">
+		<div class="card card-body">
+			<h5><b>Current Orders Pending:</b> {{pending}}</h5>
 		</div>
 	</div>
 </div>
-</section>
-
+<br>
+<hr>
 <div class="row">
 	<div class="col-md-5">
-		<h5>CUSTOMERS:</h5>
-		<hr>
+		<h5 class="centre-align-text"><b>All Customers</b></h5>
 		<div class="card card-body">
-			<a class="btn btn-primary  btn-sm btn-block" href="">Create Customer</a>
 			<table class="table table-sm">
 				<tr>
 					<th>Customer</th>
-					<th>Phone</th>
+					<th>Email</th>
+                    <th>Phone</th>
 				</tr>
 
                 {% for customer in customers %}
                     <tr>
-                        <td>{{ customer.name }}</td>
+                        <td><a href="{% url 'customer' customer.id %}">{{ customer.name }}</a></td>
+                        <td>{{ customer.email }}</td>
                         <td>{{ customer.phone }}</td>
                     </tr>
                 {% endfor %}
@@ -60,17 +43,14 @@
 	</div>
 
 	<div class="col-md-7">
-		<h5>LAST 5 ORDERS:</h5>
-		<hr>
-		<div class="card card-body">
-			<a class="btn btn-primary  btn-sm btn-block" href="">Create Order</a>
+		<h5 class="centre-align-text"><b>Recent Orders</b></h5>
+		<div class="card card-body margin-bottom-30">
 			<table class="table table-sm">
 				<tr>
 					<th>Product</th>
 					<th>Date Ordered</th>
 					<th>Status</th>
-					<th>Update</th>
-					<th>Remove</th>
+					<th>Cancel</th>
 				</tr>
 
                 {% for order in orders %}
@@ -78,8 +58,7 @@
                         <td>{{ order.product }}</td>
                         <td>{{ order.date_created }}</td>
                         <td>{{ order.status }}</td>
-                        <td><a href="#">Update</a></td>
-                        <td><a href="#">Cancel</a></td>
+                        <td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Cancel</a></td>
                     </tr>
                 {% endfor %}
 

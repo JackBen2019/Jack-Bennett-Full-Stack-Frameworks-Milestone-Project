@@ -18,7 +18,7 @@ def remove_from_cart(request, id):
     """Add a quantity of the specified product to the cart"""
 
     cart = request.session.get('cart', {})
-    cart[id] = cart.get(id, -1)
+    cart[id] = cart.get(id, 0)
 
     request.session['cart'] = cart
     return redirect(reverse('products'))

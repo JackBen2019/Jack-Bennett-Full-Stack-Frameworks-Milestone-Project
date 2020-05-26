@@ -1,46 +1,55 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1>Marketing and web services</h1>
+      <p class="lead text-muted">If you're looking to promote your marketing or web services, then you've come to the right place. Below you can do just that
+      and it will become visible to all those looking for experts in thier field to help boost thier own businesses.</p>
+      <p>
+        <a href="{% url 'create_forum_post' %}" class="btn btn-primary my-2">Add Post</a>
+      </p>
+    </div>
+</section>
+
 <section class="container">
-
-<div class="row justify-content-center">
-    <div class="col-12 centre-align-text">
-        <h2>Welcome to the community forum!</h2>
-        <p>Here you'll find the latest marketing and web events, as well as some helpful tips.</p>
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">Recent Posts</h5>
+        {% for post in posts %}
+            <div class="media text-muted pt-3">
+	        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <strong class="d-block text-gray-dark"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
+                {{ post.content|truncatewords:30 }}
+            </p>
+	        <hr>
+            </div>
+        {% endfor %}
     </div>
-</div>
-
-<div class="add-post row centre-align-text">
-    <div class="col-12">
-    <form action="{% url 'search_review' %}" method="GET">
-      <input class="search-bar" type="text" name="q" />
-      <button type="submit">Search</button>
-    </form>
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">General Discussion</h5>
+        {% for post in posts %}
+            <div class="media text-muted pt-3">
+	        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <strong class="d-block text-gray-dark"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
+                {{ post.content|truncatewords:30 }}
+            </p>
+	        <hr>
+            </div>
+        {% endfor %}
     </div>
-</div>
-
-<div style="padding-left: 0px !important;" class="row">
-<div class="col-md-4 padding-left">
-        <td>
-            <a class="panel-body btn-primary float-left" href="{% url 'create_forum_post' %}">Add a Post</a>
-        </td>
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">Events</h5>
+        {% for post in posts %}
+            <div class="media text-muted pt-3">
+	        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <strong class="d-block text-gray-dark"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
+                {{ post.content|truncatewords:30 }}
+            </p>
+	        <hr>
+            </div>
+        {% endfor %}
     </div>
-</div>
-{% for post in posts %}
-<div class="row panel-body-forum">
-	<div class="col-md-10 col-sm-9">
-		<h3>{{ post.title }}</h3>
-		<div class="row">
-			<div class="col-xs-9">
-				<p>{{ post.content|truncatewords:30 }}</p>
-				<p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
-                <p><span class="boldtext">Views:</span> {{post.views}}</p>
-                <p><a href="{% url 'forum_post_details' post.id %}" class="btn btn-outline-info">Read more</a></p>
-			</div>
-		</div>
-	</div>
-	<hr>
-</div>
-{% endfor %}
+
 </section>
 {% endblock %}
