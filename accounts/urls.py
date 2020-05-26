@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^register/', registration, name="registration"),
     url(r'^profile/', user_profile, name="profile"),
     url(r'^about/', about, name="about"),
-    url(r'^customer/', customer, name="customer"),
+    url(r'^customer/<str:pk>', customer, name="customer"),
     url(r'^dashboard/', dashboard, name="dashboard"),
     url(r'^forum/', get_forum, name='get_forum'),
     url(r'^password-reset/', include(url_reset)),

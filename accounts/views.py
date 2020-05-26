@@ -15,8 +15,9 @@ def about(request):
     """Return the about.html file"""
     return render(request, 'about.html')
 
-def customer(request):
+def customer(request, pk):
     """Return the customer.html file"""
+    customer = Customer.objects.get(id=pk)
     return render(request, 'customer.html')
 
 def dashboard(request):
