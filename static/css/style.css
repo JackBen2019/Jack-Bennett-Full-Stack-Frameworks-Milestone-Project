@@ -2,6 +2,12 @@
 
 /* ------ General ------ */
 
+@media (min-width: 767px) {
+.hide {
+    display: none;
+}
+}
+
 h1 {
     font-weight: 600 !important;
 }
@@ -161,6 +167,11 @@ li {
 .website-logo {
     width: auto;
     height: 40px;
+}
+
+.product-btn-padding {
+    padding-bottom: 40px !important;
+    padding-top: 40px !important;
 }
 
 /* ------ Profile ------ */
