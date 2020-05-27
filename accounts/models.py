@@ -17,6 +17,12 @@ CATEGORY_CHOICES = (
     ('General Discussion', 'General Discussion')
 )
 
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __unicode__(self):
+        return self.name
+
 class Post(models.Model):
     """
     A single forum post
