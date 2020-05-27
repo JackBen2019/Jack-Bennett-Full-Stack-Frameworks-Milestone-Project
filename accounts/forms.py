@@ -45,7 +45,6 @@ class UserRegistrationForm(UserCreationForm):
         
         return password2
 
-
 class ForumPostForm(forms.ModelForm):
 
     class Meta:

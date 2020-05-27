@@ -10,7 +10,6 @@ from accounts.forms import UserLoginForm, UserRegistrationForm
 from .decorators import unauthenticated_user, allowed_users, admin_only
 
 
-
 def about(request):
     """Return the about.html file"""
     return render(request, 'about.html')
@@ -172,3 +171,4 @@ def edit_forum_post(request, post_id):
 
             return render(request, 'forum_post_form.html',
                 {'form': edit_post, 'post': post})
+

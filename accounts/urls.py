@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^profile/', user_profile, name="profile"),
     url(r'^about/', about, name="about"),
     url(r'^dashboard/', dashboard, name="dashboard"),
-    url(r'^(?P<pk>\d+)/customer/$', customer, name="customer"),
+    url(r'^(?P<pk>\d+)/customer-details/$', customer, name="customer"),
     url(r'^forum/', get_forum, name='get_forum'),
     url(r'^password-reset/', include(url_reset)),
     url(r'^(?P<pk>\d+)/$', forum_post_details, name='forum_post_details'),

@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from django.utils import timezone
 from django.contrib.auth.models import User
 
@@ -17,12 +18,6 @@ CATEGORY_CHOICES = (
     ('General Discussion', 'General Discussion')
 )
 
-class Category(models.Model):
-    name = models.CharField(max_length=255)
-
-    def __unicode__(self):
-        return self.name
-
 class Post(models.Model):
     """
     A single forum post
@@ -35,5 +30,5 @@ class Post(models.Model):
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=30, blank=True, null=True)
     image = models.ImageField(upload_to="img", blank=True, null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title

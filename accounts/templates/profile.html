@@ -1,45 +1,58 @@
 {% extends 'base.html' %}
 
-{% block page_title %}{{ user }}'s Profile{% endblock %}
-
-{% block page_heading %}{{ user }}'s Profile{% endblock %}
-
 {% block content %}
 
-<!-- Code assisted by https://www.youtube.com/watch?v=gXGQmt_U9Ao -->
+	<br>
 
-<section class="container">
-<div class="profile-header-row">
-	<div class="col-sm-6">
-		<div class="col-md">
-			<div class="card text-center text-white mb-3" id="total-orders">
-			  	<div class="card-header">
-			  		<h5 class="card-title">Total Orders</h5>
-			  	</div>
-			  	<div class="card-body">
-			    	<h3 class="card-title">{{total_orders}}</h3>
-			  	</div>
-			</div>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5 class="customer-details-heading">Customer Details</h5>
+			<hr>
+            <p><b>Full Name:</b> {{customer.name}}</p>
+			<p><b>Email:</b> {{customer.email}}</p>
+			<p><b>Phone:</b> {{customer.phone}}</p>
 		</div>
 	</div>
 
-	<div class="col-sm-6">
-		<div class="col-md">
-			<div class="card text-center text-white  mb-3" id="orders-pending">
-			  	<div class="card-header">
-			  		<h5 class="card-title">Orders Pending</h5>
-			  	</div>
-			  	<div class="card-body">
-			    	<h3 class="card-title">{{pending}}</h3>
-			  	</div>
-			</div>
+	<div class="col-md">
+		<div class="card card-body">
+			<h5><b>Customer Order Count:</b> {{order_count}}</h5>
+		</div>
+        <br>
+        <div class="card card-body">
+			<a class="btn btn-outline-info btn-sm btn-block" href="">Update Customer Details</a>
+			<a class="btn btn-outline-danger btn-sm btn-block" href="">Delete Customer</a>
 		</div>
 	</div>
 </div>
 
+<br>
 
+<div class="row">
+	<div class="col-md margin-bottom">
+		<div class="card order-status-table  margin-bottom-30">
+			<table class="table table-sm">
+				<tr>
+					<th>Service</th>
+					<th>Order Date</th>
+					<th>Order Status</th>
+					<th>Cancel</th>
+				</tr>
 
-</section>
+				{% for order in orders %}
 
-<!-- Assisted code END -->
+				<tr>
+					<td>{{ order.product }}</td>
+					<td>{{ order.date_created }}</td>
+					<td>{{ order.status }}</td>
+					<td><a class="btn btn-sm btn-danger" href="">Cancel</a></td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
 {% endblock %}
