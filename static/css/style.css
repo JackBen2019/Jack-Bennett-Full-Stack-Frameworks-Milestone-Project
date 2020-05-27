@@ -158,6 +158,11 @@ li {
     flex: 1 1 auto;
 }
 
+.website-logo {
+    width: auto;
+    height: 40px;
+}
+
 /* ------ Profile ------ */
 
 .profile-header-row {
