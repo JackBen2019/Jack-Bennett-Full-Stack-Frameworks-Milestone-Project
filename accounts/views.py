@@ -147,19 +147,16 @@ def create_forum_post(request, pk=None):
         form = ForumPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save()
-            return redirect(review_details, post.pk)
+            return redirect('forum_post_details', post.pk)
     else:
         form = ForumPostForm(instance=post)
     return render(request, 'forum_post_form.html', {'form': form})
 
 @login_required
 def edit_forum_post(request, post_id):
-    """ Create a view that allows us to edit a post """
 
-    post = get_object_or_404(Post, pk=pk)
-    registered_user = request.user.id
-    creator = post.creator.id
-    if not logged_user == creator:
+    post = get_object_or_404(Post, pk=post_id)
+    if request.user.id != post.creator_id:
         messages.error(request, 'You are unable to edit this post')
         return redirect('get_forum')
     
@@ -167,13 +164,11 @@ def edit_forum_post(request, post_id):
         edit_post = ForumPostForm(request.POST, request.FILES, instance=post)
         if edit_post.is_valid():
             edit_post.save()
-            messages.success(request, 'You have successfully updated your post')
+            messages.success(request,
+            'You have successfully updated your post')
             return redirect('forum_post_details', post_id)
 
             edit_post = CreatePost(instance=post)
 
-            context = {
-                'form': edit_post,
-                'post': post
-            }
-            return render(request, 'forum_post_form.html', context)
+            return render(request, 'forum_post_form.html',
+                {'form': edit_post, 'post': post})

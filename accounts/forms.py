@@ -50,4 +50,4 @@ class ForumPostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('title', 'content', 'image', 'tag', 'published_date')
+        fields = ('title', 'content', 'image', 'category', 'published_date')
