@@ -30,6 +30,13 @@ def customer(request, pk):
     context = {'customer':customer, 'orders':orders, 'order_count':order_count}
     return render(request, 'customer.html', context)
 
+def customer_no_orders(request):
+    """Return the customer_no_orders.html file"""
+
+    user = User.objects.get(email=request.user.email)
+    username = User.objects.get(username=request.user.username)
+    return render(request, 'customer_no_orders.html', {"profile": user})
+
 
 """
 Dashboard view assisted by Dennis Ivy

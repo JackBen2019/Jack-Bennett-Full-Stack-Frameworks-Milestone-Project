@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from django.http import HttpResponse
 from .views import get_forum, forum_post_details, create_forum_post, edit_forum_post
-from accounts.views import logout, login, registration, user_profile, about, customer, dashboard
+from accounts.views import logout, login, registration, user_profile, about, customer, dashboard, customer_no_orders
 from products.views import all_products, product_details, edit_product, add_product
 from accounts import url_reset
 
@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^profile/', user_profile, name="profile"),
     url(r'^about/', about, name="about"),
     url(r'^dashboard/', dashboard, name="dashboard"),
+    url(r'^customer-details/', customer_no_orders, name="customer_no_orders"),
     url(r'^(?P<pk>\d+)/customer-details/$', customer, name="customer"),
     url(r'^forum/', get_forum, name='get_forum'),
     url(r'^password-reset/', include(url_reset)),

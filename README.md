@@ -14,19 +14,19 @@ Whether you're someone who is looking to promote their marketing or web services
 
 A lot of the testing was done by me and without the assistance of other online tools, but the tools that were used can be found in the **Technologies Used** section. The manual tests completed were as follows:
 
-### Login, Logout and Registration
+#### Login, Logout and Registration
 
 
 
-### Password Reset
+#### Password Reset
 
 
 
-### Browser and Mobile Responsiveness
+#### Browser and Mobile Responsiveness
 
 
 
-### Checkout
+#### Checkout
 
 When testing the checkout process, you will be prompted to enter your payment details in order to complete payment. Please use the card numbers mentioned in this [link](https://stripe.com/docs/testing#cards) to test this.
 
@@ -38,33 +38,34 @@ During my testing of the checkout process, I used the following test details:
 
 # UX
 
-### Design
+#### Design
 
 
 
-### User Stories
+#### User Stories
 
 
 
 # Technologies Used
 
-### Frameworks, Libraries, Version Control and Testing:
+#### Frameworks, Libraries, Version Control and Testing:
 
 - Django: Used as the core framework for this project.
 - Bootstrap: Used 
 - Font Awesome: 
 - Heroku:
 - GitHub:
+- Travis: 
 - W3 HTML & CSS Validator:
 
-### Languages:
+#### Languages:
 
 - HTML5
 - CSS3
 - JavaScript
 - Python3
 
-### Extra Technologies:
+#### Extra Technologies:
 
 - 
 
@@ -79,4 +80,5 @@ I decided to use Postgres as the database for this project, which is built into 
 # Credits
 
 - [Dennis Ivy](https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO) - A massive thanks to Dennis Ivy and his Django tutorials, which helped me to overcome a few obstacles with my website.
-- Image used on About Us page: This [link](https://unsplash.com/photos/KE0nC8-58MQ) is for the free to use image that was added to the About Us page
+- Image used on About Us page: This [link](https://unsplash.com/photos/KE0nC8-58MQ) is for the free to use image that was added to the About Us page.
+- 

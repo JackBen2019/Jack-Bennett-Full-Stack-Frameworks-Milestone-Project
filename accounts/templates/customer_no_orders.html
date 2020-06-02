@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5 class="customer-details-heading">Account Details</h5>
+			<hr>
+            <p><b>Username:</b> {{ profile.username }} </p>
+			<p><b>Email:</b> {{ profile.email }} </p>
+		</div>
+        <br class="hide">
+	</div>
+
+    <br class="hide">
+
+	<div class="col-md">
+		<div class="card card-body product-btn-padding">
+			<h5><b>Customer Order Count:</b> 0 </h5>
+		</div>
+        <br>
+        <div>
+			<a class="btn btn-outline-info btn-sm btn-block edit-profile-btn-padding" href=""><b>Update Account Details</b></a>
+		</div>
+	</div>
+</div>
+
+<br>
+
+{% endblock %}

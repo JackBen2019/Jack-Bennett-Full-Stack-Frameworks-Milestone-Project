@@ -39,7 +39,8 @@
         <hr>
     </div>
 </div>
-
+{% if user.is_authenticated %}
+{% else %}
 <div class="row">
     <div class="col-sm-6 margin-bottom-about-boxes">
         <a class="base-font-colour" href="{% url 'registration' %}">
@@ -56,5 +57,6 @@
         </a>
     </div>
 </div>
+{% endif %}
 </section>
 {% endblock %}

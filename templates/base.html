@@ -29,7 +29,11 @@
 							{% if user.is_authenticated %}
                             <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Services</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'get_forum' %}">Forum</a></li>
+                            {% if customer.paid %}
 							<li class="nav-item"><a class="nav-link" href="{% url 'customer' user.customer.id %}"><i class="fa fa-user"></i> Profile</a></li>
+                            {% else %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'customer_no_orders' %}"><i class="fa fa-user"></i> Profile</a></li>
+                            {% endif %}
 							<li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'view_cart' %}"><i class="fa fa-shipping-cart"></i> Cart
                                     {% if product_count > 0 %}

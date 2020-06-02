@@ -33,7 +33,7 @@ def checkout(request):
                     quantity=quantity
                 )
                 order_line_item.save()
-            
+
             try:
                 customer = stripe.Charge.create(
                     amount=int(total * 100),
@@ -59,10 +59,8 @@ def checkout(request):
     
     return render(request, "checkout.html", {"order_form": order_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
 
+
 def deleteOrder(request, pk):
-
-    """ DeleteOrder view assisted by Dennis Ivy """
-
+    """ Remove a single item from the cart """
     order = Order.objects.get(id=pk)
-    context = {'item':order}
-    return render(request, "delete_order.html", context)
+    return render(request, "delete_order.html", {'item': order})
