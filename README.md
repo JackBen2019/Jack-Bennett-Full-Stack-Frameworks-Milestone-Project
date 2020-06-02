@@ -20,6 +20,8 @@ To ensure the security of the website, all non user-friendly files such as envir
 
 All images and other static files have been stored externally with AWS S3. Whenever these files needed to be updated, I updated them on my local repository and then sent to AWS S3 by running the "python3 manage.py collectstatic" command.
 
+**Profile Page Functionality**: The profile page will display a page that contains your email address and username, as well as the total amount of orders and an option to edit your details. Once you have made an order, the page will update and display your most recent order(s).
+
 # Testing
 
 [![Build Status](https://travis-ci.org/JackBen2019/Jack-Bennett-Full-Stack-Frameworks-Milestone-Project.svg?branch=master)](https://travis-ci.org/JackBen2019/Jack-Bennett-Full-Stack-Frameworks-Milestone-Project)
@@ -117,8 +119,8 @@ When designing a website, I like to keep it clean and simple. Not too many contr
 
 ### Frameworks, Libraries, Version Control and Testing:
 
-- **Django**: Used as the core framework for this website.
-- **Bootstrap**: Used for the structure for the website, as well as making it more user-friendly.
+- **Django 3**: Used as the core framework for this website.
+- **Bootstrap 4**: Used for the structure for the website, as well as making it more user-friendly.
 - **Font Awesome**: Used to add icons, such as social media,
 - **Heroku**: Used for the final deployment of this website.
 - **GitHub**: Used for version control.

@@ -161,11 +161,11 @@ def create_forum_post(request, pk=None):
 @login_required
 def edit_forum_post(request, post_id):
 
-    post = get_object_or_404(Post, pk=post_id)
+    post = get_object_or_404(Post, pk=post_id, creator=request.user)
     if request.user.id != post.creator_id:
         messages.error(request, 'You are unable to edit this post')
         return redirect('get_forum')
-    
+
     if request.method == "POST":
         edit_post = ForumPostForm(request.POST, request.FILES, instance=post)
         if edit_post.is_valid():
@@ -176,6 +176,4 @@ def edit_forum_post(request, post_id):
 
             edit_post = CreatePost(instance=post)
 
-            return render(request, 'forum_post_form.html',
-                {'form': edit_post, 'post': post})
-
+        return render(request, 'forum_post_form.html', {'form': edit_post, 'post': post})
