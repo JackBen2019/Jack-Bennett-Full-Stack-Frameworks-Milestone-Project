@@ -1,5 +1,7 @@
 # Jack-Bennett Full Stack Frameworks Milestone Project
 
+![JB:Marketing Logo](https://user-images.githubusercontent.com/52998869/83530842-32342b80-a4e4-11ea-9abe-101ec2c56688.png)
+
 Are you looking for the perfect place to buy and sell marketing and website services? Then [JB:Marketing](https://jb-full-stack-frameworks.herokuapp.com/) is the place to go!
 
 We, just like you, are always striving to be better everyday and we are always pushing for the next amazing opportunity. We live by the motto to always do more and that's something we hope we you can live by with us.
