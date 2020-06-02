@@ -58,10 +58,10 @@ When designing a website, I like to keep it clean and simple. Not too many contr
 
 **Colours**: As mentioned previously, I like to keep the colours simple, but I still of course like them to be appealing. Which is why I've gone for various different shades of Grey. While Grey is often seen as a fairly dull colour, I feel it complements the site well and keeps the look simple.
 
-- Navigation and footer olour: #f2f2f2
-- Secondary footer colour: #ebeced
-- Main font colour: #212529
-- Secondary font colour: #6c757d
+- Navigation and footer colour: ![#f2f2f2](https://via.placeholder.com/15/f2f2f2/000000?text=+) `#f2f2f2`
+- Secondary footer colour: ![#ebeced](https://via.placeholder.com/15/ebeced/000000?text=+) `#ebeced`
+- Main font colour: ![#212529](https://via.placeholder.com/15/212529/000000?text=+) `#212529`
+- Secondary font colour: ![#6c757d](https://via.placeholder.com/15/6c757d/000000?text=+) `#6c757d`
 
 **Font Family**: The font family used on this website was the same throughout. Again, I didn't feel the need to add potentially contrasting fonts throughout the website.
 
