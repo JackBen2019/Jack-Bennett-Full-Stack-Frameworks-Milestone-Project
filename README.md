@@ -38,7 +38,14 @@ A lot of the testing was done by me and without the assistance of other online t
 
 ### Browser and Mobile Responsiveness
 
+I tested the browser and mobile responsiveness in a couple of ways. The main method I used to test the responsiveness was by inspecting all the pages on Google Chrome and using the 'Toggle device toolbar' option. Using this tool I was able to test a variaty of different screen sizes and how the page would look on specific mobile devices.
 
+The second method I used was simply opening the website on 4 different devices and ensuring it looked user-friendly.
+
+- My PC (21" Monitor)
+- Samsung Galaxy S8
+- iPhone 8
+- iPad Pro
 
 ### Checkout
 
@@ -110,24 +117,20 @@ When designing a website, I like to keep it clean and simple. Not too many contr
 
 ### Frameworks, Libraries, Version Control and Testing:
 
-- Django: Used as the core framework for this website.
-- Bootstrap: Used for the structure for the website, as well as making it more user-friendly.
-- Font Awesome: Used to add icons, such as social media,
-- Heroku: Used for the final deployment of this website.
-- GitHub: Used for version control.
-- Travis: Used for testing purposes.
-- W3 HTML & CSS Validator: Used to test that all HTML and CSS was valid.
+- **Django**: Used as the core framework for this website.
+- **Bootstrap**: Used for the structure for the website, as well as making it more user-friendly.
+- **Font Awesome**: Used to add icons, such as social media,
+- **Heroku**: Used for the final deployment of this website.
+- **GitHub**: Used for version control.
+- **Travis**: Used for testing purposes.
+- **W3 HTML & CSS Validator**: Used to test that all HTML and CSS was valid.
 
 ### Languages:
 
-- HTML5
-- CSS3
-- JavaScript
-- Python3
-
-### Extra Technologies:
-
-- 
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- **Python3**
 
 # Features
 
@@ -143,7 +146,7 @@ When designing a website, I like to keep it clean and simple. Not too many contr
 
 **Solution**: After some online research, I found that you could add "script: pip install -U pytest" instead of trying to run the script to the SECRET KEY.
 
-BEFORE:
+**BEFORE:**
 ```
 language: python
 python:
@@ -152,7 +155,7 @@ install: "pip3 install -r requirements.txt"
 script:
 - SECRET_KEY="whatever" ./manage.py test 
 ```
-AFTER:
+**AFTER:**
 ```
 language: python
 python:
@@ -166,8 +169,7 @@ script: pip install -U pytest
 
 **Solution**: After some time spent looking at the way the 'add_to_cart' functionality was setup, I was able to understand that simply removing any reference of quantity would solve the issue.
 
-BEFORE:
-
+**BEFORE:**
 ```
 def add_to_cart(request, id):
     """Add a quantity of the specified product to the cart"""
@@ -179,7 +181,7 @@ def add_to_cart(request, id):
     request.session['cart'] = cart
     return redirect(reverse('index'))
 ```
-AFTER:
+**AFTER:**
 ```
 def add_to_cart(request, id):
     """Add a specified product to the cart"""
