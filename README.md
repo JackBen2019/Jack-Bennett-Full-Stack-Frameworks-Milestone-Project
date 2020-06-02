@@ -16,19 +16,19 @@ Whether you're someone who is looking to promote their marketing or web services
 
 A lot of the testing was done by me and without the assistance of other online tools, but the tools that were used can be found in the **Technologies Used** section. The manual tests completed were as follows:
 
-#### Login, Logout and Registration
+### Login, Logout and Registration
 
 
 
-#### Password Reset
+### Password Reset
 
 
 
-#### Browser and Mobile Responsiveness
+### Browser and Mobile Responsiveness
 
 
 
-#### Checkout
+### Checkout
 
 When testing the checkout process, you will be prompted to enter your payment details in order to complete payment. Please use the card numbers mentioned in this [link](https://stripe.com/docs/testing#cards) to test this.
 
@@ -40,17 +40,44 @@ During my testing of the checkout process, I used the following test details:
 
 # UX
 
-#### Design
+### Design
 
 
 
-#### User Stories
+### User Stories
 
+**Generic**:
 
+- All page elements must be well presented on screens as small as 360 pixels wide and as big as 3840 pixels wide.
+- All links that are external must be automatically opened in a new tab to avoid closing down the current window.
+- All important/relevant pages must be easy to reach either through the navigation or other clearly visible links.
+
+**General Visitors**:
+
+- As a visitor, I want to have the option to register on the website.
+- As a visitor, I want to be able to instantly read something that gives me an understanding of what the website's purpose is e.g. on an About page.
+- As a visitor, I want to be able to contact the site admins/support team to ask any questions, or raise any issues.
+- As a visitor, I want to be able to view any social media associated with the website to get an understanding of the company.
+
+**Registered Users**:
+
+- As a registered user, I want to be able to easily locate a logout option.
+- As a registered user, I want to be able to login back in using the details I registered with.
+- As a registered user, I want to be able to add my products/servics to the website.
+- As a registered user, I want to be able to add and see the products/services that are in my cart.
+- As a registered user, I want to be able to purchase any products/servics that are on the website.
+- As a registered user, I want to be able to add posts into the forum.
+- As a registered user, I want to be able to edit or delete anything I have added to the website.
+
+**Admins**:
+
+- As an admin, I need to be able to edit user details and/or remove them if necessary.
+- As an admin, I need to ensure that I can easily login into the admin panel and access orders, users, posts and products.
+- As an admin, I need to be able to remove posts and/or products if necessary.
 
 # Technologies Used
 
-#### Frameworks, Libraries, Version Control and Testing:
+### Frameworks, Libraries, Version Control and Testing:
 
 - Django: Used as the core framework for this project.
 - Bootstrap: Used 
@@ -60,14 +87,14 @@ During my testing of the checkout process, I used the following test details:
 - Travis: 
 - W3 HTML & CSS Validator:
 
-#### Languages:
+### Languages:
 
 - HTML5
 - CSS3
 - JavaScript
 - Python3
 
-#### Extra Technologies:
+### Extra Technologies:
 
 - 
 
