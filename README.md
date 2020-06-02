@@ -10,7 +10,7 @@ To always do more is a broad term. To do more does not simply mean spending hour
 
 Whether you're someone who is looking to promote their marketing or web services, or someone who is looking to buy those services, JB:Marketing is the place to be. As a registered user you'll have the option to both list your services and/or purchase other services already listed on the website.
 
-### How the website functions
+# How the website functions
 
 JB:Marketing was built with the assistance of the Django3 framework. Django3 helps to put a lot of the structure and functionality in place, which in turns allows you to focus on the more important things about your website, such as the content and making it as user friendly as possible.
 
@@ -52,7 +52,22 @@ During my testing of the checkout process, I used the following test details:
 
 ### Design
 
+When designing a website, I like to keep it clean and simple. Not too many contrasting colours and with a simple, easy to navigate structure. From my experience, I am very easily deterred from any website that I instantly have issues with, even if those issues are very minor. Which is why I try to keep things simple.
 
+**Structure**: The structure of my website has been created with the use of Bootstrap4. Bootstrap provides you with an entire library of helpful CSS that can be incredibly helpful when creating the structure of your website. So, with the use of Bootstrap I can be much more certain that my website will be user-friendly on just about any device.
+
+**Colours**: As mentioned previously, I like to keep the colours simple, but I still of course like them to be appealing. Which is why I've gone for various different shades of Grey. While Grey is often seen as a fairly dull colour, I feel it complements the site well and keeps the look simple.
+
+- Navigation and footer olour: #f2f2f2
+- Secondary footer colour: #ebeced
+- Main font colour: #212529
+- Secondary font colour: #6c757d
+
+**Font Family**: The font family used on this website was the same throughout. Again, I didn't feel the need to add potentially contrasting fonts throughout the website.
+
+- -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+**Logo**: The logo of my website was created with the use of [Wix's free logo creator](https://www.wix.com/logo/maker). The logo has the brand name (JB:Marketing) added alongside a graph that is scaling upwards. The reason I chose to add this graph was to demonstrate that my website is here to help people level up their businesses.
 
 ### User Stories
 
