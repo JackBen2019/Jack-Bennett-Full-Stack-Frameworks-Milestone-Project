@@ -8,7 +8,17 @@ We, just like you, are always striving to be better everyday and we are always p
 
 To always do more is a broad term. To do more does not simply mean spending hours, or even days working on something that will provide minimum value. To do more means you are being more efficient with your time, therefore getting more done. That's where we come in.
 
-Whether you're someone who is looking to promote their marketing or web services, or someone who is looking to buy those services, JB:Marketing is the place to be.  As a registered user you'll have the option to both list your services and/or purchase other services already listed on the website.
+Whether you're someone who is looking to promote their marketing or web services, or someone who is looking to buy those services, JB:Marketing is the place to be. As a registered user you'll have the option to both list your services and/or purchase other services already listed on the website.
+
+### How the website functions
+
+JB:Marketing was built with the assistance of the Django3 framework. Django3 helps to put a lot of the structure and functionality in place, which in turns allows you to focus on the more important things about your website, such as the content and making it as user friendly as possible.
+
+Throughout the building of this website, it has had consistent version control with the use of GitHub and GitPod. This is to ensure that if any issues were to occur during the building phase, we would be able to revert back to an older version of the website. When I reached the point of completion on this website, I then deployed it to Heroku.
+
+To ensure the security of the website, all non user-friendly files such as enviroment variables and secret keys have been stored inside a seperate file, which has then been hidden with the use a .gitignore file.
+
+All images and other static files have been stored externally with AWS S3. Whenever these files needed to be updated, I updated them on my local repository and then sent to AWS S3 by running the "python3 manage.py collectstatic" command.
 
 # Testing
 
@@ -34,9 +44,9 @@ When testing the checkout process, you will be prompted to enter your payment de
 
 During my testing of the checkout process, I used the following test details:
 
-**Card Number**: 4242424242424242
-**CVC**: Any 3 digits
-**Date**: Any future date
+- **Card Number**: 4242424242424242
+- **CVC**: Any 3 digits
+- **Date**: Any future date
 
 # UX
 
