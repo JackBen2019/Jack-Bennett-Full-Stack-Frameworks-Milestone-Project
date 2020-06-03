@@ -4,6 +4,8 @@ from .forms import ProductPostForm
 
 
 def all_products(request):
+    """ Returns the products page """
+    
     products = Product.objects.all()
     return render(request, "products.html", {"products": products})
 
@@ -19,9 +21,8 @@ def product_details(request, pk):
     return render(request, "productdetails.html", {"products": products, "pk": pk})
 
 def edit_product(request, pk):
-    """ 
-    Edit a single product 
-    """
+    """ Edit a single product """
+
     products = get_object_or_404(Product, pk=pk)
     if request.method == "POST":
         form = ProductPostForm(request.POST, instance=products)
@@ -33,9 +34,7 @@ def edit_product(request, pk):
     return render(request, 'editproduct.html', {"form": form})
 
 def add_product(request, pk=None):
-    """
-    Add a single product
-    """
+    """ Add a single product """
 
     products = get_object_or_404(Product, pk=pk) if pk else None
     if request.method == "POST":
