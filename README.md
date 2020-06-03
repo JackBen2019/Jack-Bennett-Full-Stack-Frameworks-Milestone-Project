@@ -32,7 +32,7 @@ All images and other static files have been stored externally with AWS S3. Whene
 
 A lot of the testing was done by me and without the assistance of other online tools, but the tools that were used can be found in the **Technologies Used** section. The manual tests completed were as follows:
 
-### Login, Logout and Registration
+### General Website Functionality Tests
 
 **Registration**: To test this, I visited the website in the position of a user who was visiting for the first time. I first clicked on the 'Register' button in the navigation menu. Once the registration page opened, I then proceeded to enter my registration details. To test this further, I first added a username and email that I knew was already taken to ensure that it would not let me register it. I was able to confirm that it gave me an error. After that test, I entered some new details and then clicked 'Register'. This registered me successfully and I was then able to access pages such as services, forum, profile and cart.
 
@@ -41,6 +41,8 @@ A lot of the testing was done by me and without the assistance of other online t
 **Logout**: To test this, I simply clicked on the 'Logout' button the navigation menu after I had logged in. This then successfully logged me out.
 
 **Password Reset**: To test this, I first ensured that I was logged out of the website. Once I was sure of that, I proceeded to click on the 'Login' button in the navigation menu. Once the login page loaded, I clicked on the 'Forgotton your password?' link at the bottom of the login form. This then took me to another page, where I was able to enter my registered email address and have a password reset sent to my email. I successfully recieved the email and was able to update my password. Finally, I went back onto the website, loaded up the login page, added my new login details and successfully logged in.
+
+**User Restrictions on Editing/Deleting Posts/Service**: To ensure that only the user who added a post or service would be able to edit/delete that post or service, I needed to add some user restrictions directly into the templates, which is what I did. To test this, I created a post and a service from 2 seperate accounts. I then viewed both posts and services from different accounts to ensure that I was unable to see an edit or delete button if the post or service wasn't mine. This was the case on both accounts and this test was successful.
 
 ### Browser and Mobile Responsiveness
 
@@ -130,6 +132,97 @@ The navigation was created with the use of Bootstrap4 and this was to assist in 
 
 ![Base Template - Desktop View](https://user-images.githubusercontent.com/52998869/83656886-05e9df00-a5b8-11ea-8edd-87ada5fe81d7.png)
 ![Base Template - Mobile View](https://user-images.githubusercontent.com/52998869/83656954-1c903600-a5b8-11ea-9107-ee993208b765.png)
+
+</p>
+</details>
+
+**Login Template**
+
+
+
+<details><summary>Base.html Wireframe</summary>
+<p>
+
+![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
+![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+
+</p>
+</details>
+
+**Registration Template**
+
+
+
+<details><summary>Base.html Wireframe</summary>
+<p>
+
+![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
+![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+
+</p>
+</details>
+
+**About Us Template**
+
+
+
+<details><summary>Base.html Wireframe</summary>
+<p>
+
+![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
+![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+
+</p>
+</details>
+
+**Services Template**
+
+
+
+<details><summary>Base.html Wireframe</summary>
+<p>
+
+![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
+![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+
+</p>
+</details>
+
+**Forum Template**
+
+
+
+<details><summary>Base.html Wireframe</summary>
+<p>
+
+![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
+![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+
+</p>
+</details>
+
+**Profile Template**
+
+
+
+<details><summary>Base.html Wireframe</summary>
+<p>
+
+![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
+![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+
+</p>
+</details>
+
+**Cart Template**
+
+
+
+<details><summary>Base.html Wireframe</summary>
+<p>
+
+![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
+![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
 
 </p>
 </details>
