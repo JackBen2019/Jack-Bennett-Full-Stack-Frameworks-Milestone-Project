@@ -59,6 +59,7 @@ def dashboard(request):
 
     return render(request, 'dashboard.html', context)
 
+
 @login_required
 def logout(request):
     """Log the user out"""
@@ -113,12 +114,14 @@ def registration(request):
     return render(request, 'registration.html', {
         "registration_form": registration_form})
 
+
 @login_required
 def user_profile(request):
     """The user's profile page"""
     
     user = User.objects.get(email=request.user.email)
     return render(request, 'profile.html', {"profile": user})
+
 
 @login_required
 def get_forum(request):
@@ -130,6 +133,13 @@ def get_forum(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()
         ).order_by('-published_date')
     return render(request, "forum.html", {'posts': posts})
+
+
+@login_required
+def general_discussion(request):
+    """Return the general_discussion.html file"""
+    return render(request, 'general_discussion.html')
+
 
 @login_required
 def forum_post_details(request, pk):
@@ -146,6 +156,7 @@ def forum_post_details(request, pk):
     post_creator = post.creator_id
     return render(request, "forum_post_details.html", {'post': post, 'post_creator': post_creator})
 
+
 @login_required
 def create_forum_post(request, pk=None):
     """ Create a view that allows us to create a post """
@@ -161,6 +172,7 @@ def create_forum_post(request, pk=None):
     else:
         form = ForumPostForm(instance=post)
     return render(request, 'forum_post_form.html', {'form': form})
+
 
 @login_required
 def edit_forum_post(request, pk=None):
