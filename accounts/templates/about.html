@@ -36,7 +36,11 @@
             So, I think that covers everything. Thank you again for visiting and let's get to work!
             </span>
         </h5>
+        {% if user.is_authenticated %}
+        <br>
+        {% else %}
         <hr>
+        {% endif %}
     </div>
 </div>
 {% if user.is_authenticated %}

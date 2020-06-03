@@ -15,17 +15,28 @@
         {% endif %}
     </div>
 </div>
+
 <div class="row">
+    <div class="col-md-6">
+        <button class="btn btn-secondary" type="button" onclick="postInfo()">Toggle Post Details</button>
+    </div>
+</div>
+
+<div id ="postInfo" class="row">
 	<div class="col-lg-12">
 		<p><span class="boldtext">Posted:</span> {{ post.published_date }} </p>
 		<p><span class="boldtext">Views:</span> {{post.views}}</p>
 		<p><span class="boldtext">Category:</span> {{ post.category }} {{request.user.username}} {{post.creator_id}}</p>
-		<a href="{% url 'get_forum' %}" class="btn btn-outline-primary  margin-bottom-30">Back to Forum</a>
+	</div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+<a href="{% url 'get_forum' %}" class="btn btn-outline-primary  margin-bottom-30">Back to Forum</a>
         {% if request.user.username == post.creator_id %}
 		    <a href="{% url 'edit_forum_post' post.id %}" class="btn btn-outline-warning">Edit Post</a>
         {% endif %}
-        <a href="{% url 'edit_forum_post' post.id %}" class="btn btn-outline-warning">Edit Post</a>
-	</div>
+    </div>
 </div>
 </section>
 {% endblock %}

@@ -8,6 +8,6 @@ def do_search_product(request):
     return render(request, "products.html", {"products": products})
 
 def do_search_forum(request):
-    """ Allows the user to search the forum """`
+    """ Allows the user to search the forum """
     posts = Post.objects.filter(title__icontains=request.GET['q'])
     return render(request, "forum.html", {'posts': posts})
