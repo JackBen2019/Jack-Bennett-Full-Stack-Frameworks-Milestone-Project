@@ -30,6 +30,7 @@ def customer(request, pk):
     context = {'customer':customer, 'orders':orders, 'order_count':order_count}
     return render(request, 'customer.html', context)
 
+
 def customer_no_orders(request):
     """Return the customer_no_orders.html file"""
 
@@ -142,13 +143,16 @@ def forum_post_details(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.views += 1
     post.save()
-    return render(request, "forum_post_details.html", {'post': post})
+    post_creator = post.creator_id
+    return render(request, "forum_post_details.html", {'post': post, 'post_creator': post_creator})
 
 @login_required
 def create_forum_post(request, pk=None):
     """ Create a view that allows us to create a post """
 
     post = get_object_or_404(Post, pk=pk) if pk else None
+    if not post:
+        post = Post.objects.create(creator_id=request.user)
     if request.method == "POST":
         form = ForumPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
@@ -159,9 +163,9 @@ def create_forum_post(request, pk=None):
     return render(request, 'forum_post_form.html', {'form': form})
 
 @login_required
-def edit_forum_post(request, post_id):
-
-    post = get_object_or_404(Post, pk=post_id, creator=request.user)
+def edit_forum_post(request, pk=None):
+    """ Create a view that allows us to edit a post """
+    post = get_object_or_404(Post, pk=pk)
     if request.user.id != post.creator_id:
         messages.error(request, 'You are unable to edit this post')
         return redirect('get_forum')
@@ -176,4 +180,4 @@ def edit_forum_post(request, post_id):
 
             edit_post = CreatePost(instance=post)
 
-        return render(request, 'forum_post_form.html', {'form': edit_post, 'post': post})
+            return render(request, 'forum_post_form.html', {'form': edit_post, 'post': post})
