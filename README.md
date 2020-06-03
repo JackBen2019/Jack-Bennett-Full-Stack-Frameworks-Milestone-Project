@@ -127,7 +127,7 @@ The base template was used to store all the code that would be re-used across my
 
 The navigation was created with the use of Bootstrap4 and this was to assist in adding a dropdown menu for all smaller devices. The navigation link options will also change dependant on whether you are logged in or not.
 
-<details><summary>Base.html Wireframe</summary>
+<details><summary>Base Template Wireframe</summary>
 <p>
 
 ![Base Template - Desktop View](https://user-images.githubusercontent.com/52998869/83656886-05e9df00-a5b8-11ea-8edd-87ada5fe81d7.png)
@@ -140,7 +140,7 @@ The navigation was created with the use of Bootstrap4 and this was to assist in 
 
 
 
-<details><summary>Base.html Wireframe</summary>
+<details><summary>Login Template Wireframe</summary>
 <p>
 
 ![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
@@ -153,7 +153,7 @@ The navigation was created with the use of Bootstrap4 and this was to assist in 
 
 
 
-<details><summary>Base.html Wireframe</summary>
+<details><summary>Registration Template Wireframe</summary>
 <p>
 
 ![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
@@ -164,9 +164,11 @@ The navigation was created with the use of Bootstrap4 and this was to assist in 
 
 **About Us Template**
 
+The about us page is actually used as the main home page of the website. As you can only access the main content of my website when your logged in, I felt it would be a good idea for people to get an understanding of the website as soon as they landed on the site.
 
+At the bottom of the about page are two fairly large buttons. One button leads you to the registration page, while the other leads you to the login page.
 
-<details><summary>Base.html Wireframe</summary>
+<details><summary>About Us Template Wireframe</summary>
 <p>
 
 ![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
@@ -179,7 +181,7 @@ The navigation was created with the use of Bootstrap4 and this was to assist in 
 
 
 
-<details><summary>Base.html Wireframe</summary>
+<details><summary>Services Template Wireframe</summary>
 <p>
 
 ![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
@@ -192,7 +194,7 @@ The navigation was created with the use of Bootstrap4 and this was to assist in 
 
 
 
-<details><summary>Base.html Wireframe</summary>
+<details><summary>Forum Template Wireframe</summary>
 <p>
 
 ![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
@@ -205,7 +207,7 @@ The navigation was created with the use of Bootstrap4 and this was to assist in 
 
 
 
-<details><summary>Base.html Wireframe</summary>
+<details><summary>Profile Template Wireframe</summary>
 <p>
 
 ![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
@@ -218,7 +220,7 @@ The navigation was created with the use of Bootstrap4 and this was to assist in 
 
 
 
-<details><summary>Base.html Wireframe</summary>
+<details><summary>Cart Template Wireframe</summary>
 <p>
 
 ![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
