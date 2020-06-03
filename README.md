@@ -22,6 +22,10 @@ All images and other static files have been stored externally with AWS S3. Whene
 
 **Profile Page Functionality**: The profile page will display a page that contains your email address and username, as well as the total amount of orders and an option to edit your details. Once you have made an order, the page will update and display your most recent order(s).
 
+# Deployment
+
+
+
 # Testing
 
 [![Build Status](https://travis-ci.org/JackBen2019/Jack-Bennett-Full-Stack-Frameworks-Milestone-Project.svg?branch=master)](https://travis-ci.org/JackBen2019/Jack-Bennett-Full-Stack-Frameworks-Milestone-Project)
@@ -113,7 +117,22 @@ When designing a website, I like to keep it clean and simple. Not too many contr
 
 # Wireframes and Templates
 
+As with almost any webite I build, the first mock ups of the wireframes tend to differ from the final product. So, with this in mind I always start creating some very basic mock ups on Microsoft Word and then once I am set on the designs I want, I create them in full detail using [Balsamiq](https://balsamiq.com/).
 
+**Base Template**
+
+The base template was used to store all the code that would be re-used across my entire website. This included sections such as the navigation and the footer, as these were likely to never change. The base template was also used to store all links to any external files such as Stylesheets, as well as adding content blocks for page titles and general body content.
+
+The navigation was created with the use of Bootstrap4 and this was to assist in adding a dropdown menu for all smaller devices. The navigation link options will also change dependant on whether you are logged in or not.
+
+<details><summary>Base.html Wireframe</summary>
+<p>
+
+![Base Template - Desktop View](https://user-images.githubusercontent.com/52998869/83656886-05e9df00-a5b8-11ea-8edd-87ada5fe81d7.png)
+![Base Template - Mobile View](https://user-images.githubusercontent.com/52998869/83656954-1c903600-a5b8-11ea-9107-ee993208b765.png)
+
+</p>
+</details>
 
 # Technologies Used
 
