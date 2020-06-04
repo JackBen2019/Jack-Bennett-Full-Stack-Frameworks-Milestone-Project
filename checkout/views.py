@@ -66,7 +66,7 @@ def checkout(request):
     return render(request, "checkout.html", {"order_form": order_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
 
 
-def deleteOrder(request, pk):
-    """ Remove a single item from the cart """
+def delete_order(request, pk):
+    """ Cancel an order from the profile page """
     order = Order.objects.get(id=pk)
-    return render(request, "delete_order.html", {'item': order})
+    return render(request, "delete_order.html", {'order': order})

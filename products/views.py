@@ -5,7 +5,7 @@ from .forms import ProductPostForm
 
 def all_products(request):
     """ Returns the products page """
-    
+
     products = Product.objects.all()
     return render(request, "products.html", {"products": products})
 

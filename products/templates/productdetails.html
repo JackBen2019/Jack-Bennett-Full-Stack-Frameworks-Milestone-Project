@@ -15,15 +15,13 @@
         <br>
     </div>
     <div class="col-md-6">
-		{% if products.image %}
-		<img class="img-blogpost" src="/media/{{ review.image }}">
-        {% endif %}
+		<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
     </div>
 </div>
 <div class="row">
 	<div class="col-lg-12">
-		<p><span class="boldtext">Posted:</span> {{ products.category }} </p>
-		<p><span class="boldtext">Price:</span> £{{ products.price }} </p>
+		<p><strong>Service Type:</strong> {{ products.category }} </p>
+		<p><strong>Price:</strong> £{{ products.price }} </p>
 		<a href="{% url 'products' %}" class="btn btn-outline-primary">Back to Services</a>
         <a href="{% url 'edit_product' products.id %}" class="btn btn-outline-warning">Edit Service</a>
 	</div>

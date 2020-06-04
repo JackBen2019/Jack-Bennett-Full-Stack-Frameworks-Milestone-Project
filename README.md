@@ -337,3 +337,10 @@ I decided to use Postgres as the database for this project, which is built into 
 - [Dennis Ivy](https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO) - A massive thanks to Dennis Ivy and his Django tutorials, which helped me to overcome a few obstacles with my website.
 - Image used on About Us page: This [link](https://unsplash.com/photos/KE0nC8-58MQ) is for the free to use image that was added to the About Us page.
 - Full Stack Frameworks module: A lot of the code added was inspired/assisted by following along with this module.
+- All images used on the Services page are from [Pixabay]. See list below:
+    1. [E-Commerce-Store](https://pixabay.com/illustrations/ecommerce-online-shopping-e-commerce-1992280/)
+    2. [Online-Store-Renovation](https://pixabay.com/illustrations/online-store-business-buy-internet-1673585/)
+    3. [Web-Traffic](https://pixabay.com/illustrations/seo-google-search-engine-896175/)
+    4. [Increase-Website-Traffic](https://pixabay.com/illustrations/analytics-google-analytics-1925495/)
+    5. [Social-Media-Management](https://pixabay.com/illustrations/icon-polaroid-blogger-rss-app-2486501/)
+    6. [Organic-Instagram-Followers](https://pixabay.com/vectors/instagram-social-network-urges-1594387/)
