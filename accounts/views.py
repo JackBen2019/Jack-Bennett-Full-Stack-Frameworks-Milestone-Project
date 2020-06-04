@@ -10,6 +10,11 @@ from accounts.forms import UserLoginForm, UserRegistrationForm
 from .decorators import unauthenticated_user, allowed_users, admin_only
 
 
+def index(request):
+    """Return the about.html file as the homepage"""
+    return render(request, 'about.html')
+
+
 def about(request):
     """Return the about.html file"""
     return render(request, 'about.html')

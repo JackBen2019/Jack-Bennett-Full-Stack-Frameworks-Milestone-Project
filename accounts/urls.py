@@ -1,11 +1,12 @@
 from django.conf.urls import url, include
 from django.http import HttpResponse
-from .views import get_forum, forum_post_details, create_forum_post, edit_forum_post, general_discussion
+from .views import index, get_forum, forum_post_details, create_forum_post, edit_forum_post, general_discussion
 from accounts.views import logout, login, registration, user_profile, about, customer, dashboard, customer_no_orders
 from products.views import all_products, product_details, edit_product, add_product
 from accounts import url_reset
 
 urlpatterns = [
+    url(r'^$', index, name="index"),
     url(r'^logout/', logout, name="logout"),
     url(r'^login/', login, name="login"),
     url(r'^register/', registration, name="registration"),

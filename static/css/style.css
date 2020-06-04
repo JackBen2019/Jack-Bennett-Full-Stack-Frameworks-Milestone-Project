@@ -80,10 +80,6 @@ li {
     font-size: 11px !important;
 }
 
-.fa-arrow-right {
-
-}
-
 /* ------ Bootstrap ------ */
 
 .row.row-flex {
@@ -198,6 +194,10 @@ li {
 }
 
 /* ------ Search Bar ------ */
+
+.search-bar-container {
+    width: 100%;
+}
 
 .search-bar {
     width: 40%;
