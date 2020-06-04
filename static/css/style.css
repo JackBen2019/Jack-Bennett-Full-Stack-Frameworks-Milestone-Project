@@ -203,6 +203,24 @@ li {
     width: 40%;
 }
 
+.search-bar-margin-bottom {
+    margin-bottom: 10px;
+}
+
+.search-bar-container input[type=text] {
+  padding: 4px;
+  margin-top: 8px;
+  font-size: 17px;
+}
+
+.search-bar-container .search-button {
+  padding: 6px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
 /* ------ Forms ------ */
 
 .registration-form {
