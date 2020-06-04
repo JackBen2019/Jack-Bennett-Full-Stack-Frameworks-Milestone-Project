@@ -142,27 +142,26 @@ The login template was the first template on my website to make use of 'bootstra
 
 I also added the option for the user to reset their password if they were to forget it.
 
-![Login Template - Desktop View](https://user-images.githubusercontent.com/52998869/83770421-f2eb1380-a678-11ea-9259-78faa371f9a3.png)
-![Login Template - Mobile View](https://user-images.githubusercontent.com/52998869/83656954-1c903600-a5b8-11ea-9107-ee993208b765.png)
-
 <details><summary>Login Template Wireframe</summary>
 <p>
 
-![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
-![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+![Login Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
+![Login Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
 
 </p>
 </details>
 
 **Registration Template**
 
+The registration template was the second template to make use of 'bootstrap_tags'. With the use of bootstrap_tags, I was able to use a pre-generated login form which contained an email address, username, password and password confirmation field.
 
+I also added the option to login if you already had an account on the site.
 
 <details><summary>Registration Template Wireframe</summary>
 <p>
 
-![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
-![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+![Registration Template - Desktop View](https://user-images.githubusercontent.com/52998869/83772080-e4056080-a67a-11ea-9c12-cebd31eab1ff.png)
+![Registration Template - Mobile View](https://user-images.githubusercontent.com/52998869/83772210-1020e180-a67b-11ea-9bfc-af553180da2f.png)
 
 </p>
 </details>
