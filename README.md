@@ -197,8 +197,8 @@ The products are listed in rows of 3 on full width screens, but will drop down t
 
 **Add a Service**
 
-![Add a Service Template - Desktop View]()
-![Add a Service Template - Mobile View]()
+![Add a Service Template - Desktop View](https://user-images.githubusercontent.com/52998869/83791300-79abea80-a691-11ea-9434-6f0ad73b363a.png)
+![Add a Service Template - Mobile View](https://user-images.githubusercontent.com/52998869/83791322-86304300-a691-11ea-82ff-ce3179fcebc0.png)
 
 </p>
 </details>
@@ -246,7 +246,7 @@ The products are listed in rows of 3 on full width screens, but will drop down t
 
 
 
-<details><summary>Cart Template Wireframe</summary>
+<details><summary>Checkout Template Wireframe</summary>
 <p>
 
 ![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
