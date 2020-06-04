@@ -14,7 +14,7 @@
         //]]>
 </script>
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
-{% endblock %}
+{% endblock head_js %}
 
 {% block content %}
 <div class="form-container base-wrapper">
@@ -28,14 +28,16 @@
     <div class="form-group">
         {{ order_form | as_bootstrap }}
     </div>
-<h4>Card Details</h4><hr>
+
+    <h4>Card Details</h4><hr>
+    
     <div class="form-group">
         {{ payment_form | as_bootstrap }}
     </div>
 
     {% csrf_token %}
     <div class="form-group">
-        <input id="submit_payment_btn" name="commit" type="submit" value="Submit Payment" class="btn btn-primary">
+        <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
     </div>
 </form>
 </div>

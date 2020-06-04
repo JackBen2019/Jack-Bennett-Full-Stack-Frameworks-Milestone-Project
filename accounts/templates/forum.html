@@ -25,17 +25,12 @@
         {% for post in posts|slice:":4" %}
             <div class="media text-muted pt-3">
 	        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <strong class="d-block text-gray-dark"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
+                <strong class="d-block text-gray-dark margin-bottom-5"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
                 {{ post.content|truncatewords:30 }}
             </p>
 	        <hr>
             </div>
         {% endfor %}
-            <div class="media text-muted pt-3">
-	        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <a class="view-more-option" href="#">More recent posts  </a><i class="fas fa-arrow-right"></i>
-            </p>
-            </div>
     </div>
     <div class="my-3 p-3 bg-white rounded shadow-sm">
         <h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">General Discussion</h5>
@@ -43,7 +38,7 @@
         {% if post.category == 'General Discussion' %}
             <div class="media text-muted pt-3">
 	        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <strong class="d-block text-gray-dark"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
+                <strong class="d-block text-gray-dark margin-bottom-5"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
                 {{ post.content|truncatewords:30 }}
             </p>
 	        <hr>
@@ -62,7 +57,7 @@
         {% if post.category == 'Events' %}
             <div class="media text-muted pt-3">
 	        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <strong class="d-block text-gray-dark"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
+                <strong class="d-block text-gray-dark margin-bottom-5"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
                 {{ post.content|truncatewords:30 }}
             </p>
 	        <hr>
@@ -71,7 +66,7 @@
         {% endfor %}
             <div class="media text-muted pt-3">
 	        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <a class="view-more-option" href="#">More Events </a><i class="fas fa-arrow-right"></i>
+                <a class="view-more-option" href="{% url 'events' %}">More Events </a><i class="fas fa-arrow-right"></i>
             </p>
             </div>
     </div>

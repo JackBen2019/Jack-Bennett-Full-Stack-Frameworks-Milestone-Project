@@ -25,6 +25,7 @@ Customer view assisted by Dennis Ivy
 (https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO)
 """
 
+@login_required
 def customer(request, pk):
     """Return the customer.html file"""
     customer = Customer.objects.get(id=pk)
@@ -36,6 +37,7 @@ def customer(request, pk):
     return render(request, 'customer.html', context)
 
 
+@login_required
 def customer_no_orders(request):
     """Return the customer_no_orders.html file"""
 
@@ -49,6 +51,7 @@ Dashboard view assisted by Dennis Ivy
 (https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO)
 """
 
+@login_required
 def dashboard(request):
     """Return the dashboard.html file"""
     orders = Order.objects.all()
@@ -144,6 +147,12 @@ def get_forum(request):
 def general_discussion(request):
     """Return the general_discussion.html file"""
     return render(request, 'general_discussion.html')
+
+
+@login_required
+def events(request):
+    """Return the events.html file"""
+    return render(request, 'events.html')
 
 
 @login_required

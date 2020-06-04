@@ -8,9 +8,9 @@
 
 <section class="jumbotron text-center">
     <div class="container">
-      <h1>General Discussuon</h1>
+      <h1>Events</h1>
       <hr>
-      <p class="lead text-muted">Here you'll find all posts related to general discussion. Grab a cuppa, sit back and post away!</p>
+      <p class="lead text-muted">Here you'll find all posts related to marketing events. Why not check em' out!</p>
     </div>
 </section>
 
@@ -30,9 +30,9 @@
 
 <section class="container">
     <div class="my-3 p-3 bg-white rounded shadow-sm">
-        <h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">General Discussion</h5>
+        <h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">Events</h5>
         {% for post in posts %}
-        {% if post.category == 'General Discussion' %}
+        {% if post.category == 'Events' %}
             <div class="media text-muted pt-3">
 	        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
                 <strong class="d-block text-gray-dark"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>

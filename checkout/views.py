@@ -13,13 +13,7 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def checkout(request):
-    """ 
-    Allows the user to complete the
-    checkout by adding thier payment
-    and personal details and completing 
-    thier order
-    """
-    if request.method == "POST":
+    if request.method=="POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
 
@@ -34,22 +28,22 @@ def checkout(request):
                 product = get_object_or_404(Product, pk=id)
                 total += quantity * product.price
                 order_line_item = OrderLineItem(
-                    order=order,
-                    product=product,
-                    quantity=quantity
-                )
+                    order = order, 
+                    product = product, 
+                    quantity = quantity
+                    )
                 order_line_item.save()
 
             try:
                 customer = stripe.Charge.create(
-                    amount=int(total * 100),
-                    currency="GBP",
-                    description=request.user.email,
-                    card=payment_form.cleaned_data['stripe_id']
+                    amount = int(total * 100),
+                    currency = "EUR",
+                    description = request.user.email,
+                    card = payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
-            
+
             if customer.paid:
                 messages.error(request, "You have successfully paid")
                 request.session['cart'] = {}
@@ -62,8 +56,8 @@ def checkout(request):
     else:
         payment_form = MakePaymentForm()
         order_form = OrderForm()
-    
-    return render(request, "checkout.html", {"order_form": order_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
+
+    return render(request, "checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
 
 
 def delete_order(request, pk):
