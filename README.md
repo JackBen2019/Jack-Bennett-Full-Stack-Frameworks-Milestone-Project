@@ -138,7 +138,12 @@ The navigation was created with the use of Bootstrap4 and this was to assist in 
 
 **Login Template**
 
+The login template was the first template on my website to make use of 'bootstrap_tags'. With the use of bootstrap_tags, I was able to use a pre-generated login form which contained a username and password field.
 
+I also added the option for the user to reset their password if they were to forget it.
+
+![Login Template - Desktop View](https://user-images.githubusercontent.com/52998869/83770421-f2eb1380-a678-11ea-9259-78faa371f9a3.png)
+![Login Template - Mobile View](https://user-images.githubusercontent.com/52998869/83656954-1c903600-a5b8-11ea-9107-ee993208b765.png)
 
 <details><summary>Login Template Wireframe</summary>
 <p>

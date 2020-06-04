@@ -26,8 +26,6 @@ class Order(models.Model):
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
 
-""" OrderLine view assisted by Dennis Ivy """
-
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False)
     product = models.ForeignKey(Product, null=False)

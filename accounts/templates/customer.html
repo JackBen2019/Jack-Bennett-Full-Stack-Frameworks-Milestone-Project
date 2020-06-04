@@ -37,7 +37,7 @@
 
 <div class="row">
 	<div class="col-md margin-bottom">
-		<div class="card order-status-table  margin-bottom-30">
+		<div class="card order-status-table margin-bottom-30">
 			<table class="table table-sm">
 				<tr>
 					<th>Service</th>
@@ -52,7 +52,7 @@
 					<td>{{ order.product }}</td>
 					<td>{{ order.date_created }}</td>
 					<td>{{ order.status }}</td>
-					<td><a class="btn btn-sm btn-danger" href="#">Cancel</a></td>
+					<td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Cancel</a></td>
 				</tr>
 				{% endfor %}
 

@@ -63,4 +63,8 @@ def checkout(request):
 def delete_order(request, pk):
     """ Cancel an order from the profile page """
     order = Order.objects.get(id=pk)
-    return render(request, "delete_order.html", {'order': order})
+    if request.method == "POST":
+        order.delete()
+        return redirect('/')
+
+    return render(request, "delete_order.html", {'item': order})
