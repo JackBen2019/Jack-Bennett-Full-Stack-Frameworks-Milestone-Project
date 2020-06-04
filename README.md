@@ -183,13 +183,22 @@ At the bottom of the about page are two fairly large buttons. One button leads y
 
 **Services Template**
 
+The services page is where all the products/services are listed. All registered users have the option to list thier own website or marketing services on the website. This can be done by clicking on the 'Add new service' button at the top of the page. They will be asked to add a service title, description, category, price and image.
 
+The products are listed in rows of 3 on full width screens, but will drop down to just one product per row on smaller screens.
 
-<details><summary>Services Template Wireframe</summary>
+<details><summary>Services & Add a Service Template Wireframes</summary>
 <p>
 
-![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
-![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+**Services**
+
+![Services Template - Desktop View](https://user-images.githubusercontent.com/52998869/83784812-7bbd7b80-a688-11ea-9b86-cc171cfd6859.png)
+![Services Template - Mobile View](https://user-images.githubusercontent.com/52998869/83784967-89730100-a688-11ea-91e1-9b29e1b272f2.png)
+
+**Add a Service**
+
+![Add a Service Template - Desktop View]()
+![Add a Service Template - Mobile View]()
 
 </p>
 </details>
