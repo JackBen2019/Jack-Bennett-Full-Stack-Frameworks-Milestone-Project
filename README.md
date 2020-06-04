@@ -145,8 +145,8 @@ I also added the option for the user to reset their password if they were to for
 <details><summary>Login Template Wireframe</summary>
 <p>
 
-![Login Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
-![Login Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+![Login Template - Desktop View](https://user-images.githubusercontent.com/52998869/83770421-f2eb1380-a678-11ea-9259-78faa371f9a3.png)
+![Login Template - Mobile View](https://user-images.githubusercontent.com/52998869/83656954-1c903600-a5b8-11ea-9107-ee993208b765.png)
 
 </p>
 </details>
@@ -221,6 +221,19 @@ At the bottom of the about page are two fairly large buttons. One button leads y
 </details>
 
 **Cart Template**
+
+
+
+<details><summary>Cart Template Wireframe</summary>
+<p>
+
+![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
+![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+
+</p>
+</details>
+
+**Checkout Template**
 
 
 

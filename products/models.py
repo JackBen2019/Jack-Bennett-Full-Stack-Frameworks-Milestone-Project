@@ -15,7 +15,7 @@ class Tag(models.Model):
         return self.name
 
 class Product(models.Model):
-    creator_id = models.ForeignKey(User, null=False, default=1)
+    prod_creator_id = models.ForeignKey(User, null=False, default=1)
     name = models.CharField(max_length=38, default='')
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=25, default='')
     description = models.TextField()
