@@ -237,18 +237,18 @@ Each category on the forum has a maximum of 4 posts that can be shown and if you
 
 **Forum**
 
-![Forum Template - Desktop View]()
-![Forum Template - Mobile View]()
+![Forum Template - Desktop View](https://user-images.githubusercontent.com/52998869/83861081-0c8f6800-a718-11ea-8cf1-cd13ee78c450.png)
+![Forum Template - Mobile View](https://user-images.githubusercontent.com/52998869/83861107-17e29380-a718-11ea-97c4-e6edb5c30137.png)
 
 **Add a Post Template**
 
-![Add a Post Template - Desktop View]()
-![Add a Post Template - Mobile View]()
+![Add a Post Template - Desktop View](https://user-images.githubusercontent.com/52998869/83859547-fe404c80-a715-11ea-9571-e54cf791337c.png)
+![Add a Post Template - Mobile View](https://user-images.githubusercontent.com/52998869/83859576-08624b00-a716-11ea-918b-4cb4ea3df952.png)
 
 **Category Page Default Template**
 
-![Category Page Template - Desktop View]()
-![Category Page Template - Mobile View]()
+![Category Page Template - Desktop View](https://user-images.githubusercontent.com/52998869/83861857-0e0d6000-a719-11ea-861e-cb8d65d7ecb9.png)
+![Category Page Template - Mobile View](https://user-images.githubusercontent.com/52998869/83862211-88d67b00-a719-11ea-8a4f-a9cfe450b84e.png)
 
 </p>
 </details>
@@ -264,13 +264,13 @@ I have added an if statement onto the profile link so that the page will alterna
 
 **Profile With No Orders**
 
-![About Us Template - Desktop View]()
-![About Us Template - Mobile View]()
+![Profile With No Orders Template - Desktop View]()
+![Profile With No Orders Template - Mobile View]()
 
 **Profile With Orders Made**
 
-![About Us Template - Desktop View]()
-![About Us Template - Mobile View]()
+![Profile With Orders Made Template - Desktop View]()
+![Profile With Orders Made Template - Mobile View]()
 
 </p>
 </details>
@@ -284,8 +284,8 @@ The user will also have the option to remove indiviudal items from the cart shou
 <details><summary>Cart Template Wireframe</summary>
 <p>
 
-![About Us Template - Desktop View]()
-![About Us Template - Mobile View]()
+![Cart Template - Desktop View]()
+![Cart Template - Mobile View]()
 
 </p>
 </details>
@@ -294,13 +294,13 @@ The user will also have the option to remove indiviudal items from the cart shou
 
 The checkout template is used as the final page before the user completes their order. On this page, the user will asked to add their personal details such as address, name and number, as well as their payment details.
 
-Once the user has made an order, the payment will be handled by Stripe and an order success message will appear. 
+Once the user has made an order, the payment will be handled by Stripe and an order success message will appear. The details of that order will also appear on their profile page.
 
 <details><summary>Checkout Template Wireframe</summary>
 <p>
 
-![About Us Template - Desktop View]()
-![About Us Template - Mobile View]()
+![Checkout Template - Desktop View]()
+![Checkout Template - Mobile View]()
 
 </p>
 </details>

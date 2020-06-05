@@ -6,6 +6,7 @@ from .models import OrderLineItem, Order
 from django.conf import settings
 from django.utils import timezone
 from products.models import Product
+from accounts.models import Customer
 import stripe
 
 stripe.api_key = settings.STRIPE_SECRET
@@ -64,9 +65,4 @@ def delete_order(request, pk):
     """ Cancel an order from the profile page """
     order = Order.objects.get(id=pk)
     order.delete()
-    if order_count > 1:
-        return redirect('customer_no_order')
-    else:
-        return redirect('customer')
-
-    return render(request, "delete_order.html", {'item': order})
+    return redirect('customer', pk)
