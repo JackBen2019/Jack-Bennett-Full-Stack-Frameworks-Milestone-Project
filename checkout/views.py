@@ -64,6 +64,9 @@ def delete_order(request, pk):
     """ Cancel an order from the profile page """
     order = Order.objects.get(id=pk)
     order.delete()
-    return redirect('customer')
+    if order_count > 1:
+        return redirect('customer_no_order')
+    else:
+        return redirect('customer')
 
     return render(request, "delete_order.html", {'item': order})

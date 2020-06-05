@@ -97,7 +97,16 @@ When designing a website, I like to keep it clean and simple. Not too many contr
 
 ### Defensive Design
 
+As a visitor to my own website, I wanted to make it as user friendly as possible. This meant that it had to be easy to navigate, have easy to use features and functionality and also make it impossible to become lost at any point while browsing the site.
 
+Below are the design procedures I put in place:
+
+- At no point is the website less functional on a smaller device than it is on a larger design. My website has been thoroughly checked and tested to ensure everyone has the same experience.
+- If a user tries to purchase an item with incorrect card details, they will instanly be met with a helpful error message to assist them.
+- All external pages on my site will automatically be opened in a new window, rather than closing down the current tab.
+- If a user opens up one of the category pages on the forum, they can easily go back to the main forum by clicking on the 'Back to Forum' button on every category page.
+- If a user opens up a post, they can easily go back to the main forum by clicking on the 'Back to Forum' button on every post.
+- If a user opens up a service, they can easily go back to the main forum by clicking on the 'Back to Forum' button on every service.
 
 ### User Stories
 
@@ -274,7 +283,7 @@ The products are listed in rows of 3 on full width screens, but will drop down t
 
 - **Django 3**: Used as the core framework for this website.
 - **Bootstrap 4**: Used for the structure for my website, as well as making it more user-friendly.
-- **Font Awesome**: Used to add icons, such as social media,
+- **Font Awesome**: Used to add icons, such as social media logo's.
 - **Heroku**: Used for the final deployment of this website.
 - **GitHub**: Used for version control.
 - **Travis**: Used for testing purposes.
@@ -399,11 +408,32 @@ def remove_from_cart(request, id):
 
 5. Adding user restrictions on who can edit/delete posts/services: I needed to ensure that only the creator of a post/service would be able to edit/delete their work. I had some trouble with this and often found that rather than hiding the edit/delete button from other users, it hid it from everyone. Including the creator.
 
-**Solution**: 
+**Solution**: To fix this issue, I simply needed to add 'creator_id=request.user' into the 'create_forum_post' view so that the the creator id was always the id the of user who created it.
+
+Once the view had been updated, I was then able to add the following if statement into the post details page `{% if request.user == post.creator_id %}` to ensure that only the post creator could edit the post.
+
+```
+def create_forum_post(request, pk=None):
+    """ Create a view that allows us to create a post """
+
+    post = get_object_or_404(Post, pk=pk) if pk else None
+    if not post:
+        post = Post.objects.create(creator_id=request.user)
+    if request.method == "POST":
+        form = ForumPostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            post = form.save()
+        return redirect('forum_post_details', post.pk)
+    else:
+        form = ForumPostForm(instance=post)
+    return render(request, 'forum_post_form.html', {'form': form})
+```
 
 # Database
 
 I decided to use Postgres as the database for this project, which is built into the Django framework. Postgres can be easily accessed and updated by simply using the Django admin panel. This reason alone made it the viable choice over other databases such as MongoDB, as it was easily accessible and was within the framework I was using.
+
+In order to ensure that all created models and apps were correctly implemented, `python3 manage.py makemigrations` was run in the command line and this gave a breakdown of everything that was going to be migrated, as well creating an inital migration. To finalise the migration, `python3 manage.py migrate` was run in the command line shortly after.
 
 # Credits
 
