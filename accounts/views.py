@@ -11,8 +11,8 @@ from .decorators import unauthenticated_user, allowed_users, admin_only
 
 
 def index(request):
-    """Return the about.html file as the homepage"""
-    return render(request, 'about.html')
+    """Return the index.html file"""
+    return render(request, 'index.html')
 
 
 def about(request):

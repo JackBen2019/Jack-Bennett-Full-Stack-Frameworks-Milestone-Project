@@ -8,23 +8,32 @@ We, just like you, are always striving to be better everyday and we are always p
 
 To always do more is a broad term. To do more does not simply mean spending hours, or even days working on something that will provide minimum value. To do more means you are being more efficient with your time, therefore getting more done. That's where we come in.
 
-Whether you're someone who is looking to promote their marketing or web services, or someone who is looking to buy those services, JB:Marketing is the place to be. As a registered user you'll have the option to both list your services and/or purchase other services already listed on the website.
+Whether you're someone who is looking to promote their marketing or web services, or someone who is looking to buy those services, JB:Marketing is the place to be. As a registered user you'll have the option to both list your services and/or purchase other services already listed on my website.
 
-# How the website functions
+# How my website functions
 
-JB:Marketing was built with the assistance of the Django3 framework. Django3 helps to put a lot of the structure and functionality in place, which in turns allows you to focus on the more important things about your website, such as the content and making it as user friendly as possible.
+The bulk of the functionality was made possible with the use of the Django3 framework. Django3 is a Python run application and helps to put a lot of the structure and functionality in place, which in turns allows you to focus on the more important things about your website, such as the content and making it as user friendly as possible.
 
-Throughout the building of this website, it has had consistent version control with the use of GitHub and GitPod. This is to ensure that if any issues were to occur during the building phase, we would be able to revert back to an older version of the website. When I reached the point of completion on this website, I then deployed it to Heroku.
-
-To ensure the security of the website, all non user-friendly files such as enviroment variables and secret keys have been stored inside a seperate file, which has then been hidden with the use a .gitignore file.
-
-All images and other static files have been stored externally with AWS S3. Whenever these files needed to be updated, I updated them on my local repository and then sent to AWS S3 by running the "python3 manage.py collectstatic" command.
+There are many benefits to using the Djnago3 framework, but the biggest one in my opinion is having instant access to an admin panel. The admin panel allows you to create, view, update and/or delete and record, whether it's a post, user or even just a specific category for one of your products.
 
 **Profile Page Functionality**: The profile page will display a page that contains your email address and username, as well as the total amount of orders and an option to edit your details. Once you have made an order, the page will update and display your most recent order(s).
 
 # Deployment
 
+The development of this project was completed with the use of GitPod, with regular version control being added with the use of GitHub.
 
+Throughout the building of this website, it has had consistent version control with the use of GitHub and GitPod. This is to ensure that if any issues were to occur during the building phase, I would be able to revert back to an older version of my website. When I reached the point of completion on this website, I then deployed it to Heroku.
+
+To ensure the security of my website, all non user-friendly files such as enviroment variables and secret keys have been stored inside a seperate env.py file, which has then been hidden with the use a .gitignore file.
+
+All images and other static files have been stored externally with AWS S3. Whenever these files needed to be updated, I updated them on my local repository and then sent to AWS S3 by running the "python3 manage.py collectstatic" command.
+
+**Deployment Process**
+
+1. The first stage in the deployment process was to create an app on Heroku and then sync that app to my GitHub repository.
+2. Staying on Heroku, I then added all relevant Config Vars such as the database url and any secret keys.
+3. The third stage in the final deployement was doing a push of my finished code to GitHub and Heroku.
+4. As there were no errors after the final code had been pushed, my website was successfully deployed to both GitHub and Heroku.
 
 # Testing
 
@@ -34,13 +43,13 @@ A lot of the testing was done by me and without the assistance of other online t
 
 ### General Website Functionality Tests
 
-**Registration**: To test this, I visited the website in the position of a user who was visiting for the first time. I first clicked on the 'Register' button in the navigation menu. Once the registration page opened, I then proceeded to enter my registration details. To test this further, I first added a username and email that I knew was already taken to ensure that it would not let me register it. I was able to confirm that it gave me an error. After that test, I entered some new details and then clicked 'Register'. This registered me successfully and I was then able to access pages such as services, forum, profile and cart.
+**Registration**: To test this, I visited my website in the position of a user who was visiting for the first time. I first clicked on the 'Register' button in the navigation menu. Once the registration page opened, I then proceeded to enter my registration details. To test this further, I first added a username and email that I knew was already taken to ensure that it would not let me register it. I was able to confirm that it gave me an error. After that test, I entered some new details and then clicked 'Register'. This registered me successfully and I was then able to access pages such as services, forum, profile and cart.
 
-**Login**: To test this, I visited my website in the position of a recently registered user. Once on the website, I then proceeded to click on the 'Login' button in the navigation menu. After that, I then proceeded to enter the details I originally registered with. This then successfully logged me in.
+**Login**: To test this, I visited my website in the position of a recently registered user. Once on my website, I then proceeded to click on the 'Login' button in the navigation menu. After that, I then proceeded to enter the details I originally registered with. This then successfully logged me in.
 
 **Logout**: To test this, I simply clicked on the 'Logout' button the navigation menu after I had logged in. This then successfully logged me out.
 
-**Password Reset**: To test this, I first ensured that I was logged out of the website. Once I was sure of that, I proceeded to click on the 'Login' button in the navigation menu. Once the login page loaded, I clicked on the 'Forgotton your password?' link at the bottom of the login form. This then took me to another page, where I was able to enter my registered email address and have a password reset sent to my email. I successfully recieved the email and was able to update my password. Finally, I went back onto the website, loaded up the login page, added my new login details and successfully logged in.
+**Password Reset**: To test this, I first ensured that I was logged out of my website. Once I was sure of that, I proceeded to click on the 'Login' button in the navigation menu. Once the login page loaded, I clicked on the 'Forgotton your password?' link at the bottom of the login form. This then took me to another page, where I was able to enter my registered email address and have a password reset sent to my email. I successfully recieved the email and was able to update my password. Finally, I went back onto my website, loaded up the login page, added my new login details and successfully logged in.
 
 **User Restrictions on Editing/Deleting Posts/Service**: To ensure that only the user who added a post or service would be able to edit/delete that post or service, I needed to add some user restrictions directly into the templates, which is what I did. To test this, I created a post and a service from 2 seperate accounts. I then viewed both posts and services from different accounts to ensure that I was unable to see an edit or delete button if the post or service wasn't mine. This was the case on both accounts and this test was successful.
 
@@ -48,7 +57,7 @@ A lot of the testing was done by me and without the assistance of other online t
 
 I tested the browser and mobile responsiveness in a couple of ways. The main method I used to test the responsiveness was by inspecting all the pages on Google Chrome and using the 'Toggle device toolbar' option. Using this tool I was able to test a variaty of different screen sizes and how the page would look on specific mobile devices.
 
-The second method I used was simply opening the website on 4 different devices and ensuring it looked user-friendly.
+The second method I used was simply opening my website on 4 different devices and ensuring it looked user-friendly.
 
 - My PC (21" Monitor)
 - Samsung Galaxy S8
@@ -80,11 +89,15 @@ When designing a website, I like to keep it clean and simple. Not too many contr
 - Main font colour: ![#212529](https://via.placeholder.com/15/212529/000000?text=+) `#212529`
 - Secondary font colour: ![#6c757d](https://via.placeholder.com/15/6c757d/000000?text=+) `#6c757d`
 
-**Font Family**: The font family used on this website was the same throughout. Again, I didn't feel the need to add potentially contrasting fonts throughout the website.
+**Font Family**: The font family used on this website was the same throughout. Again, I didn't feel the need to add potentially contrasting fonts throughout my website.
 
 - -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 
 **Logo**: The logo of my website was created with the use of [Wix's free logo creator](https://www.wix.com/logo/maker). The logo has the brand name (JB:Marketing) added alongside a graph that is scaling upwards. The reason I chose to add this graph was to demonstrate that my website is here to help people level up their businesses.
+
+### Defensive Design
+
+
 
 ### User Stories
 
@@ -96,20 +109,20 @@ When designing a website, I like to keep it clean and simple. Not too many contr
 
 **General Visitors**:
 
-- As a visitor, I want to have the option to register on the website.
-- As a visitor, I want to be able to instantly read something that gives me an understanding of what the website's purpose is e.g. on an About page.
+- As a visitor, I want to have the option to register on my website.
+- As a visitor, I want to be able to instantly read something that gives me an understanding of what my website's purpose is e.g. on an About page.
 - As a visitor, I want to be able to contact the site admins/support team to ask any questions, or raise any issues.
-- As a visitor, I want to be able to view any social media associated with the website to get an understanding of the company.
+- As a visitor, I want to be able to view any social media associated with my website to get an understanding of the company.
 
 **Registered Users**:
 
 - As a registered user, I want to be able to easily locate a logout option.
 - As a registered user, I want to be able to login back in using the details I registered with.
-- As a registered user, I want to be able to add my products/servics to the website.
+- As a registered user, I want to be able to add my products/servics to my website.
 - As a registered user, I want to be able to add and see the products/services that are in my cart.
-- As a registered user, I want to be able to purchase any products/servics that are on the website.
+- As a registered user, I want to be able to purchase any products/servics that are on my website.
 - As a registered user, I want to be able to add posts into the forum.
-- As a registered user, I want to be able to edit or delete anything I have added to the website.
+- As a registered user, I want to be able to edit or delete anything I have added to my website.
 
 **Admins**:
 
@@ -117,7 +130,7 @@ When designing a website, I like to keep it clean and simple. Not too many contr
 - As an admin, I need to ensure that I can easily login into the admin panel and access orders, users, posts and products.
 - As an admin, I need to be able to remove posts and/or products if necessary.
 
-# Wireframes and Templates
+# Wireframes and Template Descriptions
 
 As with almost any webite I build, the first mock ups of the wireframes tend to differ from the final product. So, with this in mind I always start creating some very basic mock ups on Microsoft Word and then once I am set on the designs I want, I create them in full detail using [Balsamiq](https://balsamiq.com/).
 
@@ -168,7 +181,7 @@ I also added the option to login if you already had an account on the site.
 
 **About Us Template**
 
-The about us page is actually used as the main home page of the website. As you can only access the main content of my website when your logged in, I felt it would be a good idea for people to get an understanding of the website as soon as they landed on the site.
+The about us page is actually used as the main home page of my website. As you can only access the main content of my website when your logged in, I felt it would be a good idea for people to get an understanding of my website as soon as they landed on the site.
 
 At the bottom of the about page are two fairly large buttons. One button leads you to the registration page, while the other leads you to the login page.
 
@@ -183,7 +196,7 @@ At the bottom of the about page are two fairly large buttons. One button leads y
 
 **Services Template**
 
-The services page is where all the products/services are listed. All registered users have the option to list thier own website or marketing services on the website. This can be done by clicking on the 'Add new service' button at the top of the page. They will be asked to add a service title, description, category, price and image.
+The services page is where all the products/services are listed. All registered users have the option to list thier own website or marketing services on my website. This can be done by clicking on the 'Add new service' button at the top of the page. They will be asked to add a service title, description, category, price and image.
 
 The products are listed in rows of 3 on full width screens, but will drop down to just one product per row on smaller screens.
 
@@ -260,7 +273,7 @@ The products are listed in rows of 3 on full width screens, but will drop down t
 ### Frameworks, Libraries, Version Control and Testing:
 
 - **Django 3**: Used as the core framework for this website.
-- **Bootstrap 4**: Used for the structure for the website, as well as making it more user-friendly.
+- **Bootstrap 4**: Used for the structure for my website, as well as making it more user-friendly.
 - **Font Awesome**: Used to add icons, such as social media,
 - **Heroku**: Used for the final deployment of this website.
 - **GitHub**: Used for version control.
@@ -276,7 +289,41 @@ The products are listed in rows of 3 on full width screens, but will drop down t
 
 # Features
 
+My website has been made fully responsive and as user friendly as possible to ensure that all features can used effectively. As mentioned previously, Bootstrap4 was often used to assist with the responsiveness of my website.
 
+The main features used on my site can be seen below:
+
+**General**
+
+- Login, Logout and Registration options
+- Navigation menu displays more options when the user is registered/logged in
+- If the user forgets their password, they can reset it via an external link on the login page
+- Stripe functionality is used to allows users to pay for any services they would like
+
+**Profile**
+
+- All of the users orders can be seen in the Profile page (this includes an order count)
+- Users can update their details in the Profile page
+
+**Forum**
+
+- Segmented forum (posts are split into categories on the forum)
+- Add a post button, allowing users to add their own posts to the forum
+
+**Services**
+
+- Option to search for services on the services page
+- Add a service button, allowing users to add their own services to the services page
+- The user has the option of finding out more about any of the services available
+- The user has the choice to add a service to their cart if they like it
+
+### Future Features:
+
+- Allow users to view thier posts in the Profile page
+- Allow users to delete thier posts
+- Allow users to add reviews to services they've bought
+- Show a number counts of total posts
+- Show a number count of total comments on each post
 
 # Bugs / Issues
 
@@ -307,7 +354,7 @@ install:
 script: pip install -U pytest
 ```
 
-3. Adding a single product to the cart: The original plan for the website was to allow users to add multiple of any product to the basket. But, after some thought, I felt this wouldn't work well it's services that are being sold, rather than physical products. So, I then came across an issue as I wasn't quite sure how to only allow for a single product to be added to the basket, when I had previously allowed for multiple.
+3. Adding a single product to the cart: The original plan for my website was to allow users to add multiple of any product to the basket. But, after some thought, I felt this wouldn't work well it's services that are being sold, rather than physical products. So, I then came across an issue as I wasn't quite sure how to only allow for a single product to be added to the basket, when I had previously allowed for multiple.
 
 **Solution**: After some time spent looking at the way the 'add_to_cart' functionality was setup, I was able to understand that simply removing any reference of quantity would solve the issue.
 
