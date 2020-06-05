@@ -101,6 +101,7 @@ As a visitor to my own website, I wanted to make it as user friendly as possible
 
 Below are the design procedures I put in place:
 
+- Success and error messages have been added wherever necessary. For example, if a user's card details are incorrect, a message will pop up to confirm that the payment could not be processed.
 - At no point is the website less functional on a smaller device than it is on a larger design. My website has been thoroughly checked and tested to ensure everyone has the same experience.
 - If a user tries to purchase an item with incorrect card details, they will instanly be met with a helpful error message to assist them.
 - All external pages on my site will automatically be opened in a new window, rather than closing down the current tab.
@@ -203,13 +204,13 @@ At the bottom of the about page are two fairly large buttons. One button leads y
 </p>
 </details>
 
-**Services Template**
+**All Services Template**
 
 The services page is where all the products/services are listed. All registered users have the option to list thier own website or marketing services on my website. This can be done by clicking on the 'Add new service' button at the top of the page. They will be asked to add a service title, description, category, price and image.
 
 The products are listed in rows of 3 on full width screens, but will drop down to just one product per row on smaller screens.
 
-<details><summary>Services & Add a Service Template Wireframes</summary>
+<details><summary>All Services Template Wireframes</summary>
 <p>
 
 **Services**
@@ -225,54 +226,81 @@ The products are listed in rows of 3 on full width screens, but will drop down t
 </p>
 </details>
 
-**Forum Template**
+**All Forum Templates**
 
+The forum page is where all the community posts are added. It has been split up into seperate categories so it is easy for the user to navigate and find specific posts they want to see.
 
+Each category on the forum has a maximum of 4 posts that can be shown and if you would like to see the rest of the posts for that category, you will need to click the link that takes you to the seperate category page.
 
-<details><summary>Forum Template Wireframe</summary>
+<details><summary>All Forum Template Wireframes</summary>
 <p>
 
-![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
-![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+**Forum**
+
+![Forum Template - Desktop View]()
+![Forum Template - Mobile View]()
+
+**Add a Post Template**
+
+![Add a Post Template - Desktop View]()
+![Add a Post Template - Mobile View]()
+
+**Category Page Default Template**
+
+![Category Page Template - Desktop View]()
+![Category Page Template - Mobile View]()
 
 </p>
 </details>
 
-**Profile Template**
+**All Profile Template**
 
+The profile page is where the user can find personal information such as their account details and the orders they have placed.
 
+I have added an if statement onto the profile link so that the page will alternate dependant on whether they have made an order or not. If they have made an order, then it will show on their total number of orders and they will also be able to see the order details at the bottom of the page. If they haven't made an order, then the order count will be 0 and the order details section will be completed removed.
 
-<details><summary>Profile Template Wireframe</summary>
+<details><summary>All Profile Template Wireframes</summary>
 <p>
 
-![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
-![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+**Profile With No Orders**
+
+![About Us Template - Desktop View]()
+![About Us Template - Mobile View]()
+
+**Profile With Orders Made**
+
+![About Us Template - Desktop View]()
+![About Us Template - Mobile View]()
 
 </p>
 </details>
 
 **Cart Template**
 
+The cart template gives the user a full breakdown of all the items they have added to thier cart. This includes the service name, service type and price.
 
+The user will also have the option to remove indiviudal items from the cart should they wish to do so.
 
 <details><summary>Cart Template Wireframe</summary>
 <p>
 
-![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
-![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+![About Us Template - Desktop View]()
+![About Us Template - Mobile View]()
 
 </p>
 </details>
 
 **Checkout Template**
 
+The checkout template is used as the final page before the user completes their order. On this page, the user will asked to add their personal details such as address, name and number, as well as their payment details.
 
+Once the user has made an order, the payment will be handled by Stripe and an order success message will appear. 
 
 <details><summary>Checkout Template Wireframe</summary>
 <p>
 
-![About Us Template - Desktop View](https://user-images.githubusercontent.com/52998869/83663837-1b173b80-a5c1-11ea-93d7-b236f0153643.png)
-![About Us Template - Mobile View](https://user-images.githubusercontent.com/52998869/83663961-44d06280-a5c1-11ea-9183-13b93e8ccc40.png)
+![About Us Template - Desktop View]()
+![About Us Template - Mobile View]()
 
 </p>
 </details>
@@ -326,8 +354,13 @@ The main features used on my site can be seen below:
 - The user has the option of finding out more about any of the services available
 - The user has the choice to add a service to their cart if they like it
 
+**Contact Form**
+
+- The user can use the contact form to send a message to the site admin
+
 ### Future Features:
 
+- Allow for more profile features such as a profile picture
 - Allow users to view thier posts in the Profile page
 - Allow users to delete thier posts
 - Allow users to add reviews to services they've bought
