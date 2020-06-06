@@ -264,13 +264,13 @@ I have added an if statement onto the profile link so that the page will alterna
 
 **Profile With No Orders**
 
-![Profile With No Orders Template - Desktop View]()
-![Profile With No Orders Template - Mobile View]()
+![Profile With No Orders Template - Desktop View](https://user-images.githubusercontent.com/52998869/83865028-7eb67b80-a71d-11ea-8724-90f47d056978.png)
+![Profile With No Orders Template - Mobile View](https://user-images.githubusercontent.com/52998869/83865222-cf2dd900-a71d-11ea-8442-af7df231d706.png)
 
 **Profile With Orders Made**
 
-![Profile With Orders Made Template - Desktop View]()
-![Profile With Orders Made Template - Mobile View]()
+![Profile With Orders Made Template - Desktop View](https://user-images.githubusercontent.com/52998869/83865963-f638da80-a71e-11ea-9af9-0d926d6a2961.png)
+![Profile With Orders Made Template - Mobile View](https://user-images.githubusercontent.com/52998869/83865990-0355c980-a71f-11ea-8d55-873a64fea254.png)
 
 </p>
 </details>

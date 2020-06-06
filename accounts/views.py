@@ -15,6 +15,11 @@ def index(request):
     return render(request, 'index.html')
 
 
+def privacy_policy(request):
+    """Return the about.html file"""
+    return render(request, 'privacy_policy.html')
+
+
 def about(request):
     """Return the about.html file"""
     return render(request, 'about.html')
