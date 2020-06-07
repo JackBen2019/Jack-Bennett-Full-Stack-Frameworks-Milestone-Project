@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from django.http import HttpResponse
-from .views import index, get_forum, forum_post_details, create_forum_post, edit_forum_post, general_discussion, events, privacy_policy
-from accounts.views import logout, login, registration, user_profile, about, customer, dashboard, customer_no_orders
+from .views import index, get_forum, forum_post_details, create_forum_post, edit_forum_post, gen_discussion, events, privacy_policy
+from .views import logout, login, registration, about, profile, dashboard, profile_no_orders, edit_profile
 from products.views import all_products, product_details, edit_product, add_product
 from accounts import url_reset
 
@@ -10,14 +10,14 @@ urlpatterns = [
     url(r'^logout/', logout, name="logout"),
     url(r'^login/', login, name="login"),
     url(r'^register/', registration, name="registration"),
-    url(r'^profile/', user_profile, name="profile"),
     url(r'^privacy-policy/', privacy_policy, name="privacy_policy"),
     url(r'^about/', about, name="about"),
     url(r'^dashboard/', dashboard, name="dashboard"),
-    url(r'^user-profile/', customer_no_orders, name="customer_no_orders"),
-    url(r'^(?P<pk>\d+)/user-profile/$', customer, name="customer"),
+    url(r'^(?P<pk>\d+)/user-profile/$', profile, name="profile"),
+    url(r'^user-profile/', profile_no_orders, name="profile_no_orders"),
+    url(r'^user-profile/edit/$', edit_profile, name="edit_profile"),
     url(r'^forum/', get_forum, name='get_forum'),
-    url(r'^general-discussion/', general_discussion, name='general_discussion'),
+    url(r'^general-discussion/', gen_discussion, name='gen_discussion'),
     url(r'^events/', events, name='events'),
     url(r'^password-reset/', include(url_reset)),
     url(r'^(?P<pk>\d+)/$', forum_post_details, name='forum_post_details'),

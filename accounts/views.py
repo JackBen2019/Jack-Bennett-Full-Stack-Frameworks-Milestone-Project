@@ -3,11 +3,11 @@ from django.utils import timezone
 from .models import Post, Customer
 from checkout.models import Order
 from .forms import ForumPostForm
+from django.contrib.auth.forms import UserChangeForm
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
-from .decorators import unauthenticated_user, allowed_users, admin_only
 
 
 def index(request):
@@ -29,33 +29,47 @@ def about(request):
 Customer view assisted by Dennis Ivy
 (https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO)
 """
-
 @login_required
-def customer(request, pk):
-    """Return the customer.html file"""
+def profile(request, pk):
+    """Return the profile.html file as a the profile"""
     customer = Customer.objects.get(id=pk)
 
     orders = customer.order_set.all()
     order_count = orders.count()
 
     context = {'customer':customer, 'orders':orders, 'order_count':order_count}
-    return render(request, 'customer.html', context)
+    return render(request, 'profile.html', context)
 
 
 @login_required
-def customer_no_orders(request):
-    """Return the customer_no_orders.html file"""
-
+def profile_no_orders(request):
+    """Return the profile_no_orders.html file as a the profile"""
     user = User.objects.get(email=request.user.email)
     username = User.objects.get(username=request.user.username)
-    return render(request, 'customer_no_orders.html', {"profile": user})
+    return render(request, 'profile_no_orders.html', {"profile": user})
+
+
+"""
+edit_profile view assisted by Max Goodridge
+(https://www.youtube.com/watch?v=JmaxoPBvp1M)
+"""
+@login_required
+def edit_profile(request):
+    if request.method == "POST":
+        form = UserChangeForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect('registration')
+    else:
+        form = UserChangeForm(instance=request.user)
+        return render(request, 'edit_profile.html', {"form": form})
 
 
 """
 Dashboard view assisted by Dennis Ivy
 (https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO)
 """
-
 @login_required
 def dashboard(request):
     """Return the dashboard.html file"""
@@ -129,14 +143,6 @@ def registration(request):
 
 
 @login_required
-def user_profile(request):
-    """The user's profile page"""
-    
-    user = User.objects.get(email=request.user.email)
-    return render(request, 'profile.html', {"profile": user})
-
-
-@login_required
 def get_forum(request):
     """
     Will return a list of posts that were published prior to 'now'
@@ -149,7 +155,7 @@ def get_forum(request):
 
 
 @login_required
-def general_discussion(request):
+def gen_discussion(request):
     """Return the general_discussion.html file"""
     return render(request, 'general_discussion.html')
 

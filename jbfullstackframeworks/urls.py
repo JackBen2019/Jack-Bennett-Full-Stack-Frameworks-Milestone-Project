@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.views.generic import RedirectView
 from django.views.static import serve
 from .settings import MEDIA_ROOT
-from accounts.views import about, user_profile, customer
+from accounts.views import about, profile
 from accounts import urls as accounts_urls
 from products import urls as urls_products
 from search import urls as urls_search

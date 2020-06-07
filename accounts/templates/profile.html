@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{{% block page_title %}Profile Page{% endblock %}
+{% block page_title %}Profile{% endblock %}
 
 {%block page_heading %}Profile{% endblock %}
 
@@ -11,22 +11,24 @@
 <div class="row">
 	<div class="col-md">
 		<div class="card card-body">
-			<h5 class="customer-details-heading">Customer Details</h5>
+			<h5 class="customer-details-heading">Account Details</h5>
 			<hr>
             <p><b>Full Name:</b> {{customer.name}}</p>
 			<p><b>Email:</b> {{customer.email}}</p>
 			<p><b>Phone:</b> {{customer.phone}}</p>
 		</div>
+        <br class="hide">
 	</div>
 
+    <br class="hide">
+
 	<div class="col-md">
-		<div class="card card-body">
+		<div class="card card-body product-btn-padding">
 			<h5><b>Customer Order Count:</b> {{order_count}}</h5>
 		</div>
         <br>
-        <div class="card card-body">
-			<a class="btn btn-outline-info btn-sm btn-block" href="">Update Customer Details</a>
-			<a class="btn btn-outline-danger btn-sm btn-block" href="">Delete Customer</a>
+        <div>
+			<a class="btn btn-outline-info btn-sm btn-block product-btn-padding" href="{% url 'edit_profile' %}"><b>Update Account Details</b></a>
 		</div>
 	</div>
 </div>
@@ -35,7 +37,7 @@
 
 <div class="row">
 	<div class="col-md margin-bottom">
-		<div class="card order-status-table  margin-bottom-30">
+		<div class="card order-status-table margin-bottom-30">
 			<table class="table table-sm">
 				<tr>
 					<th>Service</th>
@@ -50,7 +52,7 @@
 					<td>{{ order.product }}</td>
 					<td>{{ order.date_created }}</td>
 					<td>{{ order.status }}</td>
-					<td><a class="btn btn-sm btn-danger" href="">Cancel</a></td>
+					<td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Cancel</a></td>
 				</tr>
 				{% endfor %}
 

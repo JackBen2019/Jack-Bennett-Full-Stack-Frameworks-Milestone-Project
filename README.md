@@ -369,11 +369,7 @@ The main features used on my site can be seen below:
 
 # Bugs / Issues
 
-1. Password reset email: When creating the password reset form, there were no issues/bugs to be noted and everything seemed to be working fine. It was only when you went to your email inbox and noticed that no email had actually been sent.
-
-**Solution**: 
-
-2. Travis implementation: One of the very first things that was implemented for this website was Travis. I felt it was key that Travis was implemented early on so all issues could be picked up on quickly. The issue that kept occuring was that Travis didn't seem to understand the script I was trying to pass in the file. I was trying to direct it to a SECRET KEY, but I had no luck in getting it to work.
+1. Travis implementation: One of the very first things that was implemented for this website was Travis. I felt it was key that Travis was implemented early on so all issues could be picked up on quickly. The issue that kept occuring was that Travis didn't seem to understand the script I was trying to pass in the file. I was trying to direct it to a SECRET KEY, but I had no luck in getting it to work.
 
 **Solution**: After some online research, I found that you could add "script: pip install -U pytest" instead of trying to run the script to the SECRET KEY.
 
@@ -396,7 +392,7 @@ install:
 script: pip install -U pytest
 ```
 
-3. Adding a single product to the cart: The original plan for my website was to allow users to add multiple of any product to the basket. But, after some thought, I felt this wouldn't work well it's services that are being sold, rather than physical products. So, I then came across an issue as I wasn't quite sure how to only allow for a single product to be added to the basket, when I had previously allowed for multiple.
+2. Adding a single product to the cart: The original plan for my website was to allow users to add multiple of any product to the basket. But, after some thought, I felt this wouldn't work well it's services that are being sold, rather than physical products. So, I then came across an issue as I wasn't quite sure how to only allow for a single product to be added to the basket, when I had previously allowed for multiple.
 
 **Solution**: After some time spent looking at the way the 'add_to_cart' functionality was setup, I was able to understand that simply removing any reference of quantity would solve the issue.
 
@@ -424,7 +420,7 @@ def add_to_cart(request, id):
     return redirect(reverse('products'))
 ```
 
-4. Removing a single product from the cart: Following on from the previous issue, I then had the issue of being able to remove a single product from the basket. I managed to quite easily add functionality which cleared the entire contents of the basket, but I then needed to find a way to remove a single product.
+3. Removing a single product from the cart: Following on from the previous issue, I then had the issue of being able to remove a single product from the basket. I managed to quite easily add functionality which cleared the entire contents of the basket, but I then needed to find a way to remove a single product.
 
 **Solution**: After raising the issue online, I was able to get some feedback which helped me resolve the issue. I was informed that simply adding 'cart.pop' would remove a single product. Credit for this can be found [here](https://stackoverflow.com/questions/62027473/removing-a-single-product-from-the-cart-in-django/62027585#62027585).
 
@@ -439,7 +435,7 @@ def remove_from_cart(request, id):
     return redirect(reverse('view_cart'))
 ```
 
-5. Adding user restrictions on who can edit/delete posts/services: I needed to ensure that only the creator of a post/service would be able to edit/delete their work. I had some trouble with this and often found that rather than hiding the edit/delete button from other users, it hid it from everyone. Including the creator.
+4. Adding user restrictions on who can edit/delete posts/services: I needed to ensure that only the creator of a post/service would be able to edit/delete their work. I had some trouble with this and often found that rather than hiding the edit/delete button from other users, it hid it from everyone. Including the creator.
 
 **Solution**: To fix this issue, I simply needed to add 'creator_id=request.user' into the 'create_forum_post' view so that the the creator id was always the id the of user who created it.
 
@@ -470,7 +466,8 @@ In order to ensure that all created models and apps were correctly implemented, 
 
 # Credits
 
-- [Dennis Ivy](https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO) - A massive thanks to Dennis Ivy and his Django tutorials, which helped me to overcome a few obstacles with my website.
+- [Dennis Ivy](https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO) - A massive thanks to Dennis Ivy and his Django tutorials, which helped me to create a profile page.
+- [Max Goodridge](https://www.youtube.com/playlist?list=PLw02n0FEB3E3VSHjyYMcFadtQORvl1Ssj) - Thanks to Max Goodridge and his tutorial on updating user details from the profile page.
 - Image used on About Us page: This [link](https://unsplash.com/photos/KE0nC8-58MQ) is for the free to use image that was added to the About Us page.
 - Full Stack Frameworks module: A lot of the code added was inspired/assisted by following along with this module.
 - All images used on the Services page are from [Pixabay]. See list below:
@@ -480,3 +477,4 @@ In order to ensure that all created models and apps were correctly implemented, 
     4. [Increase-Website-Traffic](https://pixabay.com/illustrations/analytics-google-analytics-1925495/)
     5. [Social-Media-Management](https://pixabay.com/illustrations/icon-polaroid-blogger-rss-app-2486501/)
     6. [Organic-Instagram-Followers](https://pixabay.com/vectors/instagram-social-network-urges-1594387/)
+- Privacy policy generated with [GetTerms](https://getterms.io/)
