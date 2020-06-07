@@ -284,8 +284,8 @@ The user will also have the option to remove indiviudal items from the cart shou
 <details><summary>Cart Template Wireframe</summary>
 <p>
 
-![Cart Template - Desktop View]()
-![Cart Template - Mobile View]()
+![Cart Template - Desktop View](https://user-images.githubusercontent.com/52998869/83973172-7f494080-a8dc-11ea-9b42-9398b26584d2.png)
+![Cart Template - Mobile View](https://user-images.githubusercontent.com/52998869/83973492-adc81b00-a8de-11ea-91f6-739b6309276f.png)
 
 </p>
 </details>
@@ -299,8 +299,8 @@ Once the user has made an order, the payment will be handled by Stripe and an or
 <details><summary>Checkout Template Wireframe</summary>
 <p>
 
-![Checkout Template - Desktop View]()
-![Checkout Template - Mobile View]()
+![Checkout Template - Desktop View](https://user-images.githubusercontent.com/52998869/83974428-27630780-a8e5-11ea-91ae-4565cfc48951.png)
+![Checkout Template - Mobile View](https://user-images.githubusercontent.com/52998869/83974474-6a24df80-a8e5-11ea-88a9-f3048609bba8.png)
 
 </p>
 </details>
