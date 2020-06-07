@@ -187,7 +187,7 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = "localhost"
-EMAIL_PORT = 1025
+EMAIL_PORT = 25
 EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 

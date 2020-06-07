@@ -21,7 +21,7 @@
 </section>
 
 <div class="container">
-    <div class="row search-bar-margin-bottom centre-align-text">
+    <div class="row search-bar-margin-bottom text-center">
         <div class="search-bar-container display">
             <form action="{% url 'search_product' %}" method="GET">
                 <input class="search-bar" type="text" name="q">
@@ -45,7 +45,7 @@
         <div class="btn-group">
             <form method="post" action="{% url 'add_to_cart' product.id %}">
             {% csrf_token %}
-            <div class="centre-align-text">
+            <div class="text-center">
                 <span class="input-group-btn">
                     <button class="product-btns btn-success" type="submit">Add to Cart</button>
                 </span>
@@ -53,7 +53,7 @@
             </form>
             <form class="ml-2" method="post" action="{% url 'product_details' product.id %}">
             {% csrf_token %}
-            <div class="centre-align-text">
+            <div class="text-center">
                 <span class="input-group-btn">
                     <button class="product-btns btn-info" type="submit">Find out more</button>
                 </span>

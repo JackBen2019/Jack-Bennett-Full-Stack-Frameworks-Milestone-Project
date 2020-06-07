@@ -17,10 +17,9 @@
 
 <body>
 	<header class="container-fluid">
-		<div class="row">
-			<div class="col-12">
+		<div class="col-12">
             <nav class="navbar navbar-expand-sm navbar-light bg-light">
-                    <a class="navbar-brand" href="{% url 'index' %}"><img class="website-logo" src="{% static 'img/logo.png' %}" alt=""></a>
+                <a class="navbar-brand" href="{% url 'index' %}"><img class="website-logo" src="{% static 'img/logo.png' %}" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -50,7 +49,6 @@
 					</div>
 				</nav>
 			</div>
-		</div>
 	</header>
 
 	{% if messages %}
@@ -61,7 +59,6 @@
 
     {% block content %} {% endblock %}
 
-    
 	<footer class="container-fluid">
 		<div class="row social-media-container">
 			<div class="col-sm-12">
@@ -96,14 +93,11 @@
 			</div>
 		</div>
         <div class="row copyright-container">
-			<div class="col-md-4 centre-align-text">
+			<div class="col-sm-6 text-right">
                 <a class="footer-link" href="{% url 'about' %}"> Contact Us </a>
 			</div>
-            <div class="col-md-4 centre-align-text">
+            <div class="col-sm-6 text-left">
                 <a class="footer-link" href="{% url 'privacy_policy' %}"> Privacy Policy </a>
-			</div>
-            <div class="col-md-4 centre-align-text">
-                © 2020 Copyright <a class="footer-link" href="{% url 'about' %}"> JB:Marketing </a>
 			</div>
 		</div>
 	</footer>
