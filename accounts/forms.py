@@ -1,7 +1,7 @@
 from django import forms
 from .models import Post
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.core.exceptions import ValidationError
 
 
@@ -39,11 +39,17 @@ class UserRegistrationForm(UserCreationForm):
 
         if not password1 or not password2:
             raise ValidationError("Please confirm your password")
-        
+
         if password1 != password2:
             raise ValidationError("Passwords must match")
-        
+
         return password2
+
+class EditProfileForm(UserChangeForm):
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email', 'username']
 
 class ForumPostForm(forms.ModelForm):
 

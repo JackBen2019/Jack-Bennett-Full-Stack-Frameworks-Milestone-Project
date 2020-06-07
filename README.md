@@ -470,7 +470,7 @@ In order to ensure that all created models and apps were correctly implemented, 
 - [Max Goodridge](https://www.youtube.com/playlist?list=PLw02n0FEB3E3VSHjyYMcFadtQORvl1Ssj) - Thanks to Max Goodridge and his tutorial on updating user details from the profile page.
 - Image used on About Us page: This [link](https://unsplash.com/photos/KE0nC8-58MQ) is for the free to use image that was added to the About Us page.
 - Full Stack Frameworks module: A lot of the code added was inspired/assisted by following along with this module.
-- All images used on the Services page are from [Pixabay]. See list below:
+- All images used on the Services page are from [Pixabay](https://pixabay.com/). See list below:
     1. [E-Commerce-Store](https://pixabay.com/illustrations/ecommerce-online-shopping-e-commerce-1992280/)
     2. [Online-Store-Renovation](https://pixabay.com/illustrations/online-store-business-buy-internet-1673585/)
     3. [Web-Traffic](https://pixabay.com/illustrations/seo-google-search-engine-896175/)
