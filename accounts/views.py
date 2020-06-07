@@ -60,7 +60,7 @@ def edit_profile(request):
 
         if form.is_valid():
             form.save()
-            return redirect('registration')
+            return redirect('profile_no_orders')
     else:
         form = UserChangeForm(instance=request.user)
         return render(request, 'edit_profile.html', {"form": form})
