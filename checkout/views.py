@@ -12,7 +12,7 @@ import stripe
 stripe.api_key = settings.STRIPE_SECRET
 
 
-@login_required()
+@login_required
 def checkout(request):
     if request.method=="POST":
         order_form = OrderForm(request.POST)
@@ -38,7 +38,7 @@ def checkout(request):
             try:
                 customer = stripe.Charge.create(
                     amount = int(total * 100),
-                    currency = "EUR",
+                    currency = "GBP",
                     description = request.user.email,
                     card = payment_form.cleaned_data['stripe_id'],
                 )
@@ -61,6 +61,7 @@ def checkout(request):
     return render(request, "checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
 
 
+@login_required
 def delete_order(request, pk):
     """ Cancel an order from the profile page """
     order = Order.objects.get(id=pk)

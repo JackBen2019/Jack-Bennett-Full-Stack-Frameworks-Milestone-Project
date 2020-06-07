@@ -362,7 +362,9 @@ The main features used on my site can be seen below:
 
 - Allow for more profile features such as a profile picture
 - Allow users to view thier posts in the Profile page
-- Allow users to delete thier posts
+- Allow users to view the services they have listed in the Profile page
+- Allow users to delete thier posts (currently they would need to use the contact form and request for it to be deleted)
+- Allow users to delete thier services (currently they would need to use the contact form and request for it to be deleted)
 - Allow users to add reviews to services they've bought
 - Show a number counts of total posts
 - Show a number count of total comments on each post
