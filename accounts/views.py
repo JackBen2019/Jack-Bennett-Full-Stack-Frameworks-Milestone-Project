@@ -2,12 +2,16 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.utils import timezone
 from .models import Post, Customer
 from checkout.models import Order
-from .forms import ForumPostForm
-from django.contrib.auth.forms import UserChangeForm
+from .forms import (
+    ForumPostForm,
+    UserLoginForm,
+    UserRegistrationForm,
+    EditProfileForm)
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from accounts.forms import UserLoginForm, UserRegistrationForm
 
 
 def index(request):
@@ -26,7 +30,7 @@ def about(request):
 
 
 """
-Customer view assisted by Dennis Ivy
+profile view assisted by Dennis Ivy
 (https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO)
 """
 @login_required
@@ -37,8 +41,9 @@ def profile(request, pk):
     orders = customer.order_set.all()
     order_count = orders.count()
 
-    context = {'customer':customer, 'orders':orders, 'order_count':order_count}
-    return render(request, 'profile.html', context)
+    return render(request, 'profile.html',
+                  {'customer': customer, 'orders': orders,
+                   'order_count': order_count})
 
 
 @login_required
@@ -56,14 +61,35 @@ edit_profile view assisted by Max Goodridge
 @login_required
 def edit_profile(request):
     if request.method == "POST":
-        form = UserChangeForm(request.POST, instance=request.user)
+        form = EditProfileForm(request.POST, instance=request.user)
 
         if form.is_valid():
             form.save()
             return redirect('profile_no_orders')
     else:
-        form = UserChangeForm(instance=request.user)
+        form = EditProfileForm(instance=request.user)
         return render(request, 'edit_profile.html', {"form": form})
+
+
+"""
+password_reset view assisted by Max Goodridge
+(https://www.youtube.com/watch?v=QxGKTvx-Vvg)
+"""
+@login_required
+def change_password(request):
+    if request.method == "POST":
+        form = PasswordChangeForm(data=request.POST, user=request.user)
+
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return redirect('password_reset_done')
+        else:
+            return redirect('password_reset')
+    else:
+        form = PasswordChangeForm(user=request.user)
+        return render(request, 'registration/password_reset_form.html',
+                      {"form": form})
 
 
 """
@@ -81,10 +107,9 @@ def dashboard(request):
     total_orders = orders.count()
     pending = orders.filter(status='Pending').count()
 
-    context = {'orders':orders, 'customers':customers,
-    'total_orders':total_orders, 'pending':pending}
-
-    return render(request, 'dashboard.html', context)
+    return render(request, 'dashboard.html',
+                  {'orders': orders, 'customers': customers,
+                   'total_orders': total_orders, 'pending': pending})
 
 
 @login_required
@@ -104,14 +129,15 @@ def login(request):
 
         if login_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
-                                    password=request.POST['password'])
+                                     password=request.POST['password'])
             messages.success(request, "You have successfully logged in!")
 
             if user:
                 auth.login(user=user, request=request)
                 return redirect(reverse('about'))
             else:
-                login_form.add_error(None, "Your username or password is incorrect")
+                login_form.add_error(None,
+                                     "Your username or password is incorrect")
     else:
         login_form = UserLoginForm()
     return render(request, 'login.html', {'login_form': login_form})
@@ -135,7 +161,8 @@ def registration(request):
                 messages.success(request, "You have successfully registered")
                 return redirect(reverse('about'))
             else:
-                messages.error(request, "Unable to register your account at this time")
+                messages.error(request,
+                               "Unable to register your account at this time")
     else:
         registration_form = UserRegistrationForm()
     return render(request, 'registration.html', {
@@ -150,7 +177,7 @@ def get_forum(request):
     """
 
     posts = Post.objects.filter(published_date__lte=timezone.now()
-        ).order_by('-published_date')
+                                ).order_by('-published_date')
     return render(request, "forum.html", {'posts': posts})
 
 
@@ -179,7 +206,8 @@ def forum_post_details(request, pk):
     post.views += 1
     post.save()
     post_creator = post.creator_id
-    return render(request, "forum_post_details.html", {'post': post, 'post_creator': post_creator})
+    return render(request, "forum_post_details.html",
+                  {'post': post, 'post_creator': post_creator})
 
 
 @login_required
@@ -209,7 +237,7 @@ def edit_forum_post(request, pk=None):
         if edit_post.is_valid():
             edit_post.save()
             messages.success(request,
-            'You have successfully updated your post')
+                             'You have successfully updated your post')
             return redirect('forum_post_details', post.id)
 
     if request.user != post.creator_id:
@@ -217,4 +245,5 @@ def edit_forum_post(request, pk=None):
         return redirect('get_forum')
     else:
         edit_post = ForumPostForm(instance=post)
-        return render(request, 'forum_post_form.html', {'form': edit_post, 'post': post})
+        return render(request, 'forum_post_form.html',
+                      {'form': edit_post, 'post': post})
