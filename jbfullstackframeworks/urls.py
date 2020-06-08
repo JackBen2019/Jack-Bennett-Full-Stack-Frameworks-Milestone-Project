@@ -15,25 +15,22 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.views.generic import RedirectView
 from django.views.static import serve
 from .settings import MEDIA_ROOT
-from accounts.views import about, profile
 from accounts import urls as accounts_urls
 from products import urls as urls_products
 from search import urls as urls_search
 from checkout import urls as urls_checkout
 from cart import urls as urls_cart
-from products.views import all_products
-from django.views import static
+from sendemail import urls as urls_sendemail
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', about, name="about"),
-    url(r'^accounts/', include(accounts_urls)),
-    url(r'^products/', include(urls_products)),
-    url(r'^cart/', include(urls_cart)),
-    url(r'^search/', include(urls_search)),
-    url(r'^checkout/', include(urls_checkout)),
+    url(r'^accounts/', include(accounts_urls, namespace=None)),
+    url(r'^products/', include(urls_products, namespace=None)),
+    url(r'^cart/', include(urls_cart, namespace=None)),
+    url(r'^search/', include(urls_search, namespace=None)),
+    url(r'^checkout/', include(urls_checkout, namespace=None)),
+    url(r'^$', include(urls_sendemail, namespace=None)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 ]
