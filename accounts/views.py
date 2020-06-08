@@ -184,13 +184,19 @@ def get_forum(request):
 @login_required
 def gen_discussion(request):
     """Return the general_discussion.html file"""
-    return render(request, 'general_discussion.html')
+
+    posts = Post.objects.filter(category='General Discussion')
+
+    return render(request, 'general_discussion.html', {'posts': posts})
 
 
 @login_required
 def events(request):
     """Return the events.html file"""
-    return render(request, 'events.html')
+
+    posts = Post.objects.filter(category='Events')
+
+    return render(request, 'events.html', {'posts': posts})
 
 
 @login_required
