@@ -470,6 +470,7 @@ In order to ensure that all created models and apps were correctly implemented, 
 
 - [Dennis Ivy](https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO) - A massive thanks to Dennis Ivy and his Django tutorials, which helped me to create a profile page.
 - [Max Goodridge](https://www.youtube.com/playlist?list=PLw02n0FEB3E3VSHjyYMcFadtQORvl1Ssj) - Thanks to Max Goodridge and his tutorial on updating user details from the profile page.
+- [LearnDjango](https://learndjango.com/tutorials/django-email-contact-form) - Thanks to this tutorial from LearnDjango for helping me complete the contact form.
 - Image used on About Us page: This [link](https://unsplash.com/photos/KE0nC8-58MQ) is for the free to use image that was added to the About Us page.
 - Full Stack Frameworks module: A lot of the code added was inspired/assisted by following along with this module.
 - All images used on the Services page are from [Pixabay](https://pixabay.com/). See list below:

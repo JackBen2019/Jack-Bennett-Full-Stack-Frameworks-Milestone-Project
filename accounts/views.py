@@ -196,9 +196,8 @@ def events(request):
 @login_required
 def forum_post_details(request, pk):
     """
-    Create a view that returns a single
-    post object based on the post ID (pk) and
-    render it to the 'postdetail.html' template.
+    Returns a single post based on the post ID (pk) and
+    renders it to the 'forum_post_details.html' template.
     Or return a 404 error if the post is not found
     """
 

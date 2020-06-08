@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_tags %}
+
+{% block page_title %}Contact Us{% endblock %}
+
+{%block page_heading %}Contact Us{% endblock %}
+
+<div class="form-container base-wrapper">
+	<div class="form-styling justify-content-center">
+		<form method="post">
+			<h4>Contact Us</h4>
+			<hr>
+			{% csrf_token %}
+			{{ form.as_p }}
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary">Send Message</button>
+			</div>
+		</form>
+	</div>
+</div>
