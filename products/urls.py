@@ -1,4 +1,4 @@
-from django.conf.urls import url, include
+from django.conf.urls import url
 from .views import all_products, product_details, edit_product, add_product
 
 urlpatterns = [

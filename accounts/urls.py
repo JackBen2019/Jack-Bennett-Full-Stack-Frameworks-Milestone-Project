@@ -1,6 +1,7 @@
 from django.conf.urls import url, include
 from .views import (
-    index, get_forum,
+    index,
+    get_forum,
     forum_post_details,
     create_forum_post,
     edit_forum_post,
@@ -8,9 +9,11 @@ from .views import (
     events,
     privacy_policy)
 from .views import (
-    logout, login,
+    logout,
+    login,
     registration,
-    about, profile,
+    about,
+    profile,
     dashboard,
     profile_no_orders,
     edit_profile)
