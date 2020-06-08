@@ -6,49 +6,58 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-    <script src="https://kit.fontawesome.com/04a660fe4e.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/04a660fe4e.js" crossorigin="anonymous"></script>
 	<title>{% block page_title %}Base Template{% endblock %}</title>
-    {% block head_js %}
-    {% endblock head_js %}
+	{% block head_js %}
+	{% endblock head_js %}
 </head>
 
 <body>
 	<header class="container-fluid">
 		<div class="col-12">
-            <nav class="navbar navbar-expand-sm navbar-light bg-light">
-                <a class="navbar-brand" href="{% url 'index' %}"><img class="website-logo" src="{% static 'img/logo.png' %}" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<nav class="navbar navbar-expand-sm navbar-light bg-light">
+				<a class="navbar-brand"
+					href="{% url 'index' %}"><img class="website-logo" src="{% static 'img/logo.png' %}" alt=""></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 					<div class="collapse navbar-collapse" id="navbarNav">
 						<ul class="navbar-nav">
 							{% if user.is_authenticated %}
-                            <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'get_forum' %}">Forum</a></li>
-                            {% if order_count > 0 %}
-							<li class="nav-item"><a class="nav-link" href="{% url 'profile' user.customer.id %}"><i class="fa fa-user"></i> Profile</a></li>
-                            {% else %}
-                            <li class="nav-item"><a class="nav-link" href="{% url 'profile_no_orders' %}"><i class="fa fa-user"></i> Profile</a></li>
-                            {% endif %}
-							<li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'view_cart' %}"><i class="fa fa-shipping-cart"></i> Cart
-                                    {% if product_count > 0 %}
-                                    <label class="badge badge-warning">{{ product_count }}</label>
-                                    {% endif %}
-                                </a>
-                            </li>
+							<li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Services</a></li>
+							<li class="nav-item"><a class="nav-link" href="{% url 'get_forum' %}">Forum</a></li>
+							{% if order_count > 0 %}
+							<li class="nav-item"><a class="nav-link"
+									href="{% url 'profile' user.customer.id %}"><i class="fa fa-user"></i> Profile</a>
+							</li>
 							{% else %}
-                            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
-							<li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a></li>
-							<li class="nav-item"><a class="nav-link" href="{% url 'registration' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+							<li class="nav-item"><a class="nav-link"
+									href="{% url 'profile_no_orders' %}"><i class="fa fa-user"></i> Profile</a></li>
+							{% endif %}
+							<li class="nav-item"><a class="nav-link"
+									href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
+							<li class="nav-item"><a class="nav-link"
+									href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart"></i> Cart
+									{% if product_count > 0 %}
+									<label class="badge badge-warning">{{ product_count }}</label>
+									{% endif %}
+								</a>
+							</li>
+							{% else %}
+							<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
+							<li class="nav-item"><a class="nav-link"
+									href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a></li>
+							<li class="nav-item"><a class="nav-link"
+									href="{% url 'registration' %}"><i class="fa fa-user-plus"></i> Register</a></li>
 							{% endif %}
 						</ul>
 					</div>
-				</nav>
-			</div>
+			</nav>
+		</div>
 	</header>
 
 	{% if messages %}
@@ -57,7 +66,7 @@
 	</div>
 	{% endif %}
 
-    {% block content %} {% endblock %}
+	{% block content %} {% endblock %}
 
 	<footer class="container-fluid">
 		<div class="row social-media-container">
@@ -92,12 +101,12 @@
 				</div>
 			</div>
 		</div>
-        <div class="row copyright-container">
+		<div class="row copyright-container">
 			<div class="col-sm-6 text-right">
-                <a class="footer-link" href="{% url 'about' %}"> Contact Us </a>
+				<a class="footer-link" href="{% url 'about' %}"> Contact Us </a>
 			</div>
-            <div class="col-sm-6 text-left">
-                <a class="footer-link" href="{% url 'privacy_policy' %}"> Privacy Policy </a>
+			<div class="col-sm-6 text-left">
+				<a class="footer-link" href="{% url 'privacy_policy' %}"> Privacy Policy </a>
 			</div>
 		</div>
 	</footer>
@@ -111,8 +120,9 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 	</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js" integrity="sha256-Ma7RFL/ajnMYYVm0iyAqCA2j+jWid5Xr2DQr+kYG1XA=" crossorigin="anonymous"></script>
-    <script async src="{% static 'js/main.js' %}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js"
+		integrity="sha256-Ma7RFL/ajnMYYVm0iyAqCA2j+jWid5Xr2DQr+kYG1XA=" crossorigin="anonymous"></script>
+	<script async src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>

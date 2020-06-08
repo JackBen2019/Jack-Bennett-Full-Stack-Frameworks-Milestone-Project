@@ -8,19 +8,19 @@
 
 {% block content %}
 <div class="form-container base-wrapper">
-  <div class="registration-form justify-content-center">
-    <form method="POST">
-      <h4>Register an Account Today</h4>
-      <hr />
-      {% csrf_token %} {{ registration_form | as_bootstrap }}
-      <button type="submit" class="btn btn-primary">Register</button>
-    </form>
-    <div>
-      <hr />
-      <p class="text-muted">
-        Already Have An Account? <a href="{% url 'login' %}">Sign in here</a>
-      </p>
-    </div>
-  </div>
+	<div class="registration-form justify-content-center">
+		<form method="POST">
+			<h4>Register an Account Today</h4>
+			<hr />
+			{% csrf_token %} {{ registration_form | as_bootstrap }}
+			<button type="submit" class="btn btn-primary">Register</button>
+		</form>
+		<div>
+			<hr />
+			<p class="text-muted">
+				Already Have An Account? <a href="{% url 'login' %}">Sign in here</a>
+			</p>
+		</div>
+	</div>
 </div>
 {% endblock %}

@@ -31,16 +31,16 @@
 				<tr>
 					<th>Customer</th>
 					<th>Email</th>
-                    <th>Phone</th>
+					<th>Phone</th>
 				</tr>
 
-                {% for customer in customers %}
-                    <tr>
-                        <td><a href="{% url 'customer' customer.id %}">{{ customer.name }}</a></td>
-                        <td>{{ customer.email }}</td>
-                        <td>{{ customer.phone }}</td>
-                    </tr>
-                {% endfor %}
+				{% for customer in customers %}
+				<tr>
+					<td><a href="{% url 'customer' customer.id %}">{{ customer.name }}</a></td>
+					<td>{{ customer.email }}</td>
+					<td>{{ customer.phone }}</td>
+				</tr>
+				{% endfor %}
 
 			</table>
 		</div>
@@ -57,14 +57,14 @@
 					<th>Cancel</th>
 				</tr>
 
-                {% for order in orders %}
-                    <tr>
-                        <td>{{ order.product }}</td>
-                        <td>{{ order.date_created }}</td>
-                        <td>{{ order.status }}</td>
-                        <td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Cancel</a></td>
-                    </tr>
-                {% endfor %}
+				{% for order in orders %}
+				<tr>
+					<td>{{ order.product }}</td>
+					<td>{{ order.date_created }}</td>
+					<td>{{ order.status }}</td>
+					<td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Cancel</a></td>
+				</tr>
+				{% endfor %}
 
 			</table>
 		</div>

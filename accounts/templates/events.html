@@ -7,41 +7,42 @@
 {% block content %}
 
 <section class="jumbotron text-center">
-    <div class="container">
-      <h1>Events</h1>
-      <hr>
-      <p class="lead text-muted">Here you'll find all posts related to marketing events. Why not check em' out!</p>
-    </div>
+	<div class="container">
+		<h1>Events</h1>
+		<hr>
+		<p class="lead text-muted">Here you'll find all posts related to marketing events. Why not check em' out!</p>
+	</div>
 </section>
 
 <section class="container">
-    <div class="bg-white">
-        <div class="media text-muted">
-	        <p>
-                <i class="fas fa-arrow-left"></i><a class="view-more-option" href="{% url 'get_forum' %}"> Back to forum</a>
-            </p>
-        </div>
-    </div>
+	<div class="bg-white">
+		<div class="media text-muted">
+			<p>
+				<i class="fas fa-arrow-left"></i><a class="view-more-option" href="{% url 'get_forum' %}"> Back to
+					forum</a>
+			</p>
+		</div>
+	</div>
 </section>
 
 <section class="container">
-    <p><a href="{% url 'create_forum_post' %}" class="btn btn-primary my-2">Add a Post</a></p>
+	<p><a href="{% url 'create_forum_post' %}" class="btn btn-primary my-2">Add a Post</a></p>
 </section>
 
 <section class="container">
-    <div class="my-3 p-3 bg-white rounded shadow-sm">
-        <h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">Events</h5>
-        {% for post in posts %}
-        {% if post.category == 'Events' %}
-            <div class="media text-muted pt-3">
-	        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <strong class="d-block text-gray-dark"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
-                {{ post.content|truncatewords:30 }}
-            </p>
-	        <hr>
-            </div>
-        {% endif %}
-        {% endfor %}
-    </div>
+	<div class="my-3 p-3 bg-white rounded shadow-sm">
+		<h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">Events</h5>
+		{% for post in posts %}
+		{% if post.category == 'Events' %}
+		<div class="media text-muted pt-3">
+			<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+				<strong class="d-block text-gray-dark"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
+				{{ post.content|truncatewords:30 }}
+			</p>
+			<hr>
+		</div>
+		{% endif %}
+		{% endfor %}
+	</div>
 </section>
 {% endblock %}

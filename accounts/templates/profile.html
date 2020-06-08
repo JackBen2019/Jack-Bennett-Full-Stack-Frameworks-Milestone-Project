@@ -6,60 +6,61 @@
 
 {% block content %}
 
-	<br>
+<br>
 
 <div class="row">
 	<div class="col-md">
 		<div class="card card-body">
 			<h5 class="customer-details-heading">Account Details</h5>
 			<hr>
-            <p><b>Full Name:</b> {{ profile.first_name }} {{ profile.last_name }}</p>
-            <p><b>Full Name:</b> {{customer.name}}</p>
+			<p><b>Full Name:</b> {{ profile.first_name }} {{ profile.last_name }}</p>
+			<p><b>Full Name:</b> {{customer.name}}</p>
 			<p><b>Email:</b> {{customer.email}}</p>
 			<p><b>Phone:</b> {{customer.phone}}</p>
 		</div>
-        <br class="hide">
+		<br class="hide">
 	</div>
 
-    <br class="hide">
+		<br class="hide">
 
-	<div class="col-md">
-		<div class="card card-body product-btn-padding">
-			<h5><b>Customer Order Count:</b> {{order_count}}</h5>
-		</div>
-        <br>
-        <div>
-			<a class="btn btn-outline-info btn-sm btn-block product-btn-padding" href="{% url 'edit_profile' %}"><b>Update Account Details</b></a>
-		</div>
-	</div>
-</div>
-
-<br>
-
-<div class="row">
-	<div class="col-md margin-bottom">
-		<div class="card order-status-table margin-bottom-30">
-			<table class="table table-sm">
-				<tr>
-					<th>Service</th>
-					<th>Order Date</th>
-					<th>Order Status</th>
-					<th>Cancel</th>
-				</tr>
-
-				{% for order in orders %}
-
-				<tr>
-					<td>{{ order.product }}</td>
-					<td>{{ order.date_created }}</td>
-					<td>{{ order.status }}</td>
-					<td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Cancel</a></td>
-				</tr>
-				{% endfor %}
-
-			</table>
+		<div class="col-md">
+			<div class="card card-body product-btn-padding">
+				<h5><b>Customer Order Count:</b> {{order_count}}</h5>
+			</div>
+			<br>
+			<div>
+				<a class="btn btn-outline-info btn-sm btn-block product-btn-padding"
+					href="{% url 'edit_profile' %}"><b>Update Account Details</b></a>
+			</div>
 		</div>
 	</div>
-</div>
 
-{% endblock %}
+	<br>
+
+	<div class="row">
+		<div class="col-md margin-bottom">
+			<div class="card order-status-table margin-bottom-30">
+				<table class="table table-sm">
+					<tr>
+						<th>Service</th>
+						<th>Order Date</th>
+						<th>Order Status</th>
+						<th>Cancel</th>
+					</tr>
+
+					{% for order in orders %}
+
+					<tr>
+						<td>{{ order.product }}</td>
+						<td>{{ order.date_created }}</td>
+						<td>{{ order.status }}</td>
+						<td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Cancel</a></td>
+					</tr>
+					{% endfor %}
+
+				</table>
+			</div>
+		</div>
+	</div>
+
+	{% endblock %}
