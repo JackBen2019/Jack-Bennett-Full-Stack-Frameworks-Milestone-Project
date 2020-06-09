@@ -15,5 +15,4 @@ urlpatterns = [
         password_reset_confirm, name='password_reset_confirm'),
     url(r'^complete/$', password_reset_complete,
         name='password_reset_complete'),
-    url(r'^change-password/$', change_password, name='change_password'),
 ]

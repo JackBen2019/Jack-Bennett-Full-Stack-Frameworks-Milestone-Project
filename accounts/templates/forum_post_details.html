@@ -15,8 +15,8 @@
     </div>
 			<div class="col-md-6">
 				{% if post.image %}
-				<img class="img-blogpost" src="/media/{{ review.image }}">
-        {% endif %}
+                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ post.image }}')"></div>
+                {% endif %}
     </div>
 			</div>
 

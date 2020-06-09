@@ -7,8 +7,8 @@ from .views import (
     edit_forum_post,
     gen_discussion,
     events,
-    privacy_policy)
-from .views import (
+    privacy_policy,
+    change_password,
     logout,
     login,
     registration,
@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^forum/', get_forum, name='get_forum'),
     url(r'^general-discussion/', gen_discussion, name='gen_discussion'),
     url(r'^events/', events, name='events'),
+    url(r'^password/$', change_password, name='change_password'),
     url(r'^password-reset/', include(url_reset, namespace=None)),
     url(r'^(?P<pk>\d+)/$', forum_post_details, name='forum_post_details'),
     url(r'^new/$', create_forum_post, name='create_forum_post'),
