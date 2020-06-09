@@ -18,16 +18,17 @@ from django.contrib import admin
 from django.views.static import serve
 from .settings import MEDIA_ROOT
 from accounts import urls as accounts_urls
-from accounts.views import about
+from accounts.views import index
 from products import urls as urls_products
 from search import urls as urls_search
 from checkout import urls as urls_checkout
 from cart import urls as urls_cart
 from sendemail import urls as urls_sendemail
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', about, name="about"),
+    url(r'^$', index, name="index"),
     url(r'^accounts/', include(accounts_urls, namespace=None)),
     url(r'^products/', include(urls_products, namespace=None)),
     url(r'^cart/', include(urls_cart, namespace=None)),

@@ -6,6 +6,7 @@ from .models import OrderLineItem, Order
 from django.conf import settings
 from django.utils import timezone
 from products.models import Product
+from accounts.models import Customer
 import stripe
 
 stripe.api_key = settings.STRIPE_SECRET
@@ -20,6 +21,8 @@ def checkout(request):
         if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
             order.date = timezone.now()
+            customer = Customer.objects.get(user=request.user)
+            order.customer = customer
             order.save()
 
             cart = request.session.get('cart', {})

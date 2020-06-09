@@ -11,9 +11,9 @@
 	<link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 	<script src="https://kit.fontawesome.com/04a660fe4e.js" crossorigin="anonymous"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
 	<title>{% block page_title %}Base Template{% endblock %}</title>
-	{% block head_js %}
-	{% endblock head_js %}
 </head>
 
 <body>
@@ -122,6 +122,8 @@
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js"
 		integrity="sha256-Ma7RFL/ajnMYYVm0iyAqCA2j+jWid5Xr2DQr+kYG1XA=" crossorigin="anonymous"></script>
+    {% block head_js %}
+	{% endblock head_js %}
 	<script async src="{% static 'js/main.js' %}"></script>
 </body>
 
