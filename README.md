@@ -30,10 +30,12 @@ All images and other static files have been stored externally with AWS S3. Whene
 
 **Deployment Process**
 
-1. The first stage in the deployment process was to create an app on Heroku and then sync that app to my GitHub repository.
-2. Staying on Heroku, I then added all relevant Config Vars such as the database url and any secret keys.
-3. The third stage in the final deployement was doing a push of my finished code to GitHub and Heroku.
-4. As there were no errors after the final code had been pushed, my website was successfully deployed to both GitHub and Heroku.
+1. The first stage (before startinga anything) in the process was to create a GitHub repository. This was so I had somewhere to send and store my code.
+2. Once I had setup the GitHub repository, I then created an app on Heroku, which I then synced that app to my GitHub repository.
+3. Staying on Heroku, I then added all relevant Config Vars such as the database url and any secret keys.
+4. The fourth stage was regular version control. Version control was completed across the entie duration of my website being built and this was to ensure that new versions of my code were regularly sent to GitHub and Heroku.
+5. Once I had deemed the website complete, it was time for the final deployement and this involved doing a final push of my finished code to GitHub and Heroku.
+6. As there were no errors after the final code had been pushed, my website was successfully deployed to both GitHub and Heroku.
 
 # Testing
 

@@ -299,6 +299,15 @@ li {
 
 /* ------ Products ------ */
 
+.countdown-clock-container {
+    text-align: center;
+}
+
+.countdown-clock {
+    font-size: 16px;
+    font-weight: 600;
+}
+
 .product {
     background-size: contain;
     background-position: center center;
@@ -478,6 +487,13 @@ li {
 }
 
 /* ------ Cart / Items in Cart ------ */
+
+@media (max-width: 572px) {
+.cart-button-responsive {
+    text-align: center;
+    margin-bottom: 3px;
+}
+}
 
 .badge {
     padding-left: 9px;

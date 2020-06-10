@@ -4,72 +4,126 @@
 
 {%block page_heading %}Services{% endblock %}
 
+{% block head_js %}
+<script>
+// Countdown Clock - Code assisted by W3 Schools
+var countDownDate = new Date("July 17, 2020 23:59:59").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+    
+  var distance = countDownDate - now;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("countdown-timer").innerHTML = days + "D -" + " " + hours + " " + "D -"
+  + " " + minutes + "M -" + " " + seconds + "S";
+    
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown-timer").innerHTML = "Offer has now finished!";
+  }
+}, 1000);
+</script>
+{% endblock head_js %}
+
 {% block content %}
 
 <section>
+  <div class="jumbotron text-center">
+    <div class="container">
+      <h1>Marketing and Website Services</h1>
+      <hr />
+      <p class="lead text-muted">
+        If you're looking to promote your marketing or web services, then you've
+        come to the right place. Below you can do just that and it will become
+        visible to all those looking for experts in thier field to help boost
+        thier own businesses.
+      </p>
+      <p>
+        <a href="{% url 'add_product' %}" class="btn btn-primary my-2"
+          >Add a New Service</a
+        >
+      </p>
+    </div>
+  </div>
 
-	<section class="jumbotron text-center">
-		<div class="container">
-			<h1>Marketing and Website Services</h1>
-			<hr>
-			<p class="lead text-muted">If you're looking to promote your marketing or web services, then you've come to
-				the right place. Below you can do just that
-				and it will become visible to all those looking for experts in thier field to help boost thier own
-				businesses.</p>
-			<p>
-				<a href="{% url 'add_product' %}" class="btn btn-primary my-2">Add a New Service</a>
-			</p>
-		</div>
-	</section>
+  <div class="col-xl-12">
+      <h4 class="text-center font-weight-bold">
+        Limited Time 10% Discount on Selected Products! <br><br>Offer ends in:
+        <span
+          class="text-info"
+          id="countdown-timer"
+        ></span>
+      </h4>
+  </div>
 
-	<div class="container">
-		<div class="row search-bar-margin-bottom text-center">
-			<div class="search-bar-container display">
-				<form action="{% url 'search_product' %}" method="GET">
-					<input class="search-bar" type="text" name="q">
-					<button class="search-button" type="submit">Search</button>
-				</form>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="row search-bar-margin-bottom text-center">
+      <div class="search-bar-container display">
+        <form action="{% url 'search_product' %}" method="GET">
+          <input class="search-bar" type="text" name="q" />
+          <button class="search-button" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-	<div class="album">
-		<div class="container">
-			<div class="product-row">
-				{% for product in products %}
-				<div class="col-xl-4 col-md-6">
-					<div class="card mb-4 shadow-sm">
-						<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-						<div class="product-card-body">
-							<p class="product-title">{{ product.name }}</p>
-							<p class="text-muted">{{ product.category }}</p>
-							<div class="d-flex justify-content-between align-items-center">
-								<div class="btn-group">
-									<form method="post" action="{% url 'add_to_cart' product.id %}">
-										{% csrf_token %}
-										<div class="text-center">
-											<span class="input-group-btn">
-                    <button class="product-btns btn-success" type="submit">Add to Cart</button>
-                </span>
-										</div>
-									</form>
-									<form class="ml-2" method="post" action="{% url 'product_details' product.id %}">
-										{% csrf_token %}
-										<div class="text-center">
-											<span class="input-group-btn">
-                    <button class="product-btns btn-info" type="submit">Find out more</button>
-                </span>
-										</div>
-									</form>
-								</div>
-								<p class="product-price">£{{ product.price }}</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-	{% endblock %}
+  <div class="album">
+    <div class="container">
+      <div class="product-row">
+        {% for product in products %}
+        <div class="col-xl-4 col-md-6">
+          <div class="card mb-4 shadow-sm">
+            <div
+              class="product"
+              style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"
+            ></div>
+            <div class="product-card-body">
+              <p class="product-title">{{ product.name }}</p>
+              <p class="text-muted">{{ product.category }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <form
+                    method="post"
+                    action="{% url 'add_to_cart' product.id %}"
+                  >
+                    {% csrf_token %}
+                    <div class="text-center">
+                      <span class="input-group-btn">
+                        <button class="product-btns btn-success" type="submit">
+                          Add to Cart
+                        </button>
+                      </span>
+                    </div>
+                  </form>
+                  <form
+                    class="ml-2"
+                    method="post"
+                    action="{% url 'product_details' product.id %}"
+                  >
+                    {% csrf_token %}
+                    <div class="text-center">
+                      <span class="input-group-btn">
+                        <button class="product-btns btn-info" type="submit">
+                          Find out more
+                        </button>
+                      </span>
+                    </div>
+                  </form>
+                </div>
+                <p class="product-price">£{{ product.price }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
 </section>
