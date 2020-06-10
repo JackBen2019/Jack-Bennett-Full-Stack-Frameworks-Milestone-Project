@@ -6,12 +6,6 @@
 
 {%block page_heading %}About JB:Marketing{% endblock %}
 
-{% block head_js %}
-<script>
-
-</script>
-{% endblock head_js %}
-
 {% block content %}
 <section class="container base-font-colour">
 	<div class="row">
@@ -27,7 +21,7 @@
 
 	<div class="row">
 		<div class="col-12">
-			<img src="{% static 'img/about_us_marketing.jpg' %}" alt="">
+			<img src="{% static 'img/about_us_marketing.jpg' %}" alt="About JB:Marketing - 'Do More'">
     </div>
 		</div>
 
@@ -49,11 +43,12 @@
 				</h5>
 				{% if user.is_authenticated %}
 				<br>
-        {% else %}
+                {% else %}
 				<hr>
 				{% endif %}
 			</div>
 		</div>
+        <!-- If user is logged in, the 'Register' & 'Login' buttons will be removed -->
 		{% if user.is_authenticated %}
 		{% else %}
 		<div class="row">
@@ -73,20 +68,5 @@
 			</div>
 		</div>
 		{% endif %}
-
-		<div class="row">
-			<div class="col-12">
-				<h3>Find us on the map</h3>
-				<hr>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6">
-				
-			</div>
-			<div class="col-sm-6">
-				<p>Map location</p>
-			</div>
-		</div>
 </section>
 {% endblock %}

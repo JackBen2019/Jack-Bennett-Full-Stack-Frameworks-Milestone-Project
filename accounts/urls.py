@@ -14,7 +14,6 @@ from .views import (
     registration,
     about,
     profile,
-    dashboard,
     profile_no_orders,
     edit_profile)
 from accounts import url_reset
@@ -26,7 +25,6 @@ urlpatterns = [
     url(r'^register/', registration, name="registration"),
     url(r'^privacy-policy/', privacy_policy, name="privacy_policy"),
     url(r'^about/', about, name="about"),
-    url(r'^dashboard/', dashboard, name="dashboard"),
     url(r'^(?P<pk>\d+)/user-profile/$', profile, name="profile"),
     url(r'^user-profile/', profile_no_orders, name="profile_no_orders"),
     url(r'^edit-profile/$', edit_profile, name="edit_profile"),

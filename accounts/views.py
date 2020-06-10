@@ -92,26 +92,6 @@ def change_password(request):
                       {"form": form})
 
 
-"""
-Dashboard view assisted by Dennis Ivy
-(https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO)
-"""
-@login_required
-def dashboard(request):
-    """Return the dashboard.html file"""
-    orders = Order.objects.all()
-    customers = Customer.objects.all()
-
-    total_customers = customers.count()
-
-    total_orders = orders.count()
-    pending = orders.filter(status='Pending').count()
-
-    return render(request, 'dashboard.html',
-                  {'orders': orders, 'customers': customers,
-                   'total_orders': total_orders, 'pending': pending})
-
-
 @login_required
 def logout(request):
     """Log the user out"""

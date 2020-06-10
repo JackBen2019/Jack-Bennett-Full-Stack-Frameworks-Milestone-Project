@@ -6,6 +6,7 @@
 
 {%block page_heading %}Login{% endblock %}
 
+<!-- Form allows the user to enter their login details and access the website -->
 {% block content %}
 <div class="form-container base-wrapper">
 	<div class="form-styling justify-content-center">
@@ -19,6 +20,7 @@
 		<div>
 			<hr />
 			<p class="text-muted">
+                <!-- User can request a password reset if their forget theirs -->
 				Forgotton your password? <a target="_blank" href="{% url 'password_reset' %}">Reset</a>
 			</p>
 		</div>

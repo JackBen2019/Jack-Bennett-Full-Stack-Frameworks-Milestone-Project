@@ -2,8 +2,9 @@
 
 {% block page_title %}Profile{% endblock %}
 
-{%block page_heading %}Profile{% endblock %}
+{% block page_heading %}Profile{% endblock %}
 
+<!-- This page is shown as the profile page when the user has made 0 orders -->
 {% block content %}
 
 <br>
@@ -12,6 +13,7 @@
 	<div class="col-md">
 		<div class="card card-body">
 			<h5 class="customer-details-heading">Account Details</h5>
+            <!-- User details are pulled in via the Customer model -->
 			<hr>
 			<p><b>Full Name:</b> {{ profile.first_name }} {{ profile.last_name }}</p>
 			<p><b>Username:</b> {{ profile.username }} </p>
@@ -28,6 +30,7 @@
 			</div>
 			<br>
 			<div>
+                <!-- User can update account details such as name and email -->
 				<a class="btn btn-outline-info btn-sm btn-block edit-profile-btn-padding"
 					href="{% url 'edit_profile' %}"><b>Update Account Details</b></a>
 			</div>

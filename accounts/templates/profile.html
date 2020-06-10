@@ -1,5 +1,8 @@
 {% extends 'base.html' %} {% block page_title %}Profile{% endblock %} {%block
-page_heading %}Profile{% endblock %} {% block content %}
+page_heading %}Profile{% endblock %} 
+
+<!-- This page is shown as the profile page when the user has made at least 1 order -->
+{% block content %}
 
 <br />
 
@@ -7,10 +10,11 @@ page_heading %}Profile{% endblock %} {% block content %}
   <div class="col-md">
     <div class="card card-body">
       <h5 class="customer-details-heading">Account Details</h5>
+      <!-- User details are pulled in via the Customer model -->
       <hr />
       <p><b>Full Name:</b> {{customer.name}}</p>
+      <p><b>Username:</b> {{ profile.username }} </p>
       <p><b>Email:</b> {{customer.email}}</p>
-      <p><b>Phone:</b> {{customer.phone}}</p>
     </div>
     <br class="hide" />
   </div>
@@ -23,6 +27,7 @@ page_heading %}Profile{% endblock %} {% block content %}
     </div>
     <br />
     <div>
+      <!-- User can update account details such as name and email -->
       <a
         class="btn btn-outline-info btn-sm btn-block product-btn-padding"
         href="{% url 'edit_profile' %}"
@@ -34,6 +39,7 @@ page_heading %}Profile{% endblock %} {% block content %}
 
 <br />
 
+<!-- All of the users order details, such as date and order status, will be displayed here  -->
 <div class="row">
   <div class="col-md margin-bottom">
     <div class="card order-status-table margin-bottom-30">
@@ -53,6 +59,7 @@ page_heading %}Profile{% endblock %} {% block content %}
           <td>{{ order.date_created }}</td>
           <td>Pending</td>
           <td>
+            <!-- The user can cancel a specific order by clicking the 'Cancel' button -->
             <a
               class="btn btn-sm btn-danger"
               href="{% url 'delete_order' order.id %}"

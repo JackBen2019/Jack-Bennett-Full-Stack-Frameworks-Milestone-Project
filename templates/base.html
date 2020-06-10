@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles %} <!-- Links to all static files stored in the root static folder -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +9,11 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+    <!-- Link to custom CSS stored in the static/css folder -->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 	<script src="https://kit.fontawesome.com/04a660fe4e.js" crossorigin="anonymous"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
-	<title>{% block page_title %}Base Template{% endblock %}</title>
+	<!-- Block for page specific titles -->
+    <title>{% block page_title %}Base Template{% endblock %}</title>
 </head>
 
 <body>
@@ -27,14 +27,17 @@
                     </button>
 					<div class="collapse navbar-collapse" id="navbarNav">
 						<ul class="navbar-nav">
+                        <!-- Navigation for users who are logged in -->
 							{% if user.is_authenticated %}
 							<li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Services</a></li>
 							<li class="nav-item"><a class="nav-link" href="{% url 'get_forum' %}">Forum</a></li>
-							{% if order_count > 0 %}
+							<!-- If order has been made, then display order in Profile -->
+                            {% if order_count > 0 %}
 							<li class="nav-item"><a class="nav-link"
 									href="{% url 'profile' user.customer.id %}"><i class="fa fa-user"></i> Profile</a>
 							</li>
 							{% else %}
+                            <!-- Navigation icons used referenced from Font Awesome -->
 							<li class="nav-item"><a class="nav-link"
 									href="{% url 'profile_no_orders' %}"><i class="fa fa-user"></i> Profile</a></li>
 							{% endif %}
@@ -42,11 +45,15 @@
 									href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
 							<li class="nav-item"><a class="nav-link"
 									href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart"></i> Cart
-									{% if product_count > 0 %}
+									<!-- If item has been added to cart, then display an item count on the cart -->
+                                    {% if product_count > 0 %}
 									<label class="badge badge-warning">{{ product_count }}</label>
 									{% endif %}
 								</a>
 							</li>
+                        <!-- Logged in navigation END -->
+
+                        <!-- Navigation for users who are NOT logged in/registered -->
 							{% else %}
 							<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
 							<li class="nav-item"><a class="nav-link"
@@ -54,17 +61,12 @@
 							<li class="nav-item"><a class="nav-link"
 									href="{% url 'registration' %}"><i class="fa fa-user-plus"></i> Register</a></li>
 							{% endif %}
+                        <!-- Not logged in/registered navigation END -->
 						</ul>
 					</div>
 			</nav>
 		</div>
 	</header>
-
-	{% if messages %}
-	<div>
-		{% for message in messages %} {{ message }} {% endfor %}
-	</div>
-	{% endif %}
 
 	{% block content %} {% endblock %}
 
@@ -122,8 +124,10 @@
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js"
 		integrity="sha256-Ma7RFL/ajnMYYVm0iyAqCA2j+jWid5Xr2DQr+kYG1XA=" crossorigin="anonymous"></script>
+    <!-- Block for any page specific JavaScript -->
     {% block head_js %}
 	{% endblock head_js %}
+    <!-- Link to custom JavaScript stored in the static/css folder -->
 	<script async src="{% static 'js/main.js' %}"></script>
 </body>
 

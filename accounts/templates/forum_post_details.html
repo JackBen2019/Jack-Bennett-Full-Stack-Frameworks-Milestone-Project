@@ -14,6 +14,7 @@
 			<br>
     </div>
 			<div class="col-md-6">
+                <!-- If an image is added with the post, it will be displayed here -->
 				{% if post.image %}
                 <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ post.image }}')"></div>
                 {% endif %}
@@ -22,6 +23,7 @@
 
 			<div class="row">
 				<div class="col-md-6">
+                    <!-- User has the option to hide extra, less import, details about the post -->
 					<button class="btn btn-secondary" type="button" onclick="postInfo()">Toggle Post Details</button>
 				</div>
 			</div>
@@ -37,6 +39,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<a href="{% url 'get_forum' %}" class="btn btn-outline-primary margin-bottom-30">Back to Forum</a>
+                    <!-- 'Edit Post' will only display for the post creator -->
 					{% if request.user == post.creator_id %}
 					<a href="{% url 'edit_forum_post' post.id %}" class="btn btn-outline-warning margin-bottom-30">Edit
 						Post</a>

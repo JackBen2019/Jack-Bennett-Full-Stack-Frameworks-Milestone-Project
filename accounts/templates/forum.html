@@ -23,6 +23,7 @@
 <section class="container">
 	<div class="my-3 p-3 bg-white rounded shadow-sm">
 		<h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">Recent Posts</h5>
+        <!-- A list of recent posts will display here. Limited to 4 most recent posts -->
 		{% for post in posts|slice:":4" %}
 		<div class="media text-muted pt-3">
 			<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
@@ -35,6 +36,7 @@
 	</div>
 	<div class="my-3 p-3 bg-white rounded shadow-sm">
 		<h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">General Discussion</h5>
+        <!-- A list of recent posts in 'General Discussion' will display here. Limited to 4 most recent posts -->
 		{% for post in posts|slice:":4" %}
 		{% if post.category == 'General Discussion' %}
 		<div class="media text-muted pt-3">
@@ -48,6 +50,7 @@
 		{% endfor %}
 		<div class="media text-muted pt-3">
 			<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <!-- User can see all 'General Discussion' posts on a new page  -->
 				<a class="view-more-option" href="{% url 'gen_discussion' %}">More General Discussion
 				</a><i class="fas fa-arrow-right"></i>
 			</p>
@@ -55,6 +58,7 @@
 	</div>
 	<div class="my-3 p-3 bg-white rounded shadow-sm">
 		<h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">Events</h5>
+        <!-- A list of recent posts in 'Events' will display here. Limited to 4 most recent posts -->
 		{% for post in posts|slice:":4" %}
 		{% if post.category == 'Events' %}
 		<div class="media text-muted pt-3">
@@ -68,6 +72,7 @@
 		{% endfor %}
 		<div class="media text-muted pt-3">
 			<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <!-- User can see all 'Events' posts on a new page  -->
 				<a class="view-more-option" href="{% url 'events' %}">More Events </a><i class="fas fa-arrow-right"></i>
 			</p>
 		</div>
