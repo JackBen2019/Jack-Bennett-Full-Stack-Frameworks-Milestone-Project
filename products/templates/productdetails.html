@@ -15,6 +15,7 @@
 			<br>
         </div>
 		<div class="col-md-6">
+            <!-- If an image is added with the service, it will be displayed here -->
 			<div class="product" style="background-image: url('{{ MEDIA_URL }}{{ products.image }}')"></div>
 		</div>
 	</div>
@@ -23,6 +24,7 @@
 			<p><strong>Service Type:</strong> {{ products.category }} </p>
 			<p><strong>Price:</strong> £{{ products.price }} </p>
 			<a href="{% url 'products' %}" class="btn btn-outline-primary">Back to Services</a>
+            <!-- 'Edit Service' will only display for the service creator -->
 			{% if request.user == products.prod_creator_id %}
 			<a href="{% url 'edit_product' products.id %}" class="btn btn-outline-warning">Edit Service</a>
 			{% endif %}

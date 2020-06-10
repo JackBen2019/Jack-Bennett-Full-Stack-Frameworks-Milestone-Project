@@ -4,6 +4,7 @@
 
 {%block page_heading %}Services{% endblock %}
 
+<!-- JavaScript added to enable countdowwn clock functionality -->
 {% block head_js %}
 <script>
 // Countdown Clock - Code assisted by W3 Schools
@@ -52,6 +53,7 @@ var x = setInterval(function() {
     </div>
   </div>
 
+  <!-- Countdown clock added to count down time until new services are available on the site -->
   <div class="col-xl-12">
       <h4 class="text-center font-weight-bold">
         New services to help your business will be availble soon! <br><br> Only 
@@ -63,6 +65,7 @@ var x = setInterval(function() {
       </h4>
   </div>
 
+  <!-- User can search for a specific service -->
   <div class="container">
     <div class="row search-bar-margin-bottom text-center">
       <div class="search-bar-container display">
@@ -77,6 +80,7 @@ var x = setInterval(function() {
   <div class="album">
     <div class="container">
       <div class="product-row">
+      <!-- A list of all services on the site will display here -->
         {% for product in products %}
         <div class="col-xl-4 col-md-6">
           <div class="card mb-4 shadow-sm">
@@ -93,6 +97,7 @@ var x = setInterval(function() {
                     method="post"
                     action="{% url 'add_to_cart' product.id %}"
                   >
+                    <!-- User can add specific product to thier cart -->
                     {% csrf_token %}
                     <div class="text-center">
                       <span class="input-group-btn">

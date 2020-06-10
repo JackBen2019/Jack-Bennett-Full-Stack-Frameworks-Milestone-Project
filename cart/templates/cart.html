@@ -22,6 +22,7 @@
 			</tr>
 		</thead>
 		<tbody>
+            <!-- Each item in the users cart will be listed here -->
 			{% for item in cart_items %}
 			<tr>
 				<td scope="row">{{ item.product.name }}</td>
@@ -31,6 +32,7 @@
 			</tr>
 			{% endfor %}
 
+            <!-- Total cost of ALL products in the cart -->
 			<tr>
 				<td colspan="2"><b>Order Total</b></td>
 				<td><b>£{{ total }}</b></td>
@@ -38,6 +40,7 @@
 			</tr>
 			<tr>
 				<td colspan="5">
+                    <!-- User can either continue shopping or proceed to the checkout page -->
 					<a class="btn btn-warning float-left cart-button-responsive" href="{% url 'checkout' %}">Proceed To Checkout</a>
 					<a class="btn btn-primary float-left ml-2 cart-button-responsive" href="{% url 'products' %}">Continue Shopping</a>
 				</td>
