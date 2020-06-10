@@ -317,7 +317,7 @@ Once the user has made an order, the payment will be handled by Stripe and an or
 - **Heroku**: Used for the final deployment of this website.
 - **GitHub**: Used for version control.
 - **Travis**: Used for testing purposes.
-- **W3 HTML & CSS Validator**: Used to test that all HTML and CSS was valid.
+- **W3C HTML & CSS Validator**: Used to test that all HTML and CSS was valid.
 
 ### Languages:
 

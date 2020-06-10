@@ -30,3 +30,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titles
+
+class postComment(models.Model):
+    post = models.ForeignKey(Post, related_name='comments')
+    user_name = models.CharField(max_length=250)
+    email = models.EmailField()
+    content = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.user_name
