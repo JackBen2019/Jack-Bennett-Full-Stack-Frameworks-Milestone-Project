@@ -454,20 +454,17 @@ li {
   margin-right: 0 !important;
 }
 
-.copyright-container {
+.main-footer-container {
   background-color: #ebeced !important;
   margin-right: 0 !important;
   padding-top: 20px;
-  padding-bottom: 20px;
+}
+
+.main-footer-links {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .social-media-footer {
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.copyright-footer {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;

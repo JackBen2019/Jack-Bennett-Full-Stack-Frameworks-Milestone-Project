@@ -105,12 +105,20 @@
 				</div>
 			</div>
 		</div>
-		<div class="row copyright-container">
-			<div class="col-sm-6 text-right">
-				<a class="footer-link" href="{% url 'contact' %}"> Contact Us </a>
-			</div>
-			<div class="col-sm-6 text-left">
-				<a class="footer-link" href="{% url 'privacy_policy' %}"> Privacy Policy </a>
+		<div class="row main-footer-container text-center">
+			<div class="col-sm-12">
+				<ul class="list-inline">
+					<li class="list-inline-item">
+						<a class="main-footer-links" href="{% url 'contact' %}" target="_blank">
+							<p>Contact Us</p>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a class="main-footer-links" href="{% url 'privacy_policy' %}" target="_blank">
+							<p>Privacy Policy</p>
+						</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</footer>

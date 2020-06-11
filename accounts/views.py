@@ -230,22 +230,18 @@ def comment_post_form(request, pk):
 
 
 @login_required
-def create_forum_post(request, pk=None):
+def create_forum_post(request):
     """
     A view that allows us to create a post, which
     will then be added to the forum
     """
-
-    post = (get_object_or_404(Post, pk=pk) if pk else None)
-    if not post:
-        post = Post.objects.create(creator_id=request.user)
     if request.method == 'POST':
-        form = ForumPostForm(request.POST, request.FILES, instance=post)
+        form = ForumPostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save()
-        return redirect('forum_post_details', post.pk)
+        return redirect('forum_post_details', post.id)
     else:
-        form = ForumPostForm(instance=post)
+        form = ForumPostForm()
     return render(request, 'forum_post_form.html', {'form': form})
 
 
