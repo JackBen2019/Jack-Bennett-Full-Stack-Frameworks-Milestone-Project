@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+
 {% load static from staticfiles %}
+
 {% load bootstrap_tags %}
 
 {% block page_title %}Checkout{% endblock %}
@@ -28,7 +30,7 @@
 				<div class="alert-message block-message error" id="stripe-error-message"></div>
 			</div>
 
-            <!-- Order form will ask the user for personal details, such as address and name -->
+			<!-- Order form will ask the user for personal details, such as address and name -->
 			<div class="form-group">
 				{{ order_form | as_bootstrap }}
 			</div>
@@ -36,12 +38,12 @@
 			<h4>Card Details</h4>
 			<hr>
 
-            <!-- Payment form will ask the user for card details -->
+			<!-- Payment form will ask the user for card details -->
 			<div class="form-group">
 				{{ payment_form | as_bootstrap }}
 			</div>
 
-            <!-- Payment will be made via Stripe payments and the customer will be charged -->
+			<!-- Payment will be made via Stripe payments and the customer will be charged -->
 			<div class="form-group">
 				<input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
     </div>

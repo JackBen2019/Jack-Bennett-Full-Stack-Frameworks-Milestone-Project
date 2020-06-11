@@ -2,7 +2,7 @@
 
 {% block page_title %}Profile{% endblock %}
 
-{%block page_heading %}Profile{% endblock %} 
+{%block page_heading %}Profile{% endblock %}
 
 <!-- This page is shown as the profile page when the user has made at least 1 order -->
 {% block content %}
@@ -10,68 +10,61 @@
 <br />
 
 <div class="row">
-  <div class="col-md">
-    <div class="card card-body">
-      <h5 class="customer-details-heading">Account Details</h5>
-      <!-- User details are pulled in via the Customer model -->
-      <hr />
-      <p><b>Full Name:</b> {{customer.name}}</p>
-      <p><b>Email:</b> {{customer.email}}</p>
-    </div>
-    <br class="hide" />
+	<div class="col-md">
+		<div class="card card-body">
+			<h5 class="customer-details-heading">Account Details</h5>
+			<!-- User details are pulled in via the Customer model -->
+			<hr />
+			<p><b>Full Name:</b> {{customer.name}}</p>
+			<p><b>Email:</b> {{customer.email}}</p>
+		</div>
+		<br class="hide" />
   </div>
 
-  <br class="hide" />
+		<br class="hide" />
 
-  <div class="col-md">
-    <div class="card card-body product-btn-padding">
-      <h5><b>Customer Order Count:</b> {{order_count}}</h5>
-    </div>
-    <br />
-    <div>
-      <!-- User can update account details such as name and email -->
-      <a
-        class="btn btn-outline-info btn-sm btn-block edit-profile-btn-padding"
-        href="{% url 'edit_profile' %}"
-        ><b>Update Account Details</b></a
-      >
-    </div>
-  </div>
-</div>
+		<div class="col-md">
+			<div class="card card-body product-btn-padding">
+				<h5><b>Customer Order Count:</b> {{order_count}}</h5>
+			</div>
+			<br />
+			<div>
+				<!-- User can update account details such as name and email -->
+				<a class="btn btn-outline-info btn-sm btn-block edit-profile-btn-padding"
+					href="{% url 'edit_profile' %}"><b>Update Account Details</b></a>
+			</div>
+		</div>
+	</div>
 
-<br />
+	<br />
 
-<!-- All of the users order details, such as date and order status, will be displayed here  -->
-<div class="row">
-  <div class="col-md margin-bottom">
-    <div class="card order-status-table margin-bottom-30">
-      <table class="table table-sm">
-        <tr>
-          <th>Service</th>
-          <th>Order Date</th>
-          <th>Order Status</th>
-          <th>Cancel</th>
-        </tr>
+	<!-- All of the users order details, such as date and order status, will be displayed here  -->
+	<div class="row">
+		<div class="col-md margin-bottom">
+			<div class="card order-status-table margin-bottom-30">
+				<table class="table table-sm">
+					<tr>
+						<th>Service</th>
+						<th>Order Date</th>
+						<th>Order Status</th>
+						<th>Cancel</th>
+					</tr>
 
-        {% for order in orders %}
-        <tr>
-          <td>
-            {% for o in order.items.all %} {{o.product.name}} {% endfor %}
-          </td>
-          <td>{{ order.date_created }}</td>
-          <td>Pending</td>
-          <td>
-            <!-- The user can cancel a specific order by clicking the 'Cancel' button -->
-            <a
-              class="btn btn-sm btn-danger"
-              href="{% url 'delete_order' order.id %}"
-              >Cancel</a
-            >
-          </td>
-        </tr>
-        {% endfor %}
-      </table>
-    </div>
-  </div>
-</div>
-{% endblock %}
+					{% for order in orders %}
+					<tr>
+						<td>
+							{% for o in order.items.all %} {{o.product.name}} {% endfor %}
+						</td>
+						<td>{{ order.date_created }}</td>
+						<td>Pending</td>
+						<td>
+							<!-- The user can cancel a specific order by clicking the 'Cancel' button -->
+							<a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Cancel</a>
+						</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+	{% endblock %}
