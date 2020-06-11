@@ -47,4 +47,23 @@
 				</div>
 			</div>
 </section>
+
+<section class="container panel-body-forum-details">
+    <div class="row">
+        <div class="col-md-12">
+            <a href="{% url 'comment_post_form' post.id %}"><h4 class="comment-header">Leave a comment</h4></a>
+            <hr />
+            <h5>Total comments: </h5>
+        </div>
+        <div class="col-md-12">
+            {% for comment in comments %}
+            <p>{{ comment.created_date }}</p>
+            <p>{{ comment.user_name }}</p>
+            <p>{{ comment.content }}</p>
+            {% empty %}
+            <p>No comments added. Why not be the first!</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 {% endblock %}

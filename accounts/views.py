@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.utils import timezone
 from .models import Post, Customer
-from checkout.models import Order
 from .forms import (
     ForumPostForm,
     UserLoginForm,
     UserRegistrationForm,
-    EditProfileForm)
+    EditProfileForm,
+    CommentPostForm)
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import auth, messages
@@ -191,8 +191,29 @@ def forum_post_details(request, pk):
     post.views += 1
     post.save()
     post_creator = post.creator_id
-    return render(request, "forum_post_details.html",
+    return render(request, 'forum_post_details.html',
                   {'post': post, 'post_creator': post_creator})
+
+
+"""
+comment_post_form view assisted by Master Code Online
+(https://www.youtube.com/watch?v=fatQJKeGWP8)
+"""
+@login_required
+def comment_post_form(request, pk):
+    """ Create a view that allows us to add a comment """
+
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = CommentPostForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('forum_post_details', {'post': post})
+    else:
+        form = CommentPostForm()
+        return render(request, 'comment_post_form.html', {'form': form})
 
 
 @login_required

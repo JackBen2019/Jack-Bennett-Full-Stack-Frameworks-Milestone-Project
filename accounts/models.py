@@ -29,9 +29,9 @@ class Post(models.Model):
     image = models.ImageField(upload_to="img", blank=True, null=True)
 
     def __str__(self):
-        return self.titles
+        return self.title
 
-class postComment(models.Model):
+class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments')
     user_name = models.CharField(max_length=250)
     email = models.EmailField()

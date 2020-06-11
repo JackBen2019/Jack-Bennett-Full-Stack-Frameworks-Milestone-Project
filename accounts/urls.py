@@ -15,7 +15,8 @@ from .views import (
     about,
     profile,
     profile_no_orders,
-    edit_profile)
+    edit_profile,
+    comment_post_form)
 from accounts import url_reset
 
 urlpatterns = [
@@ -34,6 +35,8 @@ urlpatterns = [
     url(r'^password/$', change_password, name='change_password'),
     url(r'^password-reset/', include(url_reset, namespace=None)),
     url(r'^(?P<pk>\d+)/$', forum_post_details, name='forum_post_details'),
+    url(r'^(?P<pk>\d+)/add-comment/$', comment_post_form,
+        name='comment_post_form'),
     url(r'^new/$', create_forum_post, name='create_forum_post'),
     url(r'^(?P<pk>\d+)/edit/$', edit_forum_post, name='edit_forum_post')
 ]

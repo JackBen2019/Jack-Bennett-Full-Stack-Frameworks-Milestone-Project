@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post
+from .models import Post, Comment
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.core.exceptions import ValidationError
@@ -45,14 +45,23 @@ class UserRegistrationForm(UserCreationForm):
 
         return password2
 
+
 class EditProfileForm(UserChangeForm):
 
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'email', 'password']
 
+
 class ForumPostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('title', 'content', 'image', 'category', 'published_date')
+        fields = ['title', 'content', 'image', 'category', 'published_date']
+
+
+class CommentPostForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ['content']
