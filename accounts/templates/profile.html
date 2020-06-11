@@ -1,5 +1,8 @@
-{% extends 'base.html' %} {% block page_title %}Profile{% endblock %} {%block
-page_heading %}Profile{% endblock %} 
+{% extends 'base.html' %}
+
+{% block page_title %}Profile{% endblock %}
+
+{%block page_heading %}Profile{% endblock %} 
 
 <!-- This page is shown as the profile page when the user has made at least 1 order -->
 {% block content %}
@@ -13,7 +16,6 @@ page_heading %}Profile{% endblock %}
       <!-- User details are pulled in via the Customer model -->
       <hr />
       <p><b>Full Name:</b> {{customer.name}}</p>
-      <p><b>Username:</b> {{ profile.username }} </p>
       <p><b>Email:</b> {{customer.email}}</p>
     </div>
     <br class="hide" />
@@ -29,7 +31,7 @@ page_heading %}Profile{% endblock %}
     <div>
       <!-- User can update account details such as name and email -->
       <a
-        class="btn btn-outline-info btn-sm btn-block product-btn-padding"
+        class="btn btn-outline-info btn-sm btn-block edit-profile-btn-padding"
         href="{% url 'edit_profile' %}"
         ><b>Update Account Details</b></a
       >

@@ -368,6 +368,7 @@ The main features used on my site can be seen below:
 - Allow users to delete thier posts (currently they would need to use the contact form and request for it to be deleted)
 - Allow users to delete thier services (currently they would need to use the contact form and request for it to be deleted)
 - Allow users to add reviews to services they've bought
+- Allow users to edit/delete their comments on posts
 - Show a number counts of total posts
 - Show a number count of total comments on each post
 

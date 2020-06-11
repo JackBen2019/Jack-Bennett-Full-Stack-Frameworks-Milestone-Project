@@ -19,8 +19,8 @@ def contact(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('contact_success')
-    return render(request, "contact_email.html", {'form': form})
+    return render(request, 'contact_email.html', {'form': form})
 
 
 def contact_success(request):
-    return render(request, "contact_success.html",)
+    return render(request, 'contact_success.html')

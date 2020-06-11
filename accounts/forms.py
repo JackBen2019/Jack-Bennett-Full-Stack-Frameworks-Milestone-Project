@@ -6,6 +6,7 @@ from django.core.exceptions import ValidationError
 
 
 class UserLoginForm(forms.Form):
+
     """Form to be used to log users in"""
 
     username = forms.CharField()
@@ -13,19 +14,26 @@ class UserLoginForm(forms.Form):
 
 
 class UserRegistrationForm(UserCreationForm):
+
     """Form used to register a new user"""
 
-    password1 = forms.CharField(
-        label="Password",
-        widget=forms.PasswordInput)
-    password2 = forms.CharField(
-        label="Password Confirmation",
-        widget=forms.PasswordInput)
-    
+    password1 = forms.CharField(label='Password',
+                                widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Password Confirmation',
+                                widget=forms.PasswordInput)
+
     class Meta:
+
         model = User
-        fields = ['first_name', 'last_name', 'email', 'username', 'password1', 'password2']
-    
+        fields = [
+            'first_name',
+            'last_name',
+            'email',
+            'username',
+            'password1',
+            'password2',
+            ]
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
@@ -38,10 +46,10 @@ class UserRegistrationForm(UserCreationForm):
         password2 = self.cleaned_data.get('password2')
 
         if not password1 or not password2:
-            raise ValidationError("Please confirm your password")
+            raise ValidationError('Please confirm your password')
 
         if password1 != password2:
-            raise ValidationError("Passwords must match")
+            raise ValidationError('Passwords must match')
 
         return password2
 
@@ -49,6 +57,7 @@ class UserRegistrationForm(UserCreationForm):
 class EditProfileForm(UserChangeForm):
 
     class Meta:
+
         model = User
         fields = ['first_name', 'last_name', 'email', 'password']
 
@@ -56,12 +65,15 @@ class EditProfileForm(UserChangeForm):
 class ForumPostForm(forms.ModelForm):
 
     class Meta:
+
         model = Post
-        fields = ['title', 'content', 'image', 'category', 'published_date']
+        fields = ['title', 'content', 'image', 'category',
+                  'published_date']
 
 
 class CommentPostForm(forms.ModelForm):
 
     class Meta:
+
         model = Comment
         fields = ['content']

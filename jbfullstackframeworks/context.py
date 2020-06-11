@@ -7,6 +7,7 @@ def orderCount(request):
     file to alternate the page based on whether
     you have made any orders or not.
     """
+
     if request.user.is_authenticated:
         try:
             customer = Customer.objects.get(user=request.user)

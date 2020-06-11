@@ -53,13 +53,13 @@
         <div class="col-md-12">
             <a href="{% url 'comment_post_form' post.id %}"><h4 class="comment-header">Leave a comment</h4></a>
             <hr />
-            <h5>Total comments: </h5>
         </div>
         <div class="col-md-12">
-            {% for comment in comments %}
+            {% for comment in post.comments.all %}
             <p>{{ comment.created_date }}</p>
             <p>{{ comment.user_name }}</p>
-            <p>{{ comment.content }}</p>
+            <p><b>{{ comment.content }}</b></p>
+            <hr />
             {% empty %}
             <p>No comments added. Why not be the first!</p>
             {% endfor %}

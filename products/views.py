@@ -9,7 +9,7 @@ def all_products(request):
     """ Returns the products page """
 
     products = Product.objects.all()
-    return render(request, "products.html", {"products": products})
+    return render(request, 'products.html', {'products': products})
 
 
 @login_required
@@ -23,7 +23,9 @@ def product_details(request, pk):
 
     products = get_object_or_404(Product, pk=pk)
     product_creator = products.prod_creator_id
-    return render(request, "productdetails.html", {"products": products, "pk": pk, 'product_creator':product_creator})
+    return render(request, 'productdetails.html',
+                  {'products': products, 'pk': pk,
+                   'product_creator': product_creator})
 
 
 @login_required
@@ -31,28 +33,29 @@ def edit_product(request, pk):
     """ Edit a single product """
 
     products = get_object_or_404(Product, pk=pk)
-    if request.method == "POST":
+    if request.method == 'POST':
         form = ProductPostForm(request.POST, instance=products)
         if form.is_valid():
             product = form.save()
             return redirect(product_details, product.pk)
     else:
         form = ProductPostForm(instance=products)
-    return render(request, 'editproduct.html', {"form": form})
+    return render(request, 'editproduct.html', {'form': form})
 
 
 @login_required
 def add_product(request, pk=None):
     """ Add a single product """
 
-    products = get_object_or_404(Product, pk=pk) if pk else None
+    products = (get_object_or_404(Product, pk=pk) if pk else None)
     if not products:
         products = Product.objects.create(prod_creator_id=request.user)
-    if request.method == "POST":
-        form = ProductPostForm(request.POST, request.FILES, instance=products)
+    if request.method == 'POST':
+        form = ProductPostForm(request.POST, request.FILES,
+                               instance=products)
         if form.is_valid():
             product = form.save()
             return redirect(product_details, products.pk)
     else:
         form = ProductPostForm(instance=products)
-    return render(request, 'addproductform.html', {"form": form})
+    return render(request, 'addproductform.html', {'form': form})

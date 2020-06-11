@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, reverse
 
+
 def view_cart(request):
     """A View that renders the cart contents page"""
-    return render(request, "cart.html")
+
+    return render(request, 'cart.html')
 
 
 def add_to_cart(request, id):
@@ -13,6 +15,7 @@ def add_to_cart(request, id):
 
     request.session['cart'] = cart
     return redirect(reverse('products'))
+
 
 def remove_from_cart(request, id):
     """Remove a specified product from the cart"""

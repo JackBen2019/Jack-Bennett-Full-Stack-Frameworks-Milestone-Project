@@ -1,6 +1,5 @@
 from django.conf.urls import url
 from .views import checkout, delete_order
-from accounts import urls as accounts_urls
 
 urlpatterns = [
     url(r'^$', checkout, name="checkout"),
