@@ -6,7 +6,7 @@ from .forms import ProductPostForm
 
 @login_required
 def all_products(request):
-    """ Returns the products page """
+    """Returns the 'Services' page"""
 
     products = Product.objects.all()
     return render(request, 'products.html', {'products': products})
@@ -30,7 +30,7 @@ def product_details(request, pk):
 
 @login_required
 def edit_product(request, pk):
-    """ Edit a single product """
+    """Edit a single product"""
 
     products = get_object_or_404(Product, pk=pk)
     if request.method == 'POST':
@@ -45,7 +45,7 @@ def edit_product(request, pk):
 
 @login_required
 def add_product(request, pk=None):
-    """ Add a single product """
+    """Add a single product to the 'Services' page"""
 
     products = (get_object_or_404(Product, pk=pk) if pk else None)
     if not products:

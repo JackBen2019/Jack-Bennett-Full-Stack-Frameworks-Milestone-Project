@@ -5,6 +5,8 @@ from .forms import ContactForm
 
 
 def contact(request):
+    """Returns a contact form"""
+
     if request.method == 'GET':
         form = ContactForm()
     else:
@@ -23,4 +25,9 @@ def contact(request):
 
 
 def contact_success(request):
+    """
+    Returns a page that confirms the contact
+    form has been filled out and sent
+    """
+
     return render(request, 'contact_success.html')

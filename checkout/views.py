@@ -15,6 +15,12 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required
 def checkout(request):
+    """
+    Returns the checkout page and allows the
+    user to enter the personal and payment
+    details in order to complete their order
+    """
+
     if request.method == 'POST':
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
@@ -66,7 +72,7 @@ def checkout(request):
 
 @login_required
 def delete_order(request, pk):
-    """ Cancel an order from the profile page """
+    """Cancel an order from the profile page"""
 
     order = Order.objects.get(id=pk)
     order.delete()

@@ -19,7 +19,7 @@ def index(request):
 
 
 def privacy_policy(request):
-    """Return the about.html file"""
+    """Return the privacy_policy.html file"""
 
     return render(request, 'privacy_policy.html')
 
@@ -32,7 +32,10 @@ def about(request):
 
 @login_required
 def profile(request, pk):
-    """Return the profile.html file as a the profile"""
+    """
+    Return the profile.html file as a the profile page
+    if the user had made 0 orders
+    """
 
     customer = Customer.objects.get(id=pk)
 
@@ -45,7 +48,10 @@ def profile(request, pk):
 
 @login_required
 def profile_no_orders(request):
-    """Return the profile_no_orders.html file as a the profile"""
+    """
+    Return the profile_no_orders.html file as a the profile page
+    if the user has made 1 or more orders
+    """
 
     user = User.objects.get(email=request.user.email)
     username = User.objects.get(username=request.user.username)
@@ -54,6 +60,10 @@ def profile_no_orders(request):
 
 @login_required
 def edit_profile(request):
+    """
+    A view that gives the user the option to
+    update thier account details
+    """
     if request.method == 'POST':
         form = EditProfileForm(request.POST, instance=request.user)
 
@@ -67,6 +77,11 @@ def edit_profile(request):
 
 @login_required
 def change_password(request):
+    """
+    A view that gives the user the option to
+    update thier password, seperate from the
+    edit_profile page
+    """
     if request.method == 'POST':
         form = PasswordChangeForm(data=request.POST, user=request.user)
 
@@ -117,7 +132,7 @@ def login(request):
 
 
 def registration(request):
-    """Render the registration page"""
+    """Return the registration page"""
 
     if request.user.is_authenticated:
         return redirect(reverse('about'))
@@ -148,7 +163,7 @@ def registration(request):
 @login_required
 def get_forum(request):
     """
-    Will return a list of posts that were published prior to 'now'
+    Will return a list of posts that have been published
     and render them to the 'forum.html' template
     """
 
@@ -159,7 +174,10 @@ def get_forum(request):
 
 @login_required
 def gen_discussion(request):
-    """Return the general_discussion.html file"""
+    """
+    Will return a list of posts that have a category
+    that matches 'General Discussion'
+    """
 
     posts = Post.objects.filter(category='General Discussion')
 
@@ -168,7 +186,10 @@ def gen_discussion(request):
 
 @login_required
 def events(request):
-    """Return the events.html file"""
+    """
+    Will return a list of posts that have a category
+    that matches 'Events'
+    """
 
     posts = Post.objects.filter(category='Events')
 
@@ -178,9 +199,9 @@ def events(request):
 @login_required
 def forum_post_details(request, pk):
     """
-    Returns a single post based on the post ID (pk) and
-    renders it to the 'forum_post_details.html' template.
-    Or return a 404 error if the post is not found
+    Allows the user to view a posts details based on
+    the post ID (pk) and renders it to the
+    'forum_post_details.html' template.
     """
 
     post = get_object_or_404(Post, pk=pk)
@@ -193,7 +214,7 @@ def forum_post_details(request, pk):
 
 @login_required
 def comment_post_form(request, pk):
-    """ Create a view that allows us to add a comment """
+    """ A view that allows us to add a comment to a post """
 
     post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST':
@@ -210,7 +231,10 @@ def comment_post_form(request, pk):
 
 @login_required
 def create_forum_post(request, pk=None):
-    """ Create a view that allows us to create a post """
+    """
+    A view that allows us to create a post, which
+    will then be added to the forum
+    """
 
     post = (get_object_or_404(Post, pk=pk) if pk else None)
     if not post:
@@ -227,7 +251,7 @@ def create_forum_post(request, pk=None):
 
 @login_required
 def edit_forum_post(request, pk=None):
-    """ Create a view that allows us to edit a post """
+    """ A view that allows us to edit a post """
 
     post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST':
