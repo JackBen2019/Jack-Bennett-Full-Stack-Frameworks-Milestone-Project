@@ -47,7 +47,6 @@
 						<th>Service</th>
 						<th>Order Date</th>
 						<th>Order Status</th>
-						<th>Cancel</th>
 					</tr>
 
 					{% for order in orders %}
@@ -57,10 +56,6 @@
 						</td>
 						<td>{{ order.date_created }}</td>
 						<td>Pending</td>
-						<td>
-							<!-- The user can cancel a specific order by clicking the 'Cancel' button -->
-							<a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Cancel</a>
-						</td>
 					</tr>
 					{% endfor %}
 				</table>

@@ -37,6 +37,35 @@ All images and other static files have been stored externally with AWS S3. Whene
 5. Once I had deemed the website complete, it was time for the final deployement and this involved doing a final push of my finished code to GitHub and Heroku.
 6. As there were no errors after the final code had been pushed, my website was successfully deployed to both GitHub and Heroku.
 
+**Using/Cloning This Repository**
+
+If you would like to use this repository as a base for one of your projects, please follow the below steps:
+
+1. You first need to make sure you are on the main page of this repository. Follow this [link](https://github.com/JackBen2019/Jack-Bennett-Full-Stack-Frameworks-Milestone-Project) if you are unsure.
+2. Once there, you then need to click the green button that reads 'Clone or download'. See snippet below for guidance.
+
+![Clone or Download Snippet](https://user-images.githubusercontent.com/52998869/84489146-23ded000-ac99-11ea-8e75-4a2ddb88d387.png)
+
+3. After that, click on the clipboard icon located to the right of the GitHub link. See snippet below for guidance.
+
+![Clone or Download Snippet](https://user-images.githubusercontent.com/52998869/84489390-8d5ede80-ac99-11ea-9bec-e2c9b0ec53e5.png)
+
+4. Now you need to open up your preffered IDE e.g. GitPod or AWS. Once you have that open, locate and go to the terminal window.
+5. Once in the termal window, you then need to follow the steps that are needed for your specific IDE in order to complete the clone of this repository. 
+
+**Using/Cloning This Repository on GitPod in a Few Simple Steps**
+
+If you are using GitPod, then cloning this GitHub repository is simple.
+
+1. You first need to make sure you are on the main page of this repository. Follow this [link](https://github.com/JackBen2019/Jack-Bennett-Full-Stack-Frameworks-Milestone-Project) if you are unsure.
+2. Once there, you then need to click the green button that reads 'GitPod'. See snippet below for guidance.
+
+![Clone GitPod Repository Snippet](https://user-images.githubusercontent.com/52998869/84490894-af596080-ac9b-11ea-8462-95e49e9e4351.png)
+
+3. When you click that button, it will begin to load the repository in GitPod.
+4. Once the repository have loaded, you need to click on 'File' in the top left hand corner and then click 'Save Workspace As'. You can then give it a relevant name and save it.
+5. The repository has now been cloned and is ready for use.
+
 # Testing
 
 [![Build Status](https://travis-ci.org/JackBen2019/Jack-Bennett-Full-Stack-Frameworks-Milestone-Project.svg?branch=master)](https://travis-ci.org/JackBen2019/Jack-Bennett-Full-Stack-Frameworks-Milestone-Project)
@@ -45,15 +74,53 @@ A lot of the testing was done by me and without the assistance of other online t
 
 ### General Website Functionality Tests
 
-**Registration**: To test this, I visited my website in the position of a user who was visiting for the first time. I first clicked on the 'Register' button in the navigation menu. Once the registration page opened, I then proceeded to enter my registration details. To test this further, I first added a username and email that I knew was already taken to ensure that it would not let me register it. I was able to confirm that it gave me an error. After that test, I entered some new details and then clicked 'Register'. This registered me successfully and I was then able to access pages such as services, forum, profile and cart.
+**Registration**: To test this, I visited my website in the position of a user who was visiting for the first time. I first clicked on the 'Register' button in the navigation menu. Once the registration page opened, I completed the following steps:
+
+1. Clicked on the 'Register' button without filling out any fields to ensure a user would not be able to register without entering their details.
+
+Result - It didn't allow me to register until I populated the 'Username' field.
+
+2. Clicked on the 'Register' button after I populated the 'Username' field.
+
+Result - It didn't allow me to register until I also populated the 'Password' field.
+
+3. Clicked on the 'Register' button after I populated the 'Username' and 'Password' field.
+
+Result - It didn't allow me to register until I also populated the 'Password Confirmation' field.
+
+4. Clicked on the 'Register' button after I populated the 'Username', 'Password' and 'Password Confirmation' field.
+
+Result - It now successfully worked and an account was registered with the username and password I set. This is all the information that is needed to use the website. Email Address and full name will be requested at the checkout page if you choose to purchase something.
+
+To test the registration form further, I added a username and email that I knew was already taken to ensure that it would not let me register it. I was able to confirm that it gave me an error. After that test, I entered some new details and then clicked 'Register'. This registered me successfully and I was then able to access pages such as services, forum, profile and cart.
 
 **Login**: To test this, I visited my website in the position of a recently registered user. Once on my website, I then proceeded to click on the 'Login' button in the navigation menu. After that, I then proceeded to enter the details I originally registered with. This then successfully logged me in.
+
+To test this further, I entered an incorerrect password and username to esnure that it would not still let me log in. I was able to confirm that it gave me an error.
 
 **Logout**: To test this, I simply clicked on the 'Logout' button the navigation menu after I had logged in. This then successfully logged me out.
 
 **Password Reset**: To test this, I first ensured that I was logged out of my website. Once I was sure of that, I proceeded to click on the 'Login' button in the navigation menu. Once the login page loaded, I clicked on the 'Forgotton your password?' link at the bottom of the login form. This then took me to another page, where I was able to enter my registered email address and have a password reset sent to my email. I successfully recieved the email and was able to update my password. Finally, I went back onto my website, loaded up the login page, added my new login details and successfully logged in.
 
 **User Restrictions on Editing/Deleting Posts/Service**: To ensure that only the user who added a post or service would be able to edit/delete that post or service, I needed to add some user restrictions directly into the templates, which is what I did. To test this, I created a post and a service from 2 seperate accounts. I then viewed both posts and services from different accounts to ensure that I was unable to see an edit or delete button if the post or service wasn't mine. This was the case on both accounts and this test was successful.
+
+**Contact Form**: To test this, I first clicked on the 'Contact Us' link in the footer to ensure that the contact us page opened in a new tab. I felt this was necessary as the user may want to keep the page they have open for reference when filling out the contact form. Once the contact us page opened, I completed the following steps:
+
+1. Clicked on the 'Send Message' button without filling out any fields to ensure a user would not be able to send a message without entering their details.
+
+Result - It didn't allow me to send a message until I populated the 'Email Address' field.
+
+2. Clicked on the 'Send Message' button after I populated the 'Email Address' field.
+
+Result - It didn't allow me to register until I also populated the 'Reason' field.
+
+3. Clicked on the 'Send Message' button after I populated the 'Email Address' and 'Reason' field.
+
+Result - It didn't allow me to register until I also populated the 'Description' field.
+
+4. Clicked on the 'Send Message' button after I populated the 'Email Address', 'Reason' and 'Description' field.
+
+Result - It now successfully worked and a message sent confirmation was displayed.
 
 ### Browser and Mobile Responsiveness
 
