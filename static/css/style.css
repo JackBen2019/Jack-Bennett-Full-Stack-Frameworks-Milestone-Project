@@ -210,6 +210,10 @@ li {
 
 /* ------ Search Bar ------ */
 
+.product-search-button {
+  margin-bottom: 6px !important;
+}
+
 .search-bar-container {
   width: 100%;
 }
