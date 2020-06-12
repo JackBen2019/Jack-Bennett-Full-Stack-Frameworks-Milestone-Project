@@ -78,19 +78,19 @@ A lot of the testing was done by me and without the assistance of other online t
 
 1. Clicked on the 'Register' button without filling out any fields to ensure a user would not be able to register without entering their details.
 
-Result - It didn't allow me to register until I populated the 'Username' field.
+**Result** - It didn't allow me to register until I populated the 'Username' field.
 
 2. Clicked on the 'Register' button after I populated the 'Username' field.
 
-Result - It didn't allow me to register until I also populated the 'Password' field.
+**Result** - It didn't allow me to register until I also populated the 'Password' field.
 
 3. Clicked on the 'Register' button after I populated the 'Username' and 'Password' field.
 
-Result - It didn't allow me to register until I also populated the 'Password Confirmation' field.
+**Result** - It didn't allow me to register until I also populated the 'Password Confirmation' field.
 
 4. Clicked on the 'Register' button after I populated the 'Username', 'Password' and 'Password Confirmation' field.
 
-Result - It now successfully worked and an account was registered with the username and password I set. This is all the information that is needed to use the website. Email Address and full name will be requested at the checkout page if you choose to purchase something.
+**Result** - It now successfully worked and an account was registered with the username and password I set. This is all the information that is needed to use the website. Email Address and full name will be requested at the checkout page if you choose to purchase something.
 
 To test the registration form further, I added a username and email that I knew was already taken to ensure that it would not let me register it. I was able to confirm that it gave me an error. After that test, I entered some new details and then clicked 'Register'. This registered me successfully and I was then able to access pages such as services, forum, profile and cart.
 
@@ -108,19 +108,19 @@ To test this further, I entered an incorerrect password and username to esnure t
 
 1. Clicked on the 'Send Message' button without filling out any fields to ensure a user would not be able to send a message without entering their details.
 
-Result - It didn't allow me to send a message until I populated the 'Email Address' field.
+**Result** - It didn't allow me to send a message until I populated the 'Email Address' field.
 
 2. Clicked on the 'Send Message' button after I populated the 'Email Address' field.
 
-Result - It didn't allow me to register until I also populated the 'Reason' field.
+**Result** - It didn't allow me to register until I also populated the 'Reason' field.
 
 3. Clicked on the 'Send Message' button after I populated the 'Email Address' and 'Reason' field.
 
-Result - It didn't allow me to register until I also populated the 'Description' field.
+**Result** - It didn't allow me to register until I also populated the 'Description' field.
 
 4. Clicked on the 'Send Message' button after I populated the 'Email Address', 'Reason' and 'Description' field.
 
-Result - It now successfully worked and a message sent confirmation was displayed.
+**Result** - It now successfully worked and a message sent confirmation was displayed.
 
 ### Browser and Mobile Responsiveness
 
