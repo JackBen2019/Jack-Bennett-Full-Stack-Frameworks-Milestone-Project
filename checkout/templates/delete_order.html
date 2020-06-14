@@ -6,12 +6,9 @@
 
 <!-- If a user opts to cancel a product via the profile page, they will be asked to confirm that they definitely want to cancel the order -->
 {% block content %}
-
 <p>Please confirm that you would like to cancel <b>{{item}}?</b></p>
-
 <form action="POST">
-	<a href="{% url 'delete_order' order.id %}">Cancel</a>
-	<input type="submit" name="Confirm">
+   <a href="{% url 'delete_order' order.id %}">Cancel</a>
+   <input type="submit" name="Confirm">
 </form>
-
-	{% endblock %}
+{% endblock %}

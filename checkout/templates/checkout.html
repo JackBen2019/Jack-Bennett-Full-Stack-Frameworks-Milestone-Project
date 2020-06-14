@@ -12,42 +12,37 @@
 {% block head_js %}
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
-	//<![CDATA[
-        Stripe.publishableKey = '{{ publishable }}'
-        //]]>
+   //<![CDATA[
+          Stripe.publishableKey = '{{ publishable }}'
+          //]]>
 </script>
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock head_js %}
-
 {% block content %}
 <div class="form-container base-wrapper">
-	<div class="form-styling justify-content-center">
-		<form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
-			{% csrf_token %}
-			<h4>Personal Details</h4>
-			<hr>
-			<div id="credit-card-errors" style="display:none">
-				<div class="alert-message block-message error" id="stripe-error-message"></div>
-			</div>
-
-			<!-- Order form will ask the user for personal details, such as address and name -->
-			<div class="form-group">
-				{{ order_form | as_bootstrap }}
-			</div>
-
-			<h4>Card Details</h4>
-			<hr>
-
-			<!-- Payment form will ask the user for card details -->
-			<div class="form-group">
-				{{ payment_form | as_bootstrap }}
-			</div>
-
-			<!-- Payment will be made via Stripe payments and the customer will be charged -->
-			<div class="form-group">
-				<input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
-    </div>
-		</form>
-	</div>
+   <div class="form-styling justify-content-center">
+      <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+         {% csrf_token %}
+         <h4>Personal Details</h4>
+         <hr>
+         <div id="credit-card-errors" style="display:none">
+            <div class="alert-message block-message error" id="stripe-error-message"></div>
+         </div>
+         <!-- Order form will ask the user for personal details, such as address and name -->
+         <div class="form-group">
+            {{ order_form | as_bootstrap }}
+         </div>
+         <h4>Card Details</h4>
+         <hr>
+         <!-- Payment form will ask the user for card details -->
+         <div class="form-group">
+            {{ payment_form | as_bootstrap }}
+         </div>
+         <!-- Payment will be made via Stripe payments and the customer will be charged -->
+         <div class="form-group">
+            <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+         </div>
+      </form>
+   </div>
 </div>
 {% endblock %}

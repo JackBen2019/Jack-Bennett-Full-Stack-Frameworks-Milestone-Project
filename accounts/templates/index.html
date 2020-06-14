@@ -7,28 +7,28 @@
 {%block page_heading %}About JB:Marketing{% endblock %}
 
 {% block content %}
+
 <section class="container base-font-colour">
-	<div class="row">
-		<div class="col-12">
-			<h2 class="about-heading">
-				<span>- Hello and Welcome -</span>
-			</h2>
-			<h4 class="text-center">JB:Marketing - a central hub for all marketers and web developers to advertise thier
-				services.</h4>
-			<hr>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-12">
-			<img src="{% static 'img/about_us_marketing.jpg' %}" alt="">
-    </div>
-		</div>
-
-		<div class="row">
-			<div class="col-12">
-				<h5 class="text-center">
-					<span class="">We first want to take this opportunity to thank you for visiting our site today. We, just like you, are 
+   <div class="row">
+      <div class="col-12">
+         <h2 class="about-heading">
+            <span>- Hello and Welcome -</span>
+         </h2>
+         <h4 class="text-center">JB:Marketing - a central hub for all marketers and web developers to advertise thier
+            services.
+         </h4>
+         <hr>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-12">
+         <img src="{% static 'img/about_us_marketing.jpg' %}" alt="">
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-12">
+         <h5 class="text-center">
+            <span class="">We first want to take this opportunity to thank you for visiting our site today. We, just like you, are 
             always striving to be better everyday and we are always pushing for the next amazing opportunity. We live by the motto to 
             always <b>do more</b> and that's something we hope we you can live by with us.
             <br>-<br>
@@ -40,33 +40,33 @@
             services, JB:Marketing is the place to be. Here you have to choice to add your services, or simply pay for someone else's.
             So, I think that covers everything. Thank you again for visiting and let's get to work!
             </span>
-				</h5>
-				{% if user.is_authenticated %}
-				<br>
-        {% else %}
-				<hr>
-				{% endif %}
-			</div>
-		</div>
-		<!-- If user is logged in, the 'Register' & 'Login' buttons will be removed -->
-		{% if user.is_authenticated %}
-		{% else %}
-		<div class="row">
-			<div class="col-sm-6 margin-bottom-about-boxes">
-				<a class="base-font-colour" href="{% url 'registration' %}">
-					<div class="panel-body-about text-center">
-						<h2>Register</h2>
-					</div>
-				</a>
-			</div>
-			<div class="col-sm-6 margin-bottom-about-boxes">
-				<a class="base-font-colour" href="{% url 'login' %}">
-					<div class="panel-body-about text-center">
-						<h2>Login</h2>
-					</div>
-				</a>
-			</div>
-		</div>
-		{% endif %}
+         </h5>
+         {% if user.is_authenticated %}
+         <br>
+         {% else %}
+         <hr>
+         {% endif %}
+      </div>
+   </div>
+   <!-- If user is logged in, the 'Register' & 'Login' buttons will be removed -->
+   {% if user.is_authenticated %}
+   {% else %}
+   <div class="row">
+      <div class="col-sm-6 margin-bottom-about-boxes">
+         <a class="base-font-colour" href="{% url 'registration' %}">
+            <div class="panel-body-about text-center">
+               <h2>Register</h2>
+            </div>
+         </a>
+      </div>
+      <div class="col-sm-6 margin-bottom-about-boxes">
+         <a class="base-font-colour" href="{% url 'login' %}">
+            <div class="panel-body-about text-center">
+               <h2>Login</h2>
+            </div>
+         </a>
+      </div>
+   </div>
+   {% endif %}
 </section>
 {% endblock %}

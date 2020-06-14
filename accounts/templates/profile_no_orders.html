@@ -6,36 +6,32 @@
 
 <!-- This page is shown as the profile page when the user has made 0 orders -->
 {% block content %}
-
-<br>
-
-<div class="row">
-	<div class="col-md">
-		<div class="card card-body">
-			<h5 class="customer-details-heading">Account Details</h5>
-			<!-- User details are pulled in via the Customer model -->
-			<hr>
-			<p><b>Full Name:</b> {{ profile.first_name }} {{ profile.last_name }}</p>
-			<p><b>Email:</b> {{ profile.email }} </p>
-		</div>
-		<br class="hide">
-	</div>
-
-		<br class="hide">
-
-		<div class="col-md">
-			<div class="card card-body product-btn-padding">
-				<h5><b>Customer Order Count:</b> 0 </h5>
-			</div>
-			<br>
-			<div>
-				<!-- User can update account details such as name and email -->
-				<a class="btn btn-outline-info btn-sm btn-block edit-profile-btn-padding"
-					href="{% url 'edit_profile' %}"><b>Update Account Details</b></a>
-			</div>
-		</div>
-	</div>
-
-	<br>
-
+<section id="content">
+   <br>
+   <div class="row">
+      <div class="col-md">
+         <div class="card card-body">
+            <h5 class="customer-details-heading">Account Details</h5>
+            <!-- User details are pulled in via the Customer model -->
+            <hr>
+            <p><b>Full Name:</b> {{ profile.first_name }} {{ profile.last_name }}</p>
+            <p><b>Email:</b> {{ profile.email }} </p>
+         </div>
+         <br class="hide">
+      </div>
+      <br class="hide">
+      <div class="col-md">
+         <div class="card card-body product-btn-padding">
+            <h5><b>Customer Order Count:</b> 0 </h5>
+         </div>
+         <br>
+         <div>
+            <!-- User can update account details such as name and email -->
+            <a class="btn btn-outline-info btn-sm btn-block edit-profile-btn-padding"
+               href="{% url 'edit_profile' %}"><b>Update Account Details</b></a>
+         </div>
+      </div>
+   </div>
+   <br>
+</section>
 {% endblock %}

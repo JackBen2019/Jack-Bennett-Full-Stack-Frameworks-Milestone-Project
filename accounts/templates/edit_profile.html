@@ -13,7 +13,7 @@
 			<h4>Edit Details</h4>
 			<hr>
 			{% csrf_token %}
-			{{ form.as_p}}
+			{{ form | as_bootstrap }}
 			<button type="submit" class="btn btn-primary">Update Details</button>
 		</form>
 	</div>

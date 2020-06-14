@@ -28,7 +28,7 @@ h6,
 .h5,
 .h6 {
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.2;
@@ -37,6 +37,11 @@ h6,
 body {
   padding: 0px !important;
   margin: 0px !important;
+  line-height: 20px !important;
+}
+
+#content {
+  min-height: calc(100vh - 40px);
 }
 
 button {
@@ -208,36 +213,45 @@ li {
   padding-top: 40px !important;
 }
 
-/* ------ Search Bar ------ */
-
-.product-search-button {
-  margin-bottom: 6px !important;
-}
+/* ------ Search Bar - Design Assisted by W3Schools (https://www.w3schools.com/howto/howto_css_search_button.asp) ------ */
 
 .search-bar-container {
   width: 100%;
-}
-
-.search-bar {
-  width: 40%;
 }
 
 .search-bar-margin-bottom {
   margin-bottom: 10px;
 }
 
-.search-bar-container input[type="text"] {
-  padding: 4px;
-  margin-top: 8px;
+form.search-bar input[type="text"] {
+  padding: 10px;
   font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
 }
 
-.search-bar-container .search-button {
-  padding: 6px;
-  background: #ddd;
+form.search-bar button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
   font-size: 17px;
-  border: none;
+  border: 1px solid grey;
+  border-left: none;
   cursor: pointer;
+}
+
+form.search-bar button:hover {
+  background: #0b7dda;
+}
+
+form.search-bar::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 /* ------ Forms ------ */
@@ -321,6 +335,14 @@ li {
 .countdown-clock {
   font-size: 16px;
   font-weight: 600;
+}
+
+.countdown-clock-text {
+  font-weight: 500 !important;
+}
+
+.countdown-clock-text-colour {
+  color: #007bff !important;
 }
 
 .product {
@@ -437,9 +459,12 @@ li {
 
 /* ------ Footer / Social Media ------ */
 
-.footer-fix-container {
-  position: relative;
-  min-height: 100vh;
+#footer-height-fix {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  padding-bottom: 0px !important;
+  color: white;
 }
 
 .footer-wrap {

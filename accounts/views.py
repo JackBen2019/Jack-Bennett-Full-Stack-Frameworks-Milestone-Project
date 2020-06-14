@@ -64,6 +64,7 @@ def edit_profile(request):
     A view that gives the user the option to
     update thier account details
     """
+
     if request.method == 'POST':
         form = EditProfileForm(request.POST, instance=request.user)
 
@@ -82,6 +83,7 @@ def change_password(request):
     update thier password, seperate from the
     edit_profile page
     """
+
     if request.method == 'POST':
         form = PasswordChangeForm(data=request.POST, user=request.user)
 
@@ -116,7 +118,7 @@ def login(request):
 
         if login_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
-                                     password=request.POST['password'])
+                    password=request.POST['password'])
             messages.success(request, 'You have successfully logged in!'
                              )
 
@@ -125,7 +127,7 @@ def login(request):
                 return redirect(reverse('about'))
             else:
                 login_form.add_error(None,
-                                     'Your username or password is incorrect')
+                        'Your username or password is incorrect')
     else:
         login_form = UserLoginForm()
     return render(request, 'login.html', {'login_form': login_form})
@@ -144,7 +146,7 @@ def registration(request):
             registration_form.save()
 
             user = auth.authenticate(username=request.POST['username'],
-                                     password=request.POST['password1'])
+                    password=request.POST['password1'])
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request,
@@ -169,7 +171,15 @@ def get_forum(request):
 
     posts = Post.objects.filter(published_date__lte=timezone.now()
                                 ).order_by('-published_date')
-    return render(request, 'forum.html', {'posts': posts})
+
+    gen_discussion = Post.objects.filter(category='General Discussion')
+
+    events = Post.objects.filter(category='Events')
+
+    return render(request, 'forum.html', {
+                  'posts': posts,
+                  'events': events,
+                  'gen_discussion': gen_discussion})
 
 
 @login_required
@@ -179,9 +189,10 @@ def gen_discussion(request):
     that matches 'General Discussion'
     """
 
-    posts = Post.objects.filter(category='General Discussion')
+    gen_discussion = Post.objects.filter(category='General Discussion')
 
-    return render(request, 'general_discussion.html', {'posts': posts})
+    return render(request, 'general_discussion.html',
+                  {'gen_discussion': gen_discussion})
 
 
 @login_required
@@ -191,9 +202,9 @@ def events(request):
     that matches 'Events'
     """
 
-    posts = Post.objects.filter(category='Events')
+    events = Post.objects.filter(category='Events')
 
-    return render(request, 'events.html', {'posts': posts})
+    return render(request, 'events.html', {'events': events})
 
 
 @login_required
@@ -235,6 +246,7 @@ def create_forum_post(request):
     A view that allows us to create a post, which
     will then be added to the forum
     """
+
     if request.method == 'POST':
         form = ForumPostForm(request.POST, request.FILES)
         if form.is_valid():

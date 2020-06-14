@@ -7,76 +7,95 @@
 {% block content %}
 
 <section class="jumbotron text-center">
-	<div class="container">
-		<h1>Marketing and Website Forum</h1>
-		<hr>
-		<p class="lead text-muted">Here you'll find a variety of posts from the latest marketing or web events, to some
-			general discussion on the topics.
-			If you would like to add your own post, you can do so by clicking the 'Add Post' button below.</p>
-	</div>
+   <div class="container">
+      <h1>Marketing and Website Forum</h1>
+      <hr />
+      <p class="lead text-muted">
+         Here you'll find a variety of posts from the latest marketing or web
+         events, to some general discussion on the topics. If you would like to add
+         your own post, you can do so by clicking the 'Add Post' button below.
+      </p>
+   </div>
 </section>
-
 <section class="container">
-	<p><a href="{% url 'create_forum_post' %}" class="btn btn-primary my-2">Add a Post</a></p>
+   <p>
+      <a href="{% url 'create_forum_post' %}" class="btn btn-primary my-2"
+         >Add a Post</a
+         >
+   </p>
 </section>
-
 <section class="container">
-	<div class="my-3 p-3 bg-white rounded shadow-sm">
-		<h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">Recent Posts</h5>
-		<!-- A list of recent posts will display here. Limited to 4 most recent posts -->
-		{% for post in posts|slice:":4" %}
-		<div class="media text-muted pt-3">
-			<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-				<strong class="d-block text-gray-dark margin-bottom-5"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
-				{{ post.content|truncatewords:30 }}
-			</p>
-			<hr>
-		</div>
-		{% endfor %}
-	</div>
-	<div class="my-3 p-3 bg-white rounded shadow-sm">
-		<h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">General Discussion</h5>
-		<!-- A list of recent posts in 'General Discussion' will display here. Limited to 4 most recent posts -->
-		{% for post in posts|slice:":4" %}
-		{% if post.category == 'General Discussion' %}
-		<div class="media text-muted pt-3">
-			<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-				<strong class="d-block text-gray-dark margin-bottom-5"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
-				{{ post.content|truncatewords:30 }}
-			</p>
-			<hr>
-		</div>
-		{% endif %}
-		{% endfor %}
-		<div class="media text-muted pt-3">
-			<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-				<!-- User can see all 'General Discussion' posts on a new page  -->
-				<a class="view-more-option" href="{% url 'gen_discussion' %}">More General Discussion
-				</a><i class="fas fa-arrow-right"></i>
-			</p>
-		</div>
-	</div>
-	<div class="my-3 p-3 bg-white rounded shadow-sm">
-		<h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">Events</h5>
-		<!-- A list of recent posts in 'Events' will display here. Limited to 4 most recent posts -->
-		{% for post in posts|slice:":4" %}
-		{% if post.category == 'Events' %}
-		<div class="media text-muted pt-3">
-			<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-				<strong class="d-block text-gray-dark margin-bottom-5"><a href="{% url 'forum_post_details' post.id %}">{{ post.title }}</a></strong>
-				{{ post.content|truncatewords:30 }}
-			</p>
-			<hr>
-		</div>
-		{% endif %}
-		{% endfor %}
-		<div class="media text-muted pt-3">
-			<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-				<!-- User can see all 'Events' posts on a new page  -->
-				<a class="view-more-option" href="{% url 'events' %}">More Events </a><i class="fas fa-arrow-right"></i>
-			</p>
-		</div>
-	</div>
-
+   <div class="my-3 p-3 bg-white rounded shadow-sm">
+      <h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">
+         Recent Posts
+      </h5>
+      <!-- A list of recent posts will display here. Limited to 4 most recent posts -->
+      {% for post in posts|slice:":4" %}
+      <div class="media text-muted pt-3">
+         <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark margin-bottom-5"
+               ><a href="{% url 'forum_post_details' post.id %}"
+               >{{ post.title }}</a
+               ></strong
+               >
+            {{ post.content|truncatewords:30 }}
+         </p>
+         <hr />
+      </div>
+      {% endfor %}
+   </div>
+   <div class="my-3 p-3 bg-white rounded shadow-sm">
+      <h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">
+         General Discussion
+      </h5>
+      <!-- A list of recent posts in 'General Discussion' will display here. Limited to 4 most recent posts -->
+      {% for post in gen_discussion|slice:":4" %}
+      <div class="media text-muted pt-3">
+         <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark margin-bottom-5"
+               ><a href="{% url 'forum_post_details' post.id %}"
+               >{{ post.title }}</a
+               ></strong
+               >
+            {{ post.content|truncatewords:30 }}
+         </p>
+         <hr />
+      </div>
+      {% endfor %}
+      <div class="media text-muted pt-3">
+         <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <!-- User can see all 'General Discussion' posts on a new page  -->
+            <a class="view-more-option" href="{% url 'gen_discussion' %}"
+               >More General Discussion </a
+               ><i class="fas fa-arrow-right"></i>
+         </p>
+      </div>
+   </div>
+   <div class="my-3 p-3 bg-white rounded shadow-sm">
+      <h5 class="border-bottom border-gray pb-2 mb-0 forum-category-header">
+         Events
+      </h5>
+      <!-- A list of recent posts in 'Events' will display here. Limited to 4 most recent posts -->
+      {% for post in events|slice:":4" %}
+      <div class="media text-muted pt-3">
+         <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark"
+               ><a href="{% url 'forum_post_details' post.id %}"
+               >{{post.title }}</a
+               ></strong
+               >
+            {{ post.content|truncatewords:30 }}
+         </p>
+         <hr />
+      </div>
+      {% endfor %}
+      <div class="media text-muted pt-3">
+         <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <!-- User can see all 'Events' posts on a new page  -->
+            <a class="view-more-option" href="{% url 'events' %}">More Events </a
+               ><i class="fas fa-arrow-right"></i>
+         </p>
+      </div>
+   </div>
 </section>
 {% endblock %}

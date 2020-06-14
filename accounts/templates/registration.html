@@ -9,20 +9,20 @@
 <!-- Form allows the user to enter their registration details and create an account to access the website -->
 {% block content %}
 <div class="form-container base-wrapper">
-	<div class="form-styling justify-content-center">
-		<form method="POST">
-			<h4>Register an Account Today</h4>
-			<hr />
-			{% csrf_token %} {{ registration_form | as_bootstrap }}
-			<button type="submit" class="btn btn-primary">Register</button>
-		</form>
-		<div>
-			<hr />
-			<p class="text-muted">
-				<!-- User can login here if they already have an account -->
-				Already Have An Account? <a href="{% url 'login' %}">Sign in here</a>
-			</p>
-		</div>
-	</div>
+   <div class="form-styling justify-content-center">
+      <form method="POST">
+         <h4>Register an Account Today</h4>
+         <hr />
+         {% csrf_token %} {{ registration_form | as_bootstrap }}
+         <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+      <div>
+         <hr />
+         <p class="text-muted">
+            <!-- User can login here if they already have an account -->
+            Already Have An Account? <a href="{% url 'login' %}">Sign in here</a>
+         </p>
+      </div>
+   </div>
 </div>
 {% endblock %}

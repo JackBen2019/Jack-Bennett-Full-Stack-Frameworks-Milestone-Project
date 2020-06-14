@@ -11,46 +11,43 @@
 {% block content %}
 
 <!-- Some of the code on this page was inspired by Dennis Ivy tutorials (see README) -->
-
 <div class="table-responsive order-form-container">
-	<table class="table">
-		<h4>Order Summary</h4>
-		<thead>
-			<tr>
-				<th scope="col">Service</th>
-				<th class="hide-service-type" scope="col">Service Type</th>
-				<th scope="col">Price</th>
-				<th scope="col">Remove</th>
-			</tr>
-		</thead>
-		<tbody>
-			<!-- Each item in the users cart will be listed here -->
-			{% for item in cart_items %}
-			<tr>
-				<td scope="row">{{ item.product.name }}</td>
-				<td class="hide-service-type">{{ item.product.category }}</td>
-				<td>£{{ item.product.price }}</td>
-				<td><a class="btn btn-sm btn-danger" href="{% url 'remove_from_cart' item.product.id %}">Remove</a></td>
-			</tr>
-			{% endfor %}
-
-			<!-- Total cost of ALL products in the cart -->
-			<tr>
-				<td colspan="2"><b>Order Total</b></td>
-				<td><b>£{{ total }}</b></td>
-				<td class="hide-service-type"></td>
-			</tr>
-			<tr>
-				<td colspan="5">
-					<!-- User can either continue shopping or proceed to the checkout page -->
-					<a class="btn btn-warning float-left cart-button-responsive" href="{% url 'checkout' %}">Proceed To
-						Checkout</a>
-					<a class="btn btn-primary float-left ml-2 cart-button-responsive"
-						href="{% url 'products' %}">Continue Shopping</a>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+   <table class="table">
+      <h4>Order Summary</h4>
+      <thead>
+         <tr>
+            <th scope="col">Service</th>
+            <th class="hide-service-type" scope="col">Service Type</th>
+            <th scope="col">Price</th>
+            <th scope="col">Remove</th>
+         </tr>
+      </thead>
+      <tbody>
+         <!-- Each item in the users cart will be listed here -->
+         {% for item in cart_items %}
+         <tr>
+            <td scope="row">{{ item.product.name }}</td>
+            <td class="hide-service-type">{{ item.product.category }}</td>
+            <td>£{{ item.product.price }}</td>
+            <td><a class="btn btn-sm btn-danger" href="{% url 'remove_from_cart' item.product.id %}">Remove</a></td>
+         </tr>
+         {% endfor %}
+         <!-- Total cost of ALL products in the cart -->
+         <tr>
+            <td colspan="2"><b>Order Total</b></td>
+            <td><b>£{{ total }}</b></td>
+            <td class="hide-service-type"></td>
+         </tr>
+         <tr>
+            <td colspan="5">
+               <!-- User can either continue shopping or proceed to the checkout page -->
+               <a class="btn btn-warning float-left cart-button-responsive" href="{% url 'checkout' %}">Proceed To
+               Checkout</a>
+               <a class="btn btn-primary float-left ml-2 cart-button-responsive"
+                  href="{% url 'products' %}">Continue Shopping</a>
+            </td>
+         </tr>
+      </tbody>
+   </table>
 </div>
-
 {% endblock %}
