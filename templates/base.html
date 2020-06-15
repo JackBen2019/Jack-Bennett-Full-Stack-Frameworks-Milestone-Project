@@ -72,7 +72,7 @@
 
     {% if messages %}
 	<div>
-		{% for message in messages %} <h1>{{ message }}</h1> {% endfor %}
+		{% for message in messages %} <div class="alert alert-info" role="alert">{{ message }}</div> {% endfor %}
 	</div>
 	{% endif %}
 
