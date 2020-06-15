@@ -17,7 +17,7 @@ def contact(request):
             message = form.cleaned_data['description']
             try:
                 send_mail(subject, message, from_email,
-                          ['jackbennett@jbmarketing.com'])
+                          ['jackkbennett17@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('contact_success')
