@@ -117,7 +117,7 @@ def login(request):
 
         if login_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
-                    password=request.POST['password'])
+                                     password=request.POST['password'])
             messages.success(request, 'You have successfully logged in!'
                              )
 
@@ -126,7 +126,7 @@ def login(request):
                 return redirect(reverse('about'))
             else:
                 login_form.add_error(None,
-                        'Your username or password is incorrect')
+                                     'Your username or password is incorrect')
     else:
         login_form = UserLoginForm()
     return render(request, 'login.html', {'login_form': login_form})
@@ -145,7 +145,7 @@ def registration(request):
             registration_form.save()
 
             user = auth.authenticate(username=request.POST['username'],
-                    password=request.POST['password1'])
+                                     password=request.POST['password1'])
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request,
