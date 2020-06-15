@@ -76,7 +76,6 @@ def edit_profile(request):
         return render(request, 'edit_profile.html', {'form': form})
 
 
-@login_required
 def change_password(request):
     """
     A view that gives the user the option to
