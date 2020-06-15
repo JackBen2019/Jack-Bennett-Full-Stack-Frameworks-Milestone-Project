@@ -34,7 +34,7 @@ All images and other static files have been stored externally with AWS S3. Whene
 2. Once I had setup the GitHub repository, I then created an app on Heroku, which I then synced that app to my GitHub repository.
 3. Staying on Heroku, I then added all relevant Config Vars such as the database url and any secret keys.
 4. The fourth stage was regular version control. Version control was completed across the entie duration of my website being built and this was to ensure that new versions of my code were regularly sent to GitHub and Heroku.
-5. Once I had deemed the website complete, it was time for the final deployement and this involved doing a final push of my finished code to GitHub and Heroku.
+5. Once I had deemed the website complete, it was time for the final deployment and this involved doing a final push of my finished code to GitHub and Heroku.
 6. As there were no errors after the final code had been pushed, my website was successfully deployed to both GitHub and Heroku.
 
 **Using/Cloning This Repository**

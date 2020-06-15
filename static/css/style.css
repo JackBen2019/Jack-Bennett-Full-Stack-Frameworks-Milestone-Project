@@ -229,7 +229,6 @@ form.search-bar input[type="text"] {
   border: 1px solid grey;
   float: left;
   width: 80%;
-  background: #f1f1f1;
 }
 
 form.search-bar button {
