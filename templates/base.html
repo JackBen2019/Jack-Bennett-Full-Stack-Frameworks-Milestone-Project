@@ -18,6 +18,8 @@
       <title>{% block page_title %}Base Template{% endblock %}</title>
    </head>
    <body>
+   <div id="container">
+   <div id="header">
       <header class="container-fluid">
          <div class="col-12">
             <nav class="navbar navbar-expand-sm navbar-light bg-light">
@@ -69,6 +71,7 @@
             </nav>
          </div>
       </header>
+      </div>
 
     {% if messages %}
 	<div>
@@ -76,8 +79,9 @@
 	</div>
 	{% endif %}
 
-      {% block content %} {% endblock %}
-      <footer id="footer-height-fix" class="container-fluid">
+      <div id="body">{% block content %} {% endblock %}</div>
+
+      <footer id="footer" class="container-fluid">
          <div class="row social-media-container">
             <div class="col-sm-12">
                <div class="social-media-footer">
@@ -127,6 +131,8 @@
             </div>
          </div>
       </footer>
+      </div>
+
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"

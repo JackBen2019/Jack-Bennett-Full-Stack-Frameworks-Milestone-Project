@@ -34,10 +34,10 @@ h6,
   line-height: 1.2;
 }
 
-body {
-  padding: 0px !important;
-  margin: 0px !important;
-  line-height: 20px !important;
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 #content {
@@ -473,11 +473,19 @@ form.search-bar::after {
 
 /* ------ Footer / Social Media ------ */
 
-#footer-height-fix {
-  width: 100%;
-  height: 100%;
-  padding-bottom: 0px !important;
-  color: white;
+#container {
+    min-height: 100%;
+    position: relative;
+}
+
+#body {
+    padding-bottom: 135px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-wrap {
