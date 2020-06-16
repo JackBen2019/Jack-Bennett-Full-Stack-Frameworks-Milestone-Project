@@ -102,6 +102,10 @@ li {
 
 /* ------ Bootstrap ------ */
 
+.alert {
+    margin-bottom: 0px !important;
+}
+
 .row.row-flex {
   display: flex;
   flex-wrap: wrap;
