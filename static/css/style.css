@@ -34,10 +34,11 @@ h6,
   line-height: 1.2;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 #content {
@@ -103,7 +104,7 @@ li {
 /* ------ Bootstrap ------ */
 
 .alert {
-    margin-bottom: 0px !important;
+  margin-bottom: 0px !important;
 }
 
 .row.row-flex {
@@ -478,18 +479,18 @@ form.search-bar::after {
 /* ------ Footer / Social Media ------ */
 
 #container {
-    min-height: 100%;
-    position: relative;
+  min-height: 100%;
+  position: relative;
 }
 
 #body {
-    padding-bottom: 135px;
+  padding-bottom: 135px;
 }
 
 #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-wrap {

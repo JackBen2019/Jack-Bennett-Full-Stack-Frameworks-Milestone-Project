@@ -42,8 +42,12 @@ def profile(request, pk):
     orders = customer.order_set.all()
     order_count = orders.count()
 
+    user = User.objects.get(email=request.user.email)
+    username = User.objects.get(username=request.user.username)
+
     return render(request, 'profile.html', {'customer': customer,
-                  'orders': orders, 'order_count': order_count})
+                  'orders': orders, 'order_count': order_count,
+                  'profile': user})
 
 
 @login_required

@@ -44,18 +44,14 @@ def edit_product(request, pk):
 
 
 @login_required
-def add_product(request, pk=None):
+def add_product(request):
     """Add a single product to the 'Services' page"""
 
-    products = (get_object_or_404(Product, pk=pk) if pk else None)
-    if not products:
-        products = Product.objects.create(prod_creator_id=request.user)
     if request.method == 'POST':
-        form = ProductPostForm(request.POST, request.FILES,
-                               instance=products)
+        form = ProductPostForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            return redirect(product_details, products.pk)
+            return redirect('product_details', product.id)
     else:
-        form = ProductPostForm(instance=products)
+        form = ProductPostForm()
     return render(request, 'addproductform.html', {'form': form})
