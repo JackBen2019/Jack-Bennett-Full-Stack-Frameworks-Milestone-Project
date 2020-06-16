@@ -30,6 +30,12 @@ def about(request):
     return render(request, 'about.html')
 
 
+"""
+profile view assisted by Dennis Ivy
+(https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO)
+"""
+
+
 @login_required
 def profile(request, pk):
     """
@@ -62,6 +68,12 @@ def profile_no_orders(request):
     return render(request, 'profile_no_orders.html', {'profile': user})
 
 
+"""
+edit_profile view assisted by Max Goodridge
+(https://www.youtube.com/watch?v=JmaxoPBvp1M)
+"""
+
+
 @login_required
 def edit_profile(request):
     """
@@ -78,6 +90,12 @@ def edit_profile(request):
     else:
         form = EditProfileForm(instance=request.user)
         return render(request, 'edit_profile.html', {'form': form})
+
+
+"""
+change_password view assisted by Max Goodridge
+(https://www.youtube.com/watch?v=QxGKTvx-Vvg)
+"""
 
 
 def change_password(request):
