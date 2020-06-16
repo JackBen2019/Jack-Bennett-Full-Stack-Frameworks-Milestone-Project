@@ -429,6 +429,7 @@ The main features used on my site can be seen below:
 
 ### Future Features:
 
+- Allow for REAL emails to be sent via the contact form and password reset. After a lot of time was spent trying to get emails to send directly to the user requesting an email, I came to the conclusion that a bug or unknown issue was not allowing this functionality to work. Therefore, I have kept in place the console email for testing, but will aim to have full email functionality working in the future.
 - Allow for more profile features such as a profile picture
 - Allow users to view thier posts in the Profile page
 - Allow users to view the services they have listed in the Profile page
@@ -529,6 +530,16 @@ def create_forum_post(request, pk=None):
         form = ForumPostForm(instance=post)
     return render(request, 'forum_post_form.html', {'form': form})
 ```
+
+5. Emails not sending to the user requesting them.
+
+**Solution**: Unfortunately, no solution was found to this issue. There were a number of things that I tried in order to get this to work, but ultimatley had no luck. Below is everything that was tried and tested.
+
+- Allowing less secure apps to access my Gmail account
+- Disabling 2-factor authentication on Gmail
+- Disbling Captcha on Gmail
+- Changing `EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'` to be `EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'`
+- Adding EMAIL_ADDRESS and EMAIL_PASSWORD enviroment variables into the env.py file and Heroku Vars
 
 # Database
 
